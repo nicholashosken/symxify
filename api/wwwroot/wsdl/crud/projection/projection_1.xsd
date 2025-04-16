@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/projection/dto" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/projection/dto">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="projection.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2016-2022 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="LoanProjectionBaseRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:CredentialsChoice"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InterestRate" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InterestType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentFrequency" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MAprPrepaidFinanceChg" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MilitaryAprLoan" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DqCalculationMethod" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DueDateAdvanceCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LoanDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentCalculationType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AmortizeSchedule" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AmortizeScheduleType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentSkips" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentSkipStartDay" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DueDay1" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DueDay2" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FirstDueDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BalloonDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BalloonAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FirstInsuredBirthDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SecondInsuredBirthDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InsuranceType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EscrowAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PrepaidFinanceChg" type="tns:BigMoneyType"/>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LoanProjectionBaseResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StatusMessage" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Payment" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LoanAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentCount" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FinalPayment" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FinalDueDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FirstPaymentDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TotalInterest" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TotalPayments" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TotalEscrow" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TotalMaprFees" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Life" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Disability" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LifeError" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DisabilityError" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Apr" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Mapr" type="xsd:decimal"/>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+    <xsd:attribute name="StatusCode" type="xsd:int"/>
+  </xsd:complexType>
+  <xsd:complexType name="CalculatePaymentAmountRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:LoanProjectionBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LoanAmount" type="tns:BigMoneyType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MaturityDate" type="xsd:date"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CalculatePaymentAmountResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:LoanProjectionBaseResponse">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="cmn:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CalculateLoanAmountRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:LoanProjectionBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MaturityDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Payment" type="tns:BigMoneyType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CalculateLoanAmountResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:LoanProjectionBaseResponse">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="cmn:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CalculateLoanTermRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:LoanProjectionBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LoanAmount" type="tns:BigMoneyType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Payment" type="tns:BigMoneyType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CalculateLoanTermResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:LoanProjectionBaseResponse">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="cmn:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="BigMoneyType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:minInclusive value="-999999999999.99"/>
+      <xsd:maxInclusive value="999999999999.99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

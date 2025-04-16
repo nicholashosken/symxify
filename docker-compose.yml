@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  # db:
+  #   image: postgres:15
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: myuser
+  #     POSTGRES_PASSWORD: mypass
+  #     POSTGRES_DB: mydb
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+
+  # cdn:
+  #   build:
+  #     context: .
+  #     dockerfile: ./cdn/Dockerfile
+  #   ports:
+  #     - "7063:80"
+  #   environment:
+  #     - ASPNETCORE_URLS=http://+:80
+
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    ports:
+      - "7042:80"
+    # depends_on:
+      # - db
+      # - cdn
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - Serializer__cdnUrl=http://localhost
+      - AvailableSymxchangeVersions_0="crud"
+      # - PreloadedServices_0="AccountService"
+      # - PreloadedService_1="ParameterService"
+      # - SymxchangeConnection__CertificateThumbprint=""
+      - SymxchangeConnection__Port="1234"
+      - SymxchangeConnection__Host="yourconnection.net"
+      - SymxchangeConnection__Secure=true
+      # - ConnectionStrings__DefaultConnection=Host=db;Database=mydb;Username=myuser;Password=mypass
+# volumes:
+#   pgdata:

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/ecaa/dto" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/ecaa/dto">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="ecaa_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2016-2022 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="EcaaBaseRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="EcaaBaseResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Status" type="cmn:Status"/>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element name="Namespace" type="tns:namespace"/>
+          <xsd:element name="AuthenticationCredentials" type="cmn:authenticationCredentials"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="AuthenticateResult" type="tns:authenticateResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateWithAuthorizationRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element name="Namespace" type="tns:namespace"/>
+          <xsd:element name="AuthenticationCredentials" type="cmn:authenticationCredentials"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateWithAuthorizationResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="AuthenticateWithAuthorizationResult" type="tns:authenticateWithAuthorizationResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="getPrincipalsRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Credentials" type="cmn:UserNumberCredentials"/>
+          <xsd:element name="Namespace" type="tns:namespace"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="PrivilegeDemand" type="xsd:string"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Principal" type="tns:principal"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="getPrincipalsResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="PrincipalsResult" type="tns:getPrincipalsResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="initKerberosAuthenticationRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Domain" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="initKerberosAuthenticationResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="InitKerberosAuthenticationHostResult" type="tns:initKerberosAuthenticationResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authorizeSymRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Credentials" type="cmn:UserNumberCredentials"/>
+          <xsd:element minOccurs="0" name="Namespace" type="tns:namespace"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authorizeSymResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="AuthorizeSymResult" type="tns:authorizeSymResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="changeSymitarPasswordRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Credentials" type="cmn:UserNumberCredentials"/>
+          <xsd:element name="NewPassword" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="changeSymitarPasswordResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="ChangeSymitarPasswordResult" type="tns:changeSymitarPasswordResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateMemberRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element name="Credentials" type="cmn:HomeBankingCredentials"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateMemberResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="AuthenticateMemberResult" type="tns:authenticateMemberResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateServiceRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateServiceResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="AuthenticateServiceResult" type="tns:authenticateServiceResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="changeMemberHBPasswordRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Credentials" type="cmn:HomeBankingCredentials"/>
+          <xsd:element name="NewPassword" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="changeMemberHBPasswordResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="ChangeMemberHBPasswordResult" type="tns:changeMemberHBPasswordResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="convertToJWTRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="convertToJWTResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="ConvertToJWTResult" type="tns:convertToJWTResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="convertToSAMLRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseRequest">
+        <xsd:sequence>
+          <xsd:element name="JwtToken" type="tns:JwtToken"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="convertToSAMLResponse">
+    <xsd:complexContent>
+      <xsd:extension base="tns:EcaaBaseResponse">
+        <xsd:sequence>
+          <xsd:element name="ConvertToSAMLResult" type="tns:convertToSAMLResult"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="AuthorizedSym" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateWithAuthorizationResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:authenticateResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="AuthorizationProfiles" type="tns:authorizationProfile"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="getPrincipalsResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Information" type="tns:principalInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="initKerberosAuthenticationResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ServicePrincipalName" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authorizeSymResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="PrivilegeNames" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="changeSymitarPasswordResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateMemberResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authenticateServiceResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="changeMemberHBPasswordResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="convertToJWTResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="JwtToken" type="tns:JwtToken"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="convertToSAMLResult">
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SAMLAssertion" type="tns:samlAssertion"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="principalInformation">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Principal" type="tns:principal"/>
+      <xsd:element minOccurs="0" name="Name" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Phone" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="commonResult">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ErrorCode" type="tns:errorCode"/>
+      <xsd:element minOccurs="0" name="ErrorMessage" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Result" type="tns:result"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="authorizationProfile">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Namespace" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="PrivilegeNames" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="principal">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="namespace">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="samlAssertion">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="JwtToken ">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="errorCode">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NO_ERROR"/>
+      <xsd:enumeration value="NOT_FOUND"/>
+      <xsd:enumeration value="AUTHENTICATION_FAILED"/>
+      <xsd:enumeration value="SYM_NOT_AUTHORIZED"/>
+      <xsd:enumeration value="INVALID_PARAMETERS"/>
+      <xsd:enumeration value="UNEXPECTED_FAILURE"/>
+      <xsd:enumeration value="PASSWORD_CHANGE_FAILED"/>
+      <xsd:enumeration value="PASSWORD_HAS_EXPIRED"/>
+      <xsd:enumeration value="PASSWORD_WILL_EXPIRE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="result">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SUCCESS"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="FAILURE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

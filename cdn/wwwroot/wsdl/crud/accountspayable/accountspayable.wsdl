@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AccountsPayableService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/accountspayable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/accountspayable/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/accountspayable" xmlns:update="http://www.symxchange.generated.symitar.com/crud/accountspayable/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/accountspayable">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="accountspayable.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/accountspayable/dto/retrieve" schemaLocation="accountspayable_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/accountspayable/dto/update" schemaLocation="accountspayable_2.xsd"/>
+      <xsd:complexType name="VendorSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:VendorSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Vendor" type="retrieve:Vendor"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:VendorSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:VendorChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Vendor" type="retrieve:Vendor"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:InvoiceSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Invoice" type="retrieve:Invoice"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:InvoiceSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:InvoiceChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Invoice" type="retrieve:Invoice"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoicePagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:InvoiceSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoicePagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Invoice" type="retrieve:Invoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:InvoiceSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:InvoiceSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Invoice" type="retrieve:Invoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNoteSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceNoteLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:InvoiceNoteSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNoteSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceNote" type="retrieve:InvoiceNote"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNotePagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:InvoiceNoteSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNotePagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="InvoiceNote" type="retrieve:InvoiceNote"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNoteSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:InvoiceNoteSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:InvoiceNoteSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNoteSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="InvoiceNote" type="retrieve:InvoiceNote"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorFmHistoryPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:VendorFmHistorySingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorFmHistoryPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="VendorFmHistory" type="retrieve:VendorFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorFmHistorySearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:VendorFmHistorySingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:VendorFmHistorySearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorFmHistorySearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="VendorFmHistory" type="retrieve:VendorFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateVendorByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorFields" type="update:VendorFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateInvoiceByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceFields" type="update:InvoiceFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateInvoiceNoteByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceNoteLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceNoteFields" type="update:InvoiceNoteFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNoteUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateVendorRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorFields" type="update:VendorFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateInvoiceRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceFields" type="update:InvoiceFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateInvoiceNoteRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceNoteFields" type="update:InvoiceNoteFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNoteCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceNoteLocator" type="xsd:int"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteVendorRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="VendorDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteInvoiceRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteInvoiceNoteRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VendorNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="InvoiceNoteLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiceNoteDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getVendorSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:VendorSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getVendorSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:VendorSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getVendorSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:VendorSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getVendorSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:VendorSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:InvoiceSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:InvoiceSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:InvoiceSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:InvoiceSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoicePagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:InvoicePagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoicePagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:InvoicePagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchInvoicePagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:InvoiceSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchInvoicePagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:InvoiceSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceNoteSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:InvoiceNoteSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceNoteSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:InvoiceNoteSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceNotePagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:InvoiceNotePagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInvoiceNotePagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:InvoiceNotePagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchInvoiceNotePagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:InvoiceNoteSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchInvoiceNotePagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:InvoiceNoteSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getVendorFmHistoryPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:VendorFmHistoryPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getVendorFmHistoryPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:VendorFmHistoryPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchVendorFmHistoryPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:VendorFmHistorySearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchVendorFmHistoryPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:VendorFmHistorySearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateVendorByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateVendorByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateVendorByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:VendorUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateInvoiceByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateInvoiceByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateInvoiceByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:InvoiceUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateInvoiceNoteByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateInvoiceNoteByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateInvoiceNoteByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:InvoiceNoteUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createVendor">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateVendorRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createVendorResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:VendorCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createInvoice">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateInvoiceRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:InvoiceCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createInvoiceNote">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateInvoiceNoteRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createInvoiceNoteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:InvoiceNoteCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteVendor">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteVendorRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteVendorResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:VendorDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteInvoice">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteInvoiceRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:InvoiceDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteInvoiceNote">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteInvoiceNoteRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteInvoiceNoteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:InvoiceNoteDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getVendorSelectFieldsResponse">
+    <wsdl:part element="tns:getVendorSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoicePagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getInvoicePagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateInvoiceNoteByIDResponse">
+    <wsdl:part element="tns:updateInvoiceNoteByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateInvoiceByIDResponse">
+    <wsdl:part element="tns:updateInvoiceByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateInvoiceNoteByIDRequest">
+    <wsdl:part element="tns:updateInvoiceNoteByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceNoteSelectFieldsResponse">
+    <wsdl:part element="tns:getInvoiceNoteSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceNotePagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getInvoiceNotePagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateVendorByIDResponse">
+    <wsdl:part element="tns:updateVendorByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createVendorResponse">
+    <wsdl:part element="tns:createVendorResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteInvoiceNoteRequest">
+    <wsdl:part element="tns:deleteInvoiceNote" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteInvoiceNoteResponse">
+    <wsdl:part element="tns:deleteInvoiceNoteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceNoteSelectFieldsRequest">
+    <wsdl:part element="tns:getInvoiceNoteSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getInvoiceSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchVendorFmHistoryPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchVendorFmHistoryPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createVendorRequest">
+    <wsdl:part element="tns:createVendor" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceSelectFieldsRequest">
+    <wsdl:part element="tns:getInvoiceSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceNotePagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getInvoiceNotePagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchInvoiceNotePagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchInvoiceNotePagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchVendorFmHistoryPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchVendorFmHistoryPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceSelectFieldsResponse">
+    <wsdl:part element="tns:getInvoiceSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getInvoiceSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateInvoiceByIDRequest">
+    <wsdl:part element="tns:updateInvoiceByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteInvoiceRequest">
+    <wsdl:part element="tns:deleteInvoice" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getVendorSelectFieldsRequest">
+    <wsdl:part element="tns:getVendorSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteVendorResponse">
+    <wsdl:part element="tns:deleteVendorResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchInvoicePagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchInvoicePagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createInvoiceNoteRequest">
+    <wsdl:part element="tns:createInvoiceNote" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchInvoicePagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchInvoicePagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createInvoiceRequest">
+    <wsdl:part element="tns:createInvoice" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createInvoiceNoteResponse">
+    <wsdl:part element="tns:createInvoiceNoteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchInvoiceNotePagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchInvoiceNotePagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getVendorSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getVendorSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getVendorSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getVendorSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getVendorFmHistoryPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getVendorFmHistoryPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getVendorFmHistoryPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getVendorFmHistoryPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateVendorByIDRequest">
+    <wsdl:part element="tns:updateVendorByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteVendorRequest">
+    <wsdl:part element="tns:deleteVendor" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createInvoiceResponse">
+    <wsdl:part element="tns:createInvoiceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoicePagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getInvoicePagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteInvoiceResponse">
+    <wsdl:part element="tns:deleteInvoiceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="AccountsPayableService">
+    <wsdl:operation name="getVendorSelectFields">
+      <wsdl:input message="tns:getVendorSelectFieldsRequest"/>
+      <wsdl:output message="tns:getVendorSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getVendorSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getVendorSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getVendorSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceSelectFields">
+      <wsdl:input message="tns:getInvoiceSelectFieldsRequest"/>
+      <wsdl:output message="tns:getInvoiceSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getInvoiceSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getInvoiceSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoicePagedListSelectFields">
+      <wsdl:input message="tns:getInvoicePagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getInvoicePagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoicePagedSelectFields">
+      <wsdl:input message="tns:searchInvoicePagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchInvoicePagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceNoteSelectFields">
+      <wsdl:input message="tns:getInvoiceNoteSelectFieldsRequest"/>
+      <wsdl:output message="tns:getInvoiceNoteSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceNotePagedListSelectFields">
+      <wsdl:input message="tns:getInvoiceNotePagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getInvoiceNotePagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoiceNotePagedSelectFields">
+      <wsdl:input message="tns:searchInvoiceNotePagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchInvoiceNotePagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getVendorFmHistoryPagedListSelectFields">
+      <wsdl:input message="tns:getVendorFmHistoryPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getVendorFmHistoryPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchVendorFmHistoryPagedSelectFields">
+      <wsdl:input message="tns:searchVendorFmHistoryPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchVendorFmHistoryPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateVendorByID">
+      <wsdl:input message="tns:updateVendorByIDRequest"/>
+      <wsdl:output message="tns:updateVendorByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoiceByID">
+      <wsdl:input message="tns:updateInvoiceByIDRequest"/>
+      <wsdl:output message="tns:updateInvoiceByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoiceNoteByID">
+      <wsdl:input message="tns:updateInvoiceNoteByIDRequest"/>
+      <wsdl:output message="tns:updateInvoiceNoteByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createVendor">
+      <wsdl:input message="tns:createVendorRequest"/>
+      <wsdl:output message="tns:createVendorResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoice">
+      <wsdl:input message="tns:createInvoiceRequest"/>
+      <wsdl:output message="tns:createInvoiceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoiceNote">
+      <wsdl:input message="tns:createInvoiceNoteRequest"/>
+      <wsdl:output message="tns:createInvoiceNoteResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVendor">
+      <wsdl:input message="tns:deleteVendorRequest"/>
+      <wsdl:output message="tns:deleteVendorResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoice">
+      <wsdl:input message="tns:deleteInvoiceRequest"/>
+      <wsdl:output message="tns:deleteInvoiceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoiceNote">
+      <wsdl:input message="tns:deleteInvoiceNoteRequest"/>
+      <wsdl:output message="tns:deleteInvoiceNoteResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountsPayableServiceSOAPBinding" type="tns:AccountsPayableService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getVendorSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getVendorSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVendorSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getVendorSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getInvoiceSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getInvoiceSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoicePagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getInvoicePagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoicePagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/searchInvoicePagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceNoteSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getInvoiceNoteSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceNotePagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getInvoiceNotePagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoiceNotePagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/searchInvoiceNotePagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVendorFmHistoryPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/getVendorFmHistoryPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchVendorFmHistoryPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/searchVendorFmHistoryPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVendorByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/updateVendorByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoiceByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/updateInvoiceByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoiceNoteByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/updateInvoiceNoteByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVendor">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/createVendor"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoice">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/createInvoice"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoiceNote">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/createInvoiceNote"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVendor">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/deleteVendor"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoice">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/deleteInvoice"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoiceNote">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/accountspayable/deleteInvoiceNote"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountsPayableService">
+    <wsdl:port binding="tns:AccountsPayableServiceSOAPBinding" name="AccountsPayableServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/accountspayable"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

@@ -1,0 +1,3134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="WireService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/wire" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/wire/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/wire" xmlns:update="http://www.symxchange.generated.symitar.com/crud/wire/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/wire">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="wire.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/wire/dto/retrieve" schemaLocation="wire_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/wire/dto/update" schemaLocation="wire_2.xsd"/>
+      <xsd:complexType name="WireSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Wire" type="retrieve:Wire"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:WireChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Wire" type="retrieve:Wire"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryAdvSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryAdvSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdv" type="retrieve:WireBeneficiaryAdv"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryAdvPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryAdvPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryAdv" type="retrieve:WireBeneficiaryAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryAdvSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryAdvSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireBeneficiaryAdvSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryAdvSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryAdv" type="retrieve:WireBeneficiaryAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiAdvSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryFiAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiAdvSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdv" type="retrieve:WireBeneficiaryFiAdv"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiAdvPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryFiAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiAdvPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryFiAdv" type="retrieve:WireBeneficiaryFiAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiAdvSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryFiAdvSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireBeneficiaryFiAdvSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiAdvSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryFiAdv" type="retrieve:WireBeneficiaryFiAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiInfoSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiInfoSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfo" type="retrieve:WireBeneficiaryFiInfo"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiInfoPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiInfoPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryFiInfo" type="retrieve:WireBeneficiaryFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiInfoSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryFiInfoSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireBeneficiaryFiInfoSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiInfoSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryFiInfo" type="retrieve:WireBeneficiaryFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryInfoSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryInfoSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfo" type="retrieve:WireBeneficiaryInfo"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryInfoPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryInfoPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryInfo" type="retrieve:WireBeneficiaryInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryInfoSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireBeneficiaryInfoSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireBeneficiaryInfoSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryInfoSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryInfo" type="retrieve:WireBeneficiaryInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireDrawdownDebitAcctAdvSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireDrawdownDebitAcctAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireDrawdownDebitAcctAdvSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdv" type="retrieve:WireDrawdownDebitAcctAdv"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireDrawdownDebitAcctAdvPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireDrawdownDebitAcctAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireDrawdownDebitAcctAdvPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireDrawdownDebitAcctAdv" type="retrieve:WireDrawdownDebitAcctAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireDrawdownDebitAcctAdvSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireDrawdownDebitAcctAdvSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireDrawdownDebitAcctAdvSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireDrawdownDebitAcctAdvSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireDrawdownDebitAcctAdv" type="retrieve:WireDrawdownDebitAcctAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFiToFiInfoSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireFiToFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFiToFiInfoSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfo" type="retrieve:WireFiToFiInfo"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFiToFiInfoPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireFiToFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFiToFiInfoPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireFiToFiInfo" type="retrieve:WireFiToFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFiToFiInfoSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireFiToFiInfoSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireFiToFiInfoSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFiToFiInfoSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireFiToFiInfo" type="retrieve:WireFiToFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFmHistoryPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireFmHistorySingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFmHistoryPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireFmHistory" type="retrieve:WireFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFmHistorySearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireFmHistorySingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireFmHistorySearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFmHistorySearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireFmHistory" type="retrieve:WireFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiAdvSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireIntermedFiAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiAdvSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdv" type="retrieve:WireIntermedFiAdv"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiAdvPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireIntermedFiAdvSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiAdvPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireIntermedFiAdv" type="retrieve:WireIntermedFiAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiAdvSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireIntermedFiAdvSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireIntermedFiAdvSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiAdvSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireIntermedFiAdv" type="retrieve:WireIntermedFiAdv"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiInfoSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireIntermedFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiInfoSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfo" type="retrieve:WireIntermedFiInfo"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiInfoPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireIntermedFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiInfoPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireIntermedFiInfo" type="retrieve:WireIntermedFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiInfoSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireIntermedFiInfoSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireIntermedFiInfoSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiInfoSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireIntermedFiInfo" type="retrieve:WireIntermedFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireOfacDetailsSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireOfacDetailsSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireOfacDetailsSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetails" type="retrieve:WireOfacDetails"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireOfacDetailsPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireOfacDetailsSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireOfacDetailsPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireOfacDetails" type="retrieve:WireOfacDetails"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireOfacDetailsSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireOfacDetailsSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireOfacDetailsSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireOfacDetailsSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireOfacDetails" type="retrieve:WireOfacDetails"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireReceiverFiInfoSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireReceiverFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireReceiverFiInfoSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfo" type="retrieve:WireReceiverFiInfo"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireReceiverFiInfoPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireReceiverFiInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireReceiverFiInfoPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireReceiverFiInfo" type="retrieve:WireReceiverFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireReceiverFiInfoSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireReceiverFiInfoSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireReceiverFiInfoSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireReceiverFiInfoSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireReceiverFiInfo" type="retrieve:WireReceiverFiInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireServiceMessageSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireServiceMessageSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireServiceMessageSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessage" type="retrieve:WireServiceMessage"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireServiceMessagePagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireServiceMessageSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireServiceMessagePagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireServiceMessage" type="retrieve:WireServiceMessage"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireServiceMessageSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireServiceMessageSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireServiceMessageSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireServiceMessageSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireServiceMessage" type="retrieve:WireServiceMessage"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUscAuditInfoSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireUscAuditInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUscAuditInfoSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfo" type="retrieve:WireUscAuditInfo"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUscAuditInfoPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireUscAuditInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUscAuditInfoPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireUscAuditInfo" type="retrieve:WireUscAuditInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUscAuditInfoSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:WireUscAuditInfoSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:WireUscAuditInfoSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUscAuditInfoSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireUscAuditInfo" type="retrieve:WireUscAuditInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireFields" type="update:WireFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireBeneficiaryAdvByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvFields" type="update:WireBeneficiaryAdvFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryAdvUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireBeneficiaryFiAdvByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvFields" type="update:WireBeneficiaryFiAdvFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiAdvUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireBeneficiaryFiInfoByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoFields" type="update:WireBeneficiaryFiInfoFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryFiInfoUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireBeneficiaryInfoByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoFields" type="update:WireBeneficiaryInfoFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireBeneficiaryInfoUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireDrawdownDebitAcctAdvByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvFields" type="update:WireDrawdownDebitAcctAdvFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireDrawdownDebitAcctAdvUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireFiToFiInfoByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoFields" type="update:WireFiToFiInfoFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireFiToFiInfoUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireIntermedFiAdvByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvFields" type="update:WireIntermedFiAdvFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiAdvUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireIntermedFiInfoByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoFields" type="update:WireIntermedFiInfoFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireIntermedFiInfoUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireOfacDetailsByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsFields" type="update:WireOfacDetailsFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireOfacDetailsUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireReceiverFiInfoByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoFields" type="update:WireReceiverFiInfoFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireReceiverFiInfoUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireServiceMessageByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageFields" type="update:WireServiceMessageFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireServiceMessageUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateWireUscAuditInfoByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoFields" type="update:WireUscAuditInfoFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireUscAuditInfoUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateWireRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireFields" type="update:WireFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="WireCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="WireSequenceNumber" type="xsd:int"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getWireSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryAdvSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryAdvSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryAdvSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireBeneficiaryAdvSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryAdvPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryAdvPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryAdvPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryAdvPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryAdvPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryAdvSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryAdvPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryAdvSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiAdvSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryFiAdvSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiAdvSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireBeneficiaryFiAdvSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiAdvPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryFiAdvPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiAdvPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryFiAdvPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryFiAdvPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryFiAdvSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryFiAdvPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryFiAdvSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiInfoSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryFiInfoSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiInfoSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireBeneficiaryFiInfoSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiInfoPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryFiInfoPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryFiInfoPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryFiInfoPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryFiInfoPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryFiInfoSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryFiInfoPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryFiInfoSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryInfoSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryInfoSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryInfoSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireBeneficiaryInfoSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryInfoPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryInfoPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireBeneficiaryInfoPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryInfoPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryInfoPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireBeneficiaryInfoSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireBeneficiaryInfoPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireBeneficiaryInfoSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireDrawdownDebitAcctAdvSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireDrawdownDebitAcctAdvSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireDrawdownDebitAcctAdvSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireDrawdownDebitAcctAdvSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireDrawdownDebitAcctAdvPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireDrawdownDebitAcctAdvPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireDrawdownDebitAcctAdvPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireDrawdownDebitAcctAdvPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireDrawdownDebitAcctAdvPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireDrawdownDebitAcctAdvSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireDrawdownDebitAcctAdvPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireDrawdownDebitAcctAdvSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireFiToFiInfoSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireFiToFiInfoSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireFiToFiInfoSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireFiToFiInfoSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireFiToFiInfoPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireFiToFiInfoPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireFiToFiInfoPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireFiToFiInfoPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireFiToFiInfoPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireFiToFiInfoSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireFiToFiInfoPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireFiToFiInfoSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireFmHistoryPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireFmHistoryPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireFmHistoryPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireFmHistoryPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireFmHistoryPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireFmHistorySearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireFmHistoryPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireFmHistorySearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiAdvSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireIntermedFiAdvSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiAdvSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireIntermedFiAdvSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiAdvPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireIntermedFiAdvPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiAdvPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireIntermedFiAdvPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireIntermedFiAdvPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireIntermedFiAdvSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireIntermedFiAdvPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireIntermedFiAdvSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiInfoSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireIntermedFiInfoSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiInfoSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireIntermedFiInfoSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiInfoPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireIntermedFiInfoPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireIntermedFiInfoPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireIntermedFiInfoPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireIntermedFiInfoPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireIntermedFiInfoSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireIntermedFiInfoPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireIntermedFiInfoSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireOfacDetailsSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireOfacDetailsSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireOfacDetailsSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireOfacDetailsSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireOfacDetailsPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireOfacDetailsPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireOfacDetailsPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireOfacDetailsPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireOfacDetailsPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireOfacDetailsSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireOfacDetailsPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireOfacDetailsSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireReceiverFiInfoSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireReceiverFiInfoSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireReceiverFiInfoSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireReceiverFiInfoSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireReceiverFiInfoPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireReceiverFiInfoPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireReceiverFiInfoPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireReceiverFiInfoPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireReceiverFiInfoPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireReceiverFiInfoSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireReceiverFiInfoPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireReceiverFiInfoSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireServiceMessageSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireServiceMessageSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireServiceMessageSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireServiceMessageSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireServiceMessagePagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireServiceMessagePagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireServiceMessagePagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireServiceMessagePagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireServiceMessagePagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireServiceMessageSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireServiceMessagePagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireServiceMessageSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireUscAuditInfoSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireUscAuditInfoSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireUscAuditInfoSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:WireUscAuditInfoSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireUscAuditInfoPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireUscAuditInfoPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWireUscAuditInfoPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireUscAuditInfoPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireUscAuditInfoPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:WireUscAuditInfoSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchWireUscAuditInfoPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:WireUscAuditInfoSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryAdvByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireBeneficiaryAdvByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryAdvByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireBeneficiaryAdvUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryFiAdvByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireBeneficiaryFiAdvByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryFiAdvByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireBeneficiaryFiAdvUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryFiInfoByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireBeneficiaryFiInfoByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryFiInfoByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireBeneficiaryFiInfoUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryInfoByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireBeneficiaryInfoByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireBeneficiaryInfoByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireBeneficiaryInfoUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireDrawdownDebitAcctAdvByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireDrawdownDebitAcctAdvByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireDrawdownDebitAcctAdvByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireDrawdownDebitAcctAdvUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireFiToFiInfoByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireFiToFiInfoByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireFiToFiInfoByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireFiToFiInfoUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireIntermedFiAdvByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireIntermedFiAdvByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireIntermedFiAdvByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireIntermedFiAdvUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireIntermedFiInfoByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireIntermedFiInfoByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireIntermedFiInfoByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireIntermedFiInfoUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireOfacDetailsByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireOfacDetailsByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireOfacDetailsByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireOfacDetailsUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireReceiverFiInfoByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireReceiverFiInfoByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireReceiverFiInfoByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireReceiverFiInfoUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireServiceMessageByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireServiceMessageByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireServiceMessageByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireServiceMessageUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireUscAuditInfoByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateWireUscAuditInfoByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateWireUscAuditInfoByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:WireUscAuditInfoUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createWire">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateWireRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createWireResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:WireCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getWireBeneficiaryInfoSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryInfoSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireFmHistoryPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireFmHistoryPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireDrawdownDebitAcctAdvSelectFieldsRequest">
+    <wsdl:part element="tns:getWireDrawdownDebitAcctAdvSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireUscAuditInfoPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireUscAuditInfoPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryInfoPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryInfoPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireOfacDetailsPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireOfacDetailsPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiAdvPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireIntermedFiAdvPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryAdvSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryAdvSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireUscAuditInfoPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireUscAuditInfoPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryAdvSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryAdvSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createWireRequest">
+    <wsdl:part element="tns:createWire" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiAdvPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryFiAdvPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireDrawdownDebitAcctAdvPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireDrawdownDebitAcctAdvPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireFiToFiInfoPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireFiToFiInfoPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireDrawdownDebitAcctAdvPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireDrawdownDebitAcctAdvPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireOfacDetailsSelectFieldsResponse">
+    <wsdl:part element="tns:getWireOfacDetailsSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryFiInfoByIDRequest">
+    <wsdl:part element="tns:updateWireBeneficiaryFiInfoByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireReceiverFiInfoPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireReceiverFiInfoPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireSelectFieldsResponse">
+    <wsdl:part element="tns:getWireSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireFiToFiInfoPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireFiToFiInfoPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireIntermedFiAdvByIDRequest">
+    <wsdl:part element="tns:updateWireIntermedFiAdvByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireServiceMessagePagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireServiceMessagePagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireByIDResponse">
+    <wsdl:part element="tns:updateWireByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryFiAdvPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireBeneficiaryFiAdvPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireServiceMessagePagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireServiceMessagePagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireFiToFiInfoSelectFieldsResponse">
+    <wsdl:part element="tns:getWireFiToFiInfoSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryFiInfoPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireBeneficiaryFiInfoPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiInfoSelectFieldsResponse">
+    <wsdl:part element="tns:getWireIntermedFiInfoSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryAdvPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryAdvPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiAdvSelectFieldsRequest">
+    <wsdl:part element="tns:getWireIntermedFiAdvSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireOfacDetailsByIDRequest">
+    <wsdl:part element="tns:updateWireOfacDetailsByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryInfoByIDRequest">
+    <wsdl:part element="tns:updateWireBeneficiaryInfoByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiInfoSelectFieldsRequest">
+    <wsdl:part element="tns:getWireIntermedFiInfoSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireFiToFiInfoPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireFiToFiInfoPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireOfacDetailsSelectFieldsRequest">
+    <wsdl:part element="tns:getWireOfacDetailsSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireIntermedFiAdvPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireIntermedFiAdvPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireServiceMessagePagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireServiceMessagePagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryFiAdvByIDResponse">
+    <wsdl:part element="tns:updateWireBeneficiaryFiAdvByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireIntermedFiInfoPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireIntermedFiInfoPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireIntermedFiInfoByIDResponse">
+    <wsdl:part element="tns:updateWireIntermedFiInfoByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireServiceMessageByIDRequest">
+    <wsdl:part element="tns:updateWireServiceMessageByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiAdvPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireIntermedFiAdvPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireUscAuditInfoPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireUscAuditInfoPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryInfoPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryInfoPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireDrawdownDebitAcctAdvSelectFieldsResponse">
+    <wsdl:part element="tns:getWireDrawdownDebitAcctAdvSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireServiceMessageSelectFieldsRequest">
+    <wsdl:part element="tns:getWireServiceMessageSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getWireSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireFiToFiInfoByIDRequest">
+    <wsdl:part element="tns:updateWireFiToFiInfoByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiAdvSelectFieldsResponse">
+    <wsdl:part element="tns:getWireIntermedFiAdvSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireOfacDetailsPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireOfacDetailsPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireReceiverFiInfoByIDResponse">
+    <wsdl:part element="tns:updateWireReceiverFiInfoByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireServiceMessageSelectFieldsResponse">
+    <wsdl:part element="tns:getWireServiceMessageSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireIntermedFiInfoByIDRequest">
+    <wsdl:part element="tns:updateWireIntermedFiInfoByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireUscAuditInfoPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireUscAuditInfoPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createWireResponse">
+    <wsdl:part element="tns:createWireResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireOfacDetailsPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireOfacDetailsPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireUscAuditInfoSelectFieldsResponse">
+    <wsdl:part element="tns:getWireUscAuditInfoSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireReceiverFiInfoByIDRequest">
+    <wsdl:part element="tns:updateWireReceiverFiInfoByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireReceiverFiInfoSelectFieldsResponse">
+    <wsdl:part element="tns:getWireReceiverFiInfoSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryInfoSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryInfoSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireUscAuditInfoByIDRequest">
+    <wsdl:part element="tns:updateWireUscAuditInfoByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireReceiverFiInfoPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireReceiverFiInfoPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireReceiverFiInfoSelectFieldsRequest">
+    <wsdl:part element="tns:getWireReceiverFiInfoSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryInfoByIDResponse">
+    <wsdl:part element="tns:updateWireBeneficiaryInfoByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireSelectFieldsRequest">
+    <wsdl:part element="tns:getWireSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiAdvPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryFiAdvPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireIntermedFiAdvPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireIntermedFiAdvPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getWireSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireDrawdownDebitAcctAdvPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireDrawdownDebitAcctAdvPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireDrawdownDebitAcctAdvByIDRequest">
+    <wsdl:part element="tns:updateWireDrawdownDebitAcctAdvByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireOfacDetailsPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireOfacDetailsPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireFiToFiInfoPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireFiToFiInfoPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireReceiverFiInfoPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireReceiverFiInfoPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryInfoPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireBeneficiaryInfoPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireUscAuditInfoByIDResponse">
+    <wsdl:part element="tns:updateWireUscAuditInfoByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryAdvPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireBeneficiaryAdvPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryAdvByIDResponse">
+    <wsdl:part element="tns:updateWireBeneficiaryAdvByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryAdvPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireBeneficiaryAdvPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireFmHistoryPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireFmHistoryPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireFiToFiInfoByIDResponse">
+    <wsdl:part element="tns:updateWireFiToFiInfoByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireUscAuditInfoSelectFieldsRequest">
+    <wsdl:part element="tns:getWireUscAuditInfoSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireFmHistoryPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireFmHistoryPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiInfoSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryFiInfoSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireByIDRequest">
+    <wsdl:part element="tns:updateWireByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireFmHistoryPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireFmHistoryPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiInfoPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryFiInfoPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryFiInfoPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireBeneficiaryFiInfoPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiAdvSelectFieldsRequest">
+    <wsdl:part element="tns:getWireBeneficiaryFiAdvSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiInfoSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryFiInfoSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireIntermedFiInfoPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireIntermedFiInfoPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryFiInfoByIDResponse">
+    <wsdl:part element="tns:updateWireBeneficiaryFiInfoByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryFiAdvByIDRequest">
+    <wsdl:part element="tns:updateWireBeneficiaryFiAdvByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireBeneficiaryAdvByIDRequest">
+    <wsdl:part element="tns:updateWireBeneficiaryAdvByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryInfoPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireBeneficiaryInfoPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiInfoPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireIntermedFiInfoPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiAdvSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryFiAdvSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireReceiverFiInfoPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireReceiverFiInfoPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireDrawdownDebitAcctAdvByIDResponse">
+    <wsdl:part element="tns:updateWireDrawdownDebitAcctAdvByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireServiceMessagePagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchWireServiceMessagePagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireIntermedFiInfoPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getWireIntermedFiInfoPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireDrawdownDebitAcctAdvPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireDrawdownDebitAcctAdvPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchWireBeneficiaryFiAdvPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchWireBeneficiaryFiAdvPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireServiceMessageByIDResponse">
+    <wsdl:part element="tns:updateWireServiceMessageByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireIntermedFiAdvByIDResponse">
+    <wsdl:part element="tns:updateWireIntermedFiAdvByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireFiToFiInfoSelectFieldsRequest">
+    <wsdl:part element="tns:getWireFiToFiInfoSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryAdvPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryAdvPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getWireBeneficiaryFiInfoPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getWireBeneficiaryFiInfoPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateWireOfacDetailsByIDResponse">
+    <wsdl:part element="tns:updateWireOfacDetailsByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="WireService">
+    <wsdl:operation name="getWireSelectFields">
+      <wsdl:input message="tns:getWireSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getWireSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getWireSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryAdvSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryAdvSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryAdvSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryAdvPagedListSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryAdvPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryAdvPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryAdvPagedSelectFields">
+      <wsdl:input message="tns:searchWireBeneficiaryAdvPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireBeneficiaryAdvPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiAdvSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryFiAdvSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryFiAdvSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiAdvPagedListSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryFiAdvPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryFiAdvPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryFiAdvPagedSelectFields">
+      <wsdl:input message="tns:searchWireBeneficiaryFiAdvPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireBeneficiaryFiAdvPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiInfoSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryFiInfoSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryFiInfoSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiInfoPagedListSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryFiInfoPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryFiInfoPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryFiInfoPagedSelectFields">
+      <wsdl:input message="tns:searchWireBeneficiaryFiInfoPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireBeneficiaryFiInfoPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryInfoSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryInfoSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryInfoSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryInfoPagedListSelectFields">
+      <wsdl:input message="tns:getWireBeneficiaryInfoPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireBeneficiaryInfoPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryInfoPagedSelectFields">
+      <wsdl:input message="tns:searchWireBeneficiaryInfoPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireBeneficiaryInfoPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireDrawdownDebitAcctAdvSelectFields">
+      <wsdl:input message="tns:getWireDrawdownDebitAcctAdvSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireDrawdownDebitAcctAdvSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireDrawdownDebitAcctAdvPagedListSelectFields">
+      <wsdl:input message="tns:getWireDrawdownDebitAcctAdvPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireDrawdownDebitAcctAdvPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireDrawdownDebitAcctAdvPagedSelectFields">
+      <wsdl:input message="tns:searchWireDrawdownDebitAcctAdvPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireDrawdownDebitAcctAdvPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireFiToFiInfoSelectFields">
+      <wsdl:input message="tns:getWireFiToFiInfoSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireFiToFiInfoSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireFiToFiInfoPagedListSelectFields">
+      <wsdl:input message="tns:getWireFiToFiInfoPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireFiToFiInfoPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireFiToFiInfoPagedSelectFields">
+      <wsdl:input message="tns:searchWireFiToFiInfoPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireFiToFiInfoPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireFmHistoryPagedListSelectFields">
+      <wsdl:input message="tns:getWireFmHistoryPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireFmHistoryPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireFmHistoryPagedSelectFields">
+      <wsdl:input message="tns:searchWireFmHistoryPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireFmHistoryPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiAdvSelectFields">
+      <wsdl:input message="tns:getWireIntermedFiAdvSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireIntermedFiAdvSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiAdvPagedListSelectFields">
+      <wsdl:input message="tns:getWireIntermedFiAdvPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireIntermedFiAdvPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireIntermedFiAdvPagedSelectFields">
+      <wsdl:input message="tns:searchWireIntermedFiAdvPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireIntermedFiAdvPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiInfoSelectFields">
+      <wsdl:input message="tns:getWireIntermedFiInfoSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireIntermedFiInfoSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiInfoPagedListSelectFields">
+      <wsdl:input message="tns:getWireIntermedFiInfoPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireIntermedFiInfoPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireIntermedFiInfoPagedSelectFields">
+      <wsdl:input message="tns:searchWireIntermedFiInfoPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireIntermedFiInfoPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireOfacDetailsSelectFields">
+      <wsdl:input message="tns:getWireOfacDetailsSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireOfacDetailsSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireOfacDetailsPagedListSelectFields">
+      <wsdl:input message="tns:getWireOfacDetailsPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireOfacDetailsPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireOfacDetailsPagedSelectFields">
+      <wsdl:input message="tns:searchWireOfacDetailsPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireOfacDetailsPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireReceiverFiInfoSelectFields">
+      <wsdl:input message="tns:getWireReceiverFiInfoSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireReceiverFiInfoSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireReceiverFiInfoPagedListSelectFields">
+      <wsdl:input message="tns:getWireReceiverFiInfoPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireReceiverFiInfoPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireReceiverFiInfoPagedSelectFields">
+      <wsdl:input message="tns:searchWireReceiverFiInfoPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireReceiverFiInfoPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireServiceMessageSelectFields">
+      <wsdl:input message="tns:getWireServiceMessageSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireServiceMessageSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireServiceMessagePagedListSelectFields">
+      <wsdl:input message="tns:getWireServiceMessagePagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireServiceMessagePagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireServiceMessagePagedSelectFields">
+      <wsdl:input message="tns:searchWireServiceMessagePagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireServiceMessagePagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireUscAuditInfoSelectFields">
+      <wsdl:input message="tns:getWireUscAuditInfoSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireUscAuditInfoSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWireUscAuditInfoPagedListSelectFields">
+      <wsdl:input message="tns:getWireUscAuditInfoPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getWireUscAuditInfoPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireUscAuditInfoPagedSelectFields">
+      <wsdl:input message="tns:searchWireUscAuditInfoPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchWireUscAuditInfoPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireByID">
+      <wsdl:input message="tns:updateWireByIDRequest"/>
+      <wsdl:output message="tns:updateWireByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryAdvByID">
+      <wsdl:input message="tns:updateWireBeneficiaryAdvByIDRequest"/>
+      <wsdl:output message="tns:updateWireBeneficiaryAdvByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryFiAdvByID">
+      <wsdl:input message="tns:updateWireBeneficiaryFiAdvByIDRequest"/>
+      <wsdl:output message="tns:updateWireBeneficiaryFiAdvByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryFiInfoByID">
+      <wsdl:input message="tns:updateWireBeneficiaryFiInfoByIDRequest"/>
+      <wsdl:output message="tns:updateWireBeneficiaryFiInfoByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryInfoByID">
+      <wsdl:input message="tns:updateWireBeneficiaryInfoByIDRequest"/>
+      <wsdl:output message="tns:updateWireBeneficiaryInfoByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireDrawdownDebitAcctAdvByID">
+      <wsdl:input message="tns:updateWireDrawdownDebitAcctAdvByIDRequest"/>
+      <wsdl:output message="tns:updateWireDrawdownDebitAcctAdvByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireFiToFiInfoByID">
+      <wsdl:input message="tns:updateWireFiToFiInfoByIDRequest"/>
+      <wsdl:output message="tns:updateWireFiToFiInfoByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireIntermedFiAdvByID">
+      <wsdl:input message="tns:updateWireIntermedFiAdvByIDRequest"/>
+      <wsdl:output message="tns:updateWireIntermedFiAdvByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireIntermedFiInfoByID">
+      <wsdl:input message="tns:updateWireIntermedFiInfoByIDRequest"/>
+      <wsdl:output message="tns:updateWireIntermedFiInfoByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireOfacDetailsByID">
+      <wsdl:input message="tns:updateWireOfacDetailsByIDRequest"/>
+      <wsdl:output message="tns:updateWireOfacDetailsByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireReceiverFiInfoByID">
+      <wsdl:input message="tns:updateWireReceiverFiInfoByIDRequest"/>
+      <wsdl:output message="tns:updateWireReceiverFiInfoByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireServiceMessageByID">
+      <wsdl:input message="tns:updateWireServiceMessageByIDRequest"/>
+      <wsdl:output message="tns:updateWireServiceMessageByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireUscAuditInfoByID">
+      <wsdl:input message="tns:updateWireUscAuditInfoByIDRequest"/>
+      <wsdl:output message="tns:updateWireUscAuditInfoByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createWire">
+      <wsdl:input message="tns:createWireRequest"/>
+      <wsdl:output message="tns:createWireResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WireServiceSOAPBinding" type="tns:WireService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getWireSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryAdvSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryAdvSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryAdvPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryAdvPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryAdvPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireBeneficiaryAdvPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiAdvSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryFiAdvSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiAdvPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryFiAdvPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryFiAdvPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireBeneficiaryFiAdvPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiInfoSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryFiInfoSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryFiInfoPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryFiInfoPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryFiInfoPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireBeneficiaryFiInfoPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryInfoSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryInfoSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireBeneficiaryInfoPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireBeneficiaryInfoPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireBeneficiaryInfoPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireBeneficiaryInfoPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireDrawdownDebitAcctAdvSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireDrawdownDebitAcctAdvSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireDrawdownDebitAcctAdvPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireDrawdownDebitAcctAdvPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireDrawdownDebitAcctAdvPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireDrawdownDebitAcctAdvPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireFiToFiInfoSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireFiToFiInfoSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireFiToFiInfoPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireFiToFiInfoPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireFiToFiInfoPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireFiToFiInfoPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireFmHistoryPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireFmHistoryPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireFmHistoryPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireFmHistoryPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiAdvSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireIntermedFiAdvSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiAdvPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireIntermedFiAdvPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireIntermedFiAdvPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireIntermedFiAdvPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiInfoSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireIntermedFiInfoSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireIntermedFiInfoPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireIntermedFiInfoPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireIntermedFiInfoPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireIntermedFiInfoPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireOfacDetailsSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireOfacDetailsSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireOfacDetailsPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireOfacDetailsPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireOfacDetailsPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireOfacDetailsPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireReceiverFiInfoSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireReceiverFiInfoSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireReceiverFiInfoPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireReceiverFiInfoPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireReceiverFiInfoPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireReceiverFiInfoPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireServiceMessageSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireServiceMessageSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireServiceMessagePagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireServiceMessagePagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireServiceMessagePagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireServiceMessagePagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireUscAuditInfoSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireUscAuditInfoSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWireUscAuditInfoPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/getWireUscAuditInfoPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchWireUscAuditInfoPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/searchWireUscAuditInfoPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryAdvByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireBeneficiaryAdvByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryFiAdvByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireBeneficiaryFiAdvByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryFiInfoByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireBeneficiaryFiInfoByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireBeneficiaryInfoByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireBeneficiaryInfoByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireDrawdownDebitAcctAdvByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireDrawdownDebitAcctAdvByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireFiToFiInfoByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireFiToFiInfoByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireIntermedFiAdvByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireIntermedFiAdvByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireIntermedFiInfoByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireIntermedFiInfoByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireOfacDetailsByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireOfacDetailsByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireReceiverFiInfoByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireReceiverFiInfoByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireServiceMessageByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireServiceMessageByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWireUscAuditInfoByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/updateWireUscAuditInfoByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createWire">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/wire/createWire"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WireService">
+    <wsdl:port binding="tns:WireServiceSOAPBinding" name="WireServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/wire"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

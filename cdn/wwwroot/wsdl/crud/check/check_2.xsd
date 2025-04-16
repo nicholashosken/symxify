@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/check/dto/update" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/check/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:update="http://www.symxchange.generated.symitar.com/crud/check/dto/update">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="check.xsd"/>
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/check/dto/retrieve" schemaLocation="check_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="Check">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CheckNumberAssigned" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EscheatDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmLastPurgeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IssueDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Number" type="xsd:string"/>
+      <xsd:element maxOccurs="5" minOccurs="0" name="Payee">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Payee" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReconciliationDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Reference" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Reference2" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Reference3" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SourceGlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StopPmtDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TracerNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VoidDate" nillable="true" type="xsd:date"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CheckUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+      <xsd:element name="CheckFields" type="update:CheckFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CheckFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:Check"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

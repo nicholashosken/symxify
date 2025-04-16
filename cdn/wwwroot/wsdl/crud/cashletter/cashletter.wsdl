@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CashLetterService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/cashletter" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/cashletter/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/cashletter" xmlns:update="http://www.symxchange.generated.symitar.com/crud/cashletter/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/cashletter">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="cashletter.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/cashletter/dto/retrieve" schemaLocation="cashletter_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/cashletter/dto/update" schemaLocation="cashletter_2.xsd"/>
+      <xsd:complexType name="CashLetterSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CashLetterSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CashLetterSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CashLetter" type="retrieve:CashLetter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getCashLetterSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CashLetterSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCashLetterSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CashLetterSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getCashLetterSelectFieldsRequest">
+    <wsdl:part element="tns:getCashLetterSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCashLetterSelectFieldsResponse">
+    <wsdl:part element="tns:getCashLetterSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="CashLetterService">
+    <wsdl:operation name="getCashLetterSelectFields">
+      <wsdl:input message="tns:getCashLetterSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCashLetterSelectFieldsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CashLetterServiceSOAPBinding" type="tns:CashLetterService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCashLetterSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/cashletter/getCashLetterSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CashLetterService">
+    <wsdl:port binding="tns:CashLetterServiceSOAPBinding" name="CashLetterServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/cashletter"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

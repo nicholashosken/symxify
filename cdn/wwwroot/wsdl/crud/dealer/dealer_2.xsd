@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/dealer/dto/update" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/dealer/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:update="http://www.symxchange.generated.symitar.com/crud/dealer/dto/update">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="dealer.xsd"/>
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/dealer/dto/retrieve" schemaLocation="dealer_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+</xsd:schema>

@@ -1,0 +1,1862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FinrepService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/finrep" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/finrep/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/finrep" xmlns:update="http://www.symxchange.generated.symitar.com/crud/finrep/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/finrep">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="finrep.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/finrep/dto/retrieve" schemaLocation="finrep_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/finrep/dto/update" schemaLocation="finrep_2.xsd"/>
+      <xsd:complexType name="CtrSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Ctr" type="retrieve:Ctr"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:CtrChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Ctr" type="retrieve:Ctr"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrAccountSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrAccountLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrAccountSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrAccountSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrAccount" type="retrieve:CtrAccount"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrAccountPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrAccountSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrAccountPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrAccount" type="retrieve:CtrAccount"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrAccountSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrAccountSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CtrAccountSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrAccountSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrAccount" type="retrieve:CtrAccount"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranchLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrBranchSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranch" type="retrieve:CtrBranch"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrBranchSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrBranch" type="retrieve:CtrBranch"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrBranchSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CtrBranchSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrBranch" type="retrieve:CtrBranch"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrFmHistoryPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrFmHistorySingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrFmHistoryPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrFmHistory" type="retrieve:CtrFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrFmHistorySearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrFmHistorySingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CtrFmHistorySearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrFmHistorySearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrFmHistory" type="retrieve:CtrFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrForeignSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrForeignLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrForeignSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrForeignSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrForeign" type="retrieve:CtrForeign"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrForeignPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrForeignSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrForeignPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrForeign" type="retrieve:CtrForeign"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrForeignSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrForeignSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CtrForeignSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrForeignSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrForeign" type="retrieve:CtrForeign"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrNoteSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNoteLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrNoteSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrNoteSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNote" type="retrieve:CtrNote"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrNotePagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrNoteSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrNotePagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrNote" type="retrieve:CtrNote"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrNoteSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrNoteSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CtrNoteSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrNoteSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrNote" type="retrieve:CtrNote"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrPersonSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPerson" type="retrieve:CtrPerson"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrPersonSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:CtrPersonChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPerson" type="retrieve:CtrPerson"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrPersonSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrPerson" type="retrieve:CtrPerson"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrPersonSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CtrPersonSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrPerson" type="retrieve:CtrPerson"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonCtrTranInfoSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonCtrTranInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrPersonCtrTranInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonCtrTranInfoSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonCtrTranInfo" type="retrieve:CtrPersonCtrTranInfo"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonCtrTranInfoPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrPersonCtrTranInfoSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonCtrTranInfoPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrPersonCtrTranInfo" type="retrieve:CtrPersonCtrTranInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonCtrTranInfoSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CtrPersonCtrTranInfoSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CtrPersonCtrTranInfoSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonCtrTranInfoSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CtrPersonCtrTranInfo" type="retrieve:CtrPersonCtrTranInfo"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCtrByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrFields" type="update:CtrFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCtrAccountByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrAccountLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrAccountFields" type="update:CtrAccountFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrAccountUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCtrBranchByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranchLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranchFields" type="update:CtrBranchFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCtrForeignByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrForeignLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrForeignFields" type="update:CtrForeignFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrForeignUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCtrNoteByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNoteLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNoteFields" type="update:CtrNoteFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrNoteUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCtrPersonByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonFields" type="update:CtrPersonFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCtrPersonCtrTranInfoByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonCtrTranInfoLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonCtrTranInfoFields" type="update:CtrPersonCtrTranInfoFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrPersonCtrTranInfoUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateCtrBranchRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranchFields" type="update:CtrBranchFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranchLocator" type="xsd:int"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteCtrBranchRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranchLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CtrBranchDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getCtrSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrAccountSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrAccountSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrAccountSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrAccountSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrAccountPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrAccountPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrAccountPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrAccountPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrAccountPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrAccountSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrAccountPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrAccountSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrBranchSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrBranchSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrBranchSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrBranchSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrBranchPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrBranchPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrBranchPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrBranchPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrBranchPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrBranchSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrBranchPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrBranchSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrFmHistoryPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrFmHistoryPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrFmHistoryPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrFmHistoryPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrFmHistoryPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrFmHistorySearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrFmHistoryPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrFmHistorySearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrForeignSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrForeignSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrForeignSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrForeignSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrForeignPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrForeignPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrForeignPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrForeignPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrForeignPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrForeignSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrForeignPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrForeignSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrNoteSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrNoteSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrNoteSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrNoteSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrNotePagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrNotePagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrNotePagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrNotePagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrNotePagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrNoteSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrNotePagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrNoteSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrPersonSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrPersonSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrPersonSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrPersonSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrPersonPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrPersonPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrPersonPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrPersonSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrPersonPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrPersonSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonCtrTranInfoSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrPersonCtrTranInfoSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonCtrTranInfoSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CtrPersonCtrTranInfoSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonCtrTranInfoPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrPersonCtrTranInfoPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCtrPersonCtrTranInfoPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrPersonCtrTranInfoPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrPersonCtrTranInfoPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CtrPersonCtrTranInfoSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCtrPersonCtrTranInfoPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CtrPersonCtrTranInfoSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCtrByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CtrUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrAccountByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCtrAccountByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrAccountByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CtrAccountUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrBranchByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCtrBranchByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrBranchByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CtrBranchUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrForeignByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCtrForeignByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrForeignByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CtrForeignUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrNoteByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCtrNoteByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrNoteByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CtrNoteUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrPersonByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCtrPersonByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrPersonByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CtrPersonUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrPersonCtrTranInfoByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCtrPersonCtrTranInfoByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCtrPersonCtrTranInfoByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CtrPersonCtrTranInfoUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCtrBranch">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateCtrBranchRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCtrBranchResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:CtrBranchCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCtrBranch">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteCtrBranchRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCtrBranchResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:CtrBranchDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getCtrSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrPersonSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrBranchPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCtrBranchPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCtrBranchRequest">
+    <wsdl:part element="tns:deleteCtrBranch" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrPersonCtrTranInfoByIDRequest">
+    <wsdl:part element="tns:updateCtrPersonCtrTranInfoByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonCtrTranInfoSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrPersonCtrTranInfoSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrPersonCtrTranInfoPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCtrPersonCtrTranInfoPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrBranchPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrBranchPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrNoteSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrNoteSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrAccountPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrAccountPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrForeignSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrForeignSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrNoteSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrNoteSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrFmHistoryPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrFmHistoryPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrNotePagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrNotePagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrNotePagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCtrNotePagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrNotePagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCtrNotePagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrAccountPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCtrAccountPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonCtrTranInfoPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrPersonCtrTranInfoPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrBranchPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrBranchPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrNotePagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrNotePagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrFmHistoryPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrFmHistoryPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrNoteByIDRequest">
+    <wsdl:part element="tns:updateCtrNoteByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrForeignPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCtrForeignPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrForeignByIDResponse">
+    <wsdl:part element="tns:updateCtrForeignByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrAccountPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrAccountPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrFmHistoryPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCtrFmHistoryPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrForeignSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrForeignSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createCtrBranchResponse">
+    <wsdl:part element="tns:createCtrBranchResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrAccountSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrAccountSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrByIDResponse">
+    <wsdl:part element="tns:updateCtrByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrPersonSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrForeignPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCtrForeignPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrBranchByIDRequest">
+    <wsdl:part element="tns:updateCtrBranchByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getCtrPersonSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrAccountByIDResponse">
+    <wsdl:part element="tns:updateCtrAccountByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getCtrSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrByIDRequest">
+    <wsdl:part element="tns:updateCtrByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrAccountSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrAccountSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrForeignPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrForeignPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrPersonPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrBranchPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCtrBranchPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrForeignPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrForeignPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrBranchSelectFieldsResponse">
+    <wsdl:part element="tns:getCtrBranchSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrAccountByIDRequest">
+    <wsdl:part element="tns:updateCtrAccountByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getCtrPersonSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrPersonByIDRequest">
+    <wsdl:part element="tns:updateCtrPersonByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrPersonCtrTranInfoPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCtrPersonCtrTranInfoPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonCtrTranInfoSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrPersonCtrTranInfoSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonCtrTranInfoPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrPersonCtrTranInfoPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrAccountPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCtrAccountPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createCtrBranchRequest">
+    <wsdl:part element="tns:createCtrBranch" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getCtrSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrPersonByIDResponse">
+    <wsdl:part element="tns:updateCtrPersonByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrBranchByIDResponse">
+    <wsdl:part element="tns:updateCtrBranchByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrNoteByIDResponse">
+    <wsdl:part element="tns:updateCtrNoteByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrPersonCtrTranInfoByIDResponse">
+    <wsdl:part element="tns:updateCtrPersonCtrTranInfoByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrPersonPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCtrPersonPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCtrBranchResponse">
+    <wsdl:part element="tns:deleteCtrBranchResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCtrForeignByIDRequest">
+    <wsdl:part element="tns:updateCtrForeignByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrPersonPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrPersonPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCtrBranchSelectFieldsRequest">
+    <wsdl:part element="tns:getCtrBranchSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrFmHistoryPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCtrFmHistoryPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCtrPersonPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCtrPersonPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="FinrepService">
+    <wsdl:operation name="getCtrSelectFields">
+      <wsdl:input message="tns:getCtrSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getCtrSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getCtrSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrAccountSelectFields">
+      <wsdl:input message="tns:getCtrAccountSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrAccountSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrAccountPagedListSelectFields">
+      <wsdl:input message="tns:getCtrAccountPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrAccountPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrAccountPagedSelectFields">
+      <wsdl:input message="tns:searchCtrAccountPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCtrAccountPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrBranchSelectFields">
+      <wsdl:input message="tns:getCtrBranchSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrBranchSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrBranchPagedListSelectFields">
+      <wsdl:input message="tns:getCtrBranchPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrBranchPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrBranchPagedSelectFields">
+      <wsdl:input message="tns:searchCtrBranchPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCtrBranchPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrFmHistoryPagedListSelectFields">
+      <wsdl:input message="tns:getCtrFmHistoryPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrFmHistoryPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrFmHistoryPagedSelectFields">
+      <wsdl:input message="tns:searchCtrFmHistoryPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCtrFmHistoryPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrForeignSelectFields">
+      <wsdl:input message="tns:getCtrForeignSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrForeignSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrForeignPagedListSelectFields">
+      <wsdl:input message="tns:getCtrForeignPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrForeignPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrForeignPagedSelectFields">
+      <wsdl:input message="tns:searchCtrForeignPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCtrForeignPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrNoteSelectFields">
+      <wsdl:input message="tns:getCtrNoteSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrNoteSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrNotePagedListSelectFields">
+      <wsdl:input message="tns:getCtrNotePagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrNotePagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrNotePagedSelectFields">
+      <wsdl:input message="tns:searchCtrNotePagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCtrNotePagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonSelectFields">
+      <wsdl:input message="tns:getCtrPersonSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrPersonSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getCtrPersonSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getCtrPersonSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonPagedListSelectFields">
+      <wsdl:input message="tns:getCtrPersonPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrPersonPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrPersonPagedSelectFields">
+      <wsdl:input message="tns:searchCtrPersonPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCtrPersonPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonCtrTranInfoSelectFields">
+      <wsdl:input message="tns:getCtrPersonCtrTranInfoSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrPersonCtrTranInfoSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonCtrTranInfoPagedListSelectFields">
+      <wsdl:input message="tns:getCtrPersonCtrTranInfoPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCtrPersonCtrTranInfoPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrPersonCtrTranInfoPagedSelectFields">
+      <wsdl:input message="tns:searchCtrPersonCtrTranInfoPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCtrPersonCtrTranInfoPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrByID">
+      <wsdl:input message="tns:updateCtrByIDRequest"/>
+      <wsdl:output message="tns:updateCtrByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrAccountByID">
+      <wsdl:input message="tns:updateCtrAccountByIDRequest"/>
+      <wsdl:output message="tns:updateCtrAccountByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrBranchByID">
+      <wsdl:input message="tns:updateCtrBranchByIDRequest"/>
+      <wsdl:output message="tns:updateCtrBranchByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrForeignByID">
+      <wsdl:input message="tns:updateCtrForeignByIDRequest"/>
+      <wsdl:output message="tns:updateCtrForeignByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrNoteByID">
+      <wsdl:input message="tns:updateCtrNoteByIDRequest"/>
+      <wsdl:output message="tns:updateCtrNoteByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrPersonByID">
+      <wsdl:input message="tns:updateCtrPersonByIDRequest"/>
+      <wsdl:output message="tns:updateCtrPersonByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrPersonCtrTranInfoByID">
+      <wsdl:input message="tns:updateCtrPersonCtrTranInfoByIDRequest"/>
+      <wsdl:output message="tns:updateCtrPersonCtrTranInfoByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createCtrBranch">
+      <wsdl:input message="tns:createCtrBranchRequest"/>
+      <wsdl:output message="tns:createCtrBranchResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCtrBranch">
+      <wsdl:input message="tns:deleteCtrBranchRequest"/>
+      <wsdl:output message="tns:deleteCtrBranchResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FinrepServiceSOAPBinding" type="tns:FinrepService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCtrSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrAccountSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrAccountSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrAccountPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrAccountPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrAccountPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/searchCtrAccountPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrBranchSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrBranchSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrBranchPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrBranchPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrBranchPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/searchCtrBranchPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrFmHistoryPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrFmHistoryPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrFmHistoryPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/searchCtrFmHistoryPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrForeignSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrForeignSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrForeignPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrForeignPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrForeignPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/searchCtrForeignPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrNoteSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrNoteSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrNotePagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrNotePagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrNotePagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/searchCtrNotePagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrPersonSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrPersonSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrPersonPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrPersonPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/searchCtrPersonPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonCtrTranInfoSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrPersonCtrTranInfoSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtrPersonCtrTranInfoPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/getCtrPersonCtrTranInfoPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCtrPersonCtrTranInfoPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/searchCtrPersonCtrTranInfoPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/updateCtrByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrAccountByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/updateCtrAccountByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrBranchByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/updateCtrBranchByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrForeignByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/updateCtrForeignByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrNoteByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/updateCtrNoteByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrPersonByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/updateCtrPersonByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCtrPersonCtrTranInfoByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/updateCtrPersonCtrTranInfoByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCtrBranch">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/createCtrBranch"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCtrBranch">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/finrep/deleteCtrBranch"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FinrepService">
+    <wsdl:port binding="tns:FinrepServiceSOAPBinding" name="FinrepServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/finrep"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

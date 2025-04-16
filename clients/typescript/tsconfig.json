@@ -1,0 +1,17 @@
+//tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": false, 
+    "moduleResolution": "node",
+    "noEmitOnError": false, 
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
+}

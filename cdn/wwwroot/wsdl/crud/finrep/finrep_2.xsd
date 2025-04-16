@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/finrep/dto/update" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/finrep/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:update="http://www.symxchange.generated.symitar.com/crud/finrep/dto/update">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="finrep.xsd"/>
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/finrep/dto/retrieve" schemaLocation="finrep_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="Ctr">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AckByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AckDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AckErrorByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AckErrorDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ApproveAmendByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ApproveAmendDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ApproveByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ApproveDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Approver" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ApproverTitle" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BackFileFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BranchRouting" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinBillsInsert" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinCurrWager" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinCurrXchng" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinDeposit" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinFundsXfer" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinGamingIns" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinNegIns" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinOther" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinOtherDesc" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinPayment" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinPrepaid" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinTotal" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutAdvOnCred" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutCurrXchng" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutFundsXfer" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutGamingIns" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutNegIns" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutOther" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutOtherDesc" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutPayOnWagers" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutPrepaid" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutPromo" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutTotal" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutTravel" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutWithdraw" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ContactOffice" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ContactPhone" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ContactPhoneExt" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreateByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreateDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DcNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExemptByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExemptDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FederalRegulator" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FiIdNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FiIdNumberType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FiOtherType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FiType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FilingDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FilingType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmPurgeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncompleteByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncompleteDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastSubmitDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NonReportByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NonReportDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Number" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Preparer" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReSubAmendByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReSubAmendDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RsnAggregateFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RsnArmCarFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RsnAtmFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RsnMailShipFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RsnNgtDepFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RsnShBRFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StatusDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Tcc" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranSeq" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifyAmendByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifyAmendDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifyByUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifyDate" nillable="true" type="xsd:date"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrNumber" type="xsd:string"/>
+      <xsd:element name="CtrFields" type="update:CtrFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:Ctr"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CtrAccount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SlId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SlIdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrAccountUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrAccountLocator" type="xsd:int"/>
+      <xsd:element name="CtrAccountFields" type="update:CtrAccountFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrAccountFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:CtrAccount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CtrBranch">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Address" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashinLocation" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashoutLocation" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CountryCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Ein" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Name" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="State" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ZipCode" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrBranchUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrBranchLocator" type="xsd:int"/>
+      <xsd:element name="CtrBranchFields" type="update:CtrBranchFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrBranchFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:CtrBranch"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CtrForeign">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Cashin" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Cashout" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CountryCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrForeignUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrForeignLocator" type="xsd:int"/>
+      <xsd:element name="CtrForeignFields" type="update:CtrForeignFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrForeignFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:CtrForeign"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CtrNote">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Code" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnterDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnterTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExpirationDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="50" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TextLineCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserId" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VoidFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VoidedBy" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrNoteUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrNoteLocator" type="xsd:int"/>
+      <xsd:element name="CtrNoteFields" type="update:CtrNoteFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrNoteFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:CtrNote"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CtrPerson">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Address" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BirthDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Cashin" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Cashout" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CountryCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaFirst" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaLast" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaLongName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaMiddle" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaShortName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaSuffix" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Email" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EntityFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="First" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Gender" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Headquarters" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdIssueByCountry" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdIssueByState" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdTypeOtherDesc" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdVerifyMethod" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Last" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LongName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Middle" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MultiTransFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NaicsCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Occupation" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Phone" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PhoneExt" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ShortName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Ssn" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SsnTintype" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="State" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Suffix" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ZipCode" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrPersonUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonLocator" type="xsd:int"/>
+      <xsd:element name="CtrPersonFields" type="update:CtrPersonFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrPersonFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:CtrPerson"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CtrPersonCtrTranInfo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SlId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SlIdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrPersonCtrTranInfoUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrPersonCtrTranInfoLocator" type="xsd:int"/>
+      <xsd:element name="CtrPersonCtrTranInfoFields" type="update:CtrPersonCtrTranInfoFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CtrPersonCtrTranInfoFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:CtrPersonCtrTranInfo"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

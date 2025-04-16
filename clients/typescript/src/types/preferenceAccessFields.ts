@@ -1,0 +1,44 @@
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface PreferenceAccessFields {
+    accessTypeValue: boolean;
+    accessTypeValueSpecified: boolean;
+    accessType: boolean | null;
+    accountNumberValue: boolean;
+    accountNumberValueSpecified: boolean;
+    accountNumber: boolean | null;
+    enableDepositValue: boolean;
+    enableDepositValueSpecified: boolean;
+    enableDeposit: boolean | null;
+    enableFmValue: boolean;
+    enableFmValueSpecified: boolean;
+    enableFm: boolean | null;
+    enableInquiryValue: boolean;
+    enableInquiryValueSpecified: boolean;
+    enableInquiry: boolean | null;
+    enableWithdrawalValue: boolean;
+    enableWithdrawalValueSpecified: boolean;
+    enableWithdrawal: boolean | null;
+    extLoanAccountValue: boolean;
+    extLoanAccountValueSpecified: boolean;
+    extLoanAccount: boolean | null;
+    idValue: boolean;
+    idValueSpecified: boolean;
+    id: boolean | null;
+    idTypeValue: boolean;
+    idTypeValueSpecified: boolean;
+    idType: boolean | null;
+    locatorValue: boolean;
+    locatorValueSpecified: boolean;
+    locator: boolean | null;
+    qualifierValue: boolean;
+    qualifierValueSpecified: boolean;
+    qualifier: boolean | null;
+    recordChangeDateValue: boolean;
+    recordChangeDateValueSpecified: boolean;
+    recordChangeDate: boolean | null;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+}

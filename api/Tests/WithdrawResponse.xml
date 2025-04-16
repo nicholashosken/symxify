@@ -1,0 +1,14 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <tns:withdrawResponse xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/transactions" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:transactionsdto="http://www.symxchange.generated.symitar.com/noncrud/transactions/dto">
+            <Response cmn:MessageId="?" StatusCode="13033">
+                <StatusMessage>There are not sufficient funds to complete this transaction</StatusMessage>
+                <transactionsdto:OverdrawInformation>
+                    <OverdrawToleranceAmount>0.00</OverdrawToleranceAmount>
+                    <Version_1/>
+                </transactionsdto:OverdrawInformation>
+                <Version_1/>
+            </Response>
+        </tns:withdrawResponse>
+    </soap:Body>
+</soap:Envelope>

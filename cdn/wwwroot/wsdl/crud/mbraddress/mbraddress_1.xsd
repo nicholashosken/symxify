@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/mbraddress/dto/retrieve" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/mbraddress/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="mbraddress.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="MbrAddress">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrCreateDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrDisconnectDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrExpDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrFmLastDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrFmLastPurgeDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrRecordChangeDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddressType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CarrierRoute" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Country" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CountryCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtraAddress" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Headquarters" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddrFileType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddrNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddressFmHistoryList" type="retrieve:MbrAddressFmHistoryList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="State" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Street" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ZipCode" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFmHistoryList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="MbrAddressFmHistory" type="retrieve:MbrAddressFmHistory"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressChildrenFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddressFmHistoryFilter" type="retrieve:MbrAddressFmHistoryFilter"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllMbrAddressFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddressFields" type="retrieve:MbrAddressFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddressFmHistorySelectableFields" type="retrieve:MbrAddressFmHistorySelectableFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrCreateDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrDisconnectDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrExpDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrFmLastDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrFmLastPurgeDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddrRecordChangeDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AddressType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CarrierRoute" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Country" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CountryCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtraAddress" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Headquarters" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddrFileType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddrNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="State" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Street" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ZipCode" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllMbrAddressFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddressFields" type="retrieve:MbrAddressFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFmHistory">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationSeq" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConsoleNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DataType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewCharacter" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewMoney" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewRate" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldCharacter" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldMoney" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldRate" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorUser" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordType" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SecurityLevels" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubFieldNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserOverride" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFmHistorySearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StartPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EndPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFmHistoryFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StartPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EndPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFmHistorySelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllMbrAddressFmHistoryFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddressFmHistoryFields" type="retrieve:MbrAddressFmHistoryFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFmHistoryFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchSequence" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationSeq" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConsoleNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DataType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewCharacter" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewMoney" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewRate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldCharacter" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldMoney" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldRate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SecurityLevels" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubFieldNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserOverride" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MbrAddressFmHistorySingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllMbrAddressFmHistoryFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrAddressFmHistoryFields" type="retrieve:MbrAddressFmHistoryFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

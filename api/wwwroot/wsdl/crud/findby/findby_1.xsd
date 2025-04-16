@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/findby/dto" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/findby/dto">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="findby.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2022 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="LookupByActiveCardRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CardNumber">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByActiveCardResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByAnyCardRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CardNumber">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByAnyCardResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByHomeUserRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="HomeBankingUserName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByHomeUserResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByMICRRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MICR">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="22"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Draft">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByMICRResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Result" type="tns:LookupResult"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByLookupRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LookupType">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="99"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LookupNumber">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByLookupResponse">
+    <xsd:choice>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Result" type="tns:LookupResult"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+    </xsd:choice>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupResult">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="tns:IdType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="tns:Id"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="LookupBySSNRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SSN">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupBySSNResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:simpleType name="IdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHARE"/>
+      <xsd:enumeration value="LOAN"/>
+      <xsd:enumeration value="EXTERNAL"/>
+      <xsd:enumeration value="NONE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Id">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="4"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="LookupByShortNameRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ShortName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="LookupByShortNameResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+</xsd:schema>

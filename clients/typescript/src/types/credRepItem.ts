@@ -1,0 +1,43 @@
+import { CredRepItemAmount } from "./credRepItemAmount";
+import { CredRepItemCh1 } from "./credRepItemCh1";
+import { CredRepItemCh10 } from "./credRepItemCh10";
+import { CredRepItemCh15 } from "./credRepItemCh15";
+import { CredRepItemCh2 } from "./credRepItemCh2";
+import { CredRepItemCh26 } from "./credRepItemCh26";
+import { CredRepItemCh4 } from "./credRepItemCh4";
+import { CredRepItemChLong } from "./credRepItemChLong";
+import { CredRepItemCode } from "./credRepItemCode";
+import { CredRepItemDate } from "./credRepItemDate";
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface CredRepItem {
+    amount: CredRepItemAmount[];
+    amountSpecified: boolean;
+    ch1: CredRepItemCh1[];
+    ch1Specified: boolean;
+    ch10: CredRepItemCh10[];
+    ch10Specified: boolean;
+    ch15: CredRepItemCh15[];
+    ch15Specified: boolean;
+    ch2: CredRepItemCh2[];
+    ch2Specified: boolean;
+    ch26: CredRepItemCh26[];
+    ch26Specified: boolean;
+    ch4: CredRepItemCh4[];
+    ch4Specified: boolean;
+    chLong: CredRepItemChLong[];
+    chLongSpecified: boolean;
+    code: CredRepItemCode[];
+    codeSpecified: boolean;
+    date: CredRepItemDate[];
+    dateSpecified: boolean;
+    segExtendedValue: number;
+    segExtendedValueSpecified: boolean;
+    segExtended: number | null;
+    segmentType: string;
+    subsegmentType: string;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+}

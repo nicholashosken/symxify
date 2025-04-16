@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ProjectionService" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/projection" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:projectiondto="http://www.symxchange.generated.symitar.com/noncrud/projection/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/projection" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2016-2022 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/projection">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="projection.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/noncrud/projection/dto" schemaLocation="projection_1.xsd"/>
+      <xsd:element name="calculatePaymentAmount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="projectiondto:CalculatePaymentAmountRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="calculatePaymentAmountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="projectiondto:CalculatePaymentAmountResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="calculateLoanAmount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="projectiondto:CalculateLoanAmountRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="calculateLoanAmountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="projectiondto:CalculateLoanAmountResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="calculateLoanTerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="projectiondto:CalculateLoanTermRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="calculateLoanTermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="projectiondto:CalculateLoanTermResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="calculateLoanTermResponse">
+    <wsdl:part element="tns:calculateLoanTermResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="calculatePaymentAmountResponse">
+    <wsdl:part element="tns:calculatePaymentAmountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="calculateLoanAmountResponse">
+    <wsdl:part element="tns:calculateLoanAmountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="calculatePaymentAmountRequest">
+    <wsdl:part element="tns:calculatePaymentAmount" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="calculateLoanAmountRequest">
+    <wsdl:part element="tns:calculateLoanAmount" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="calculateLoanTermRequest">
+    <wsdl:part element="tns:calculateLoanTerm" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="ProjectionService">
+    <wsdl:operation name="calculatePaymentAmount">
+      <wsdl:input message="tns:calculatePaymentAmountRequest"/>
+      <wsdl:output message="tns:calculatePaymentAmountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="calculateLoanAmount">
+      <wsdl:input message="tns:calculateLoanAmountRequest"/>
+      <wsdl:output message="tns:calculateLoanAmountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="calculateLoanTerm">
+      <wsdl:input message="tns:calculateLoanTermRequest"/>
+      <wsdl:output message="tns:calculateLoanTermResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProjectionServiceBinding" type="tns:ProjectionService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="calculatePaymentAmount">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/projection/calculatePaymentAmount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateLoanAmount">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/projection/calculateLoanAmount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateLoanTerm">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/projection/calculateLoanTerm"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProjectionService">
+    <wsdl:port binding="tns:ProjectionServiceBinding" name="ProjectionServicePort">
+      <soap:address location="https://symitar367:24604/SymXchange/projection"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 1.0</xsd:documentation>
+</wsdl:definitions>

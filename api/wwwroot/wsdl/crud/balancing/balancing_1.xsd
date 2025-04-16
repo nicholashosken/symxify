@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/balancing/dto" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/balancing/dto">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="balancing.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2015-2022 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="BalancingBaseRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:CredentialsChoice"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="ResetDepositBalancesRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BalanceReportFlag" type="xsd:boolean"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ResetCashValueBalancesRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BalanceReportFlag" type="xsd:boolean"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ResetSecondPartyCheckBalancesRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BalanceReportFlag" type="xsd:boolean"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ResetCashValueBalancesResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CashValueReport" type="tns:CashValueReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ResetDepositBalancesResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DepositReport" type="tns:DepositReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ResetSecondPartyCheckBalancesResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckDisbursedReport" type="tns:CheckDisbursedReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:minInclusive value="0.01"/>
+      <xsd:maxInclusive value="90000000000000.00"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="BalanceDispenserType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DispenserId"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranGlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SourceGlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Denomination" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeginAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DispenseAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReverseAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReplenishAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RevTotalAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CurrentAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WarningAmount" type="tns:BigMoneyType"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DepositReportType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Count" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlTranCount" type="xsd:int"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CheckDisbursedReportType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FirstPartyCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FirstPartyAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="2" minOccurs="0" name="BalancePrinter" type="tns:BalancePrinterType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ThirdPartyCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ThirdPartyAmount" type="tns:BigMoneyType"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BalancePrinterType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PrinterId" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranGlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CheckAcctNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeginCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DispenseCount" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DispenseAmount" type="tns:AmountType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReverseCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReverseAmount" type="tns:AmountType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReplenishCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CurrentCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RevTotalCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WarnCount" type="xsd:int"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CashValueAdjustRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CashValueAdjustInput" type="tns:CashValueAdjustType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BalanceReportFlag" type="xsd:boolean"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CashValueAdjustResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CashValueReport" type="tns:CashValueReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CashValueReportType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="BalanceDispenser" type="tns:BalanceDispenserType"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CashValueAdjustType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="DispenserAdjust" type="tns:DispenserAdjustType"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DispenserAdjustType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SrcGlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Denomination" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReplenishAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WarnAmount" type="tns:BigMoneyType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ResetDispenser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DispenserId"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SecondPartyCheckAdjustRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SecondPartyCheckAdjust" type="tns:SecondPartyCheckAdjustType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BalanceReportFlag" type="xsd:boolean"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SecondPartyCheckAdjustResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckDisbursedReport" type="tns:CheckDisbursedReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SecondPartyCheckAdjustType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="2" minOccurs="0" name="PrinterAdjust" type="tns:PrinterAdjustType"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PrinterAdjustType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" ref="tns:PrinterId"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CheckAcct">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReplenishCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WarnCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ResetPrinter" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PrinterId">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:short">
+        <xsd:minInclusive value="1"/>
+        <xsd:maxInclusive value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="DispenserId">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:short">
+        <xsd:minInclusive value="1"/>
+        <xsd:maxInclusive value="10"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:complexType name="CashValueReportRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest">
+        <xsd:sequence>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CashValueReportResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CashValueReport" type="tns:CashValueReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VerifyDepositReportRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VerifyDepositReportResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DepositReport" type="tns:DepositReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CheckDisbursedReportRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:BalancingBaseRequest">
+        <xsd:sequence>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CheckDisbursedReportResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckDisbursedReport" type="tns:CheckDisbursedReportType"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="BigMoneyType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:minInclusive value="-999999999999.99"/>
+      <xsd:maxInclusive value="999999999999.99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

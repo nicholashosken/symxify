@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/update" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:update="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/update">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="receiveditem.xsd"/>
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/retrieve" schemaLocation="receiveditem_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="ReceivedItem">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AssocAccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AssocId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AssocIdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondDenomination" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondInterest" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondPrincipal" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondRecpCity" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondRecpName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondRecpSsn" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondRecpState" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondRecpStreet" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BondRecpZipCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ChargeOffDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CollectedDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CollectionDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConsoleNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="Disposition">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Disposition" type="xsd:short"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="FraudCode">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FraudCode" type="xsd:short"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="FraudDescription">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FraudDescription" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="FraudSeverity">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FraudSeverity" type="xsd:short"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="FraudVendor">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FraudVendor" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InputSource" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItcForeignItem" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItcReported" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItcStatusCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItemAcctNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItemAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItemCheckNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItemId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Micr1" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Micr2" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MicrAmount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MicrAuxOnUs" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MicrEpc" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MicrOnUs" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MicrTransit" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OnUs" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OnUsAcctNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OnUsId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OnUsIdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RejectDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReportDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="2" minOccurs="0" name="ResubmitDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ResubmitDate" nillable="true" type="xsd:date"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="ReturnDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ReturnDate" nillable="true" type="xsd:date"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="ReturnReason">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ReturnReason" type="xsd:short"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SbFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SbTranSequenceNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:short"/>
+      <xsd:element maxOccurs="50" minOccurs="0" name="TranSeqNumberAll">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="TranSeqNumberAll" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranSetId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VoidDate" nillable="true" type="xsd:date"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ReceivedItemUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequenceDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequence" type="xsd:int"/>
+      <xsd:element name="ReceivedItemFields" type="update:ReceivedItemFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ReceivedItemFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:ReceivedItem"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,43 @@
+import { LoanFields } from "./loanFields";
+import { LoanBankruptcySelectableFields } from "./loanBankruptcySelectableFields";
+import { LoanBillingSelectableFields } from "./loanBillingSelectableFields";
+import { LoanCheckOrderSelectableFields } from "./loanCheckOrderSelectableFields";
+import { LoanEscrowSelectableFields } from "./loanEscrowSelectableFields";
+import { LoanEscrowAnalysisSelectableFields } from "./loanEscrowAnalysisSelectableFields";
+import { LoanHoldSelectableFields } from "./loanHoldSelectableFields";
+import { LoanLnSegmentSelectableFields } from "./loanLnSegmentSelectableFields";
+import { LoanNameSelectableFields } from "./loanNameSelectableFields";
+import { LoanNoteSelectableFields } from "./loanNoteSelectableFields";
+import { LoanPledgeSelectableFields } from "./loanPledgeSelectableFields";
+import { LoanRateChangeSelectableFields } from "./loanRateChangeSelectableFields";
+import { LoanScheduleSelectableFields } from "./loanScheduleSelectableFields";
+import { LoanTrackingSelectableFields } from "./loanTrackingSelectableFields";
+import { LoanTransactionSelectableFields } from "./loanTransactionSelectableFields";
+import { LoanTransferSelectableFields } from "./loanTransferSelectableFields";
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface LoanSelectableFields {
+    includeAllLoanFieldsValue: boolean;
+    includeAllLoanFieldsValueSpecified: boolean;
+    includeAllLoanFields: boolean | null;
+    loanFields: LoanFields;
+    loanBankruptcySelectableFields: LoanBankruptcySelectableFields;
+    loanBillingSelectableFields: LoanBillingSelectableFields;
+    loanCheckOrderSelectableFields: LoanCheckOrderSelectableFields;
+    loanEscrowSelectableFields: LoanEscrowSelectableFields;
+    loanEscrowAnalysisSelectableFields: LoanEscrowAnalysisSelectableFields;
+    loanHoldSelectableFields: LoanHoldSelectableFields;
+    loanLnSegmentSelectableFields: LoanLnSegmentSelectableFields;
+    loanNameSelectableFields: LoanNameSelectableFields;
+    loanNoteSelectableFields: LoanNoteSelectableFields;
+    loanPledgeSelectableFields: LoanPledgeSelectableFields;
+    loanRateChangeSelectableFields: LoanRateChangeSelectableFields;
+    loanScheduleSelectableFields: LoanScheduleSelectableFields;
+    loanTrackingSelectableFields: LoanTrackingSelectableFields;
+    loanTransactionSelectableFields: LoanTransactionSelectableFields;
+    loanTransferSelectableFields: LoanTransferSelectableFields;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+}

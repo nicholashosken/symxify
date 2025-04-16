@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/contacteventmgmt/dto" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/contacteventmgmt/dto">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="contacteventmgmt_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2017-2022 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="ContactEventMgmtBaseRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="GetEventSummariesByAccountRequest">
+    <xsd:complexContent>
+      <xsd:extension base="tns:ContactEventMgmtBaseRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber" type="cmn:UserNumber"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetEventSummariesByAccountResponse">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Data" type="tns:EventSummariesByAccount"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Details" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="cmn:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EventSummariesByAccount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="cmn:AccountNumber"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Level" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LongName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DueDate" type="xsd:dateTime"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EventType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EventTypeId" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Subject" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AssignedToName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StatusName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ContactsUrl" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PriorityId" type="xsd:int"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

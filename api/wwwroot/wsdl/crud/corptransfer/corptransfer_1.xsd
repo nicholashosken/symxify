@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/corptransfer/dto/retrieve" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/corptransfer/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="corptransfer.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="CorpTransfer">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedByUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedReason" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EffectiveDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByCorporateUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByMemberUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredValidationMethod" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromGlAccount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromIdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InterestAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="2" minOccurs="0" name="Memo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Memo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NoticeDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationMethod" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationStatus" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorStatementDesc" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorTransactionSeq" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PrincipalAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverStatementDesc" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverTransactionSeq" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToGlAccount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToIdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CorpTransferSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllCorpTransferFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CorpTransferFields" type="retrieve:CorpTransferFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CorpTransferFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedByUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedReason" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CompletedTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EffectiveDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByCorporateUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByMemberUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredValidationMethod" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromGlAccount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FromIdType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InterestAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="2" minOccurs="0" name="Memo" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NoticeDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationMethod" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationStatus" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorStatementDesc" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorTransactionSeq" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PrincipalAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverStatementDesc" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverTransactionSeq" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToGlAccount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ToIdType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CorpTransferSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllCorpTransferFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CorpTransferFields" type="retrieve:CorpTransferFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

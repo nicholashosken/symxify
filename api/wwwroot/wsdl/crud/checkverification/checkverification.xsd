@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/checkverification/dto" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/checkverification/dto">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="checkverification_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2018-2022 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="CheckVerificationRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="cmn:AdminCredentialsChoice"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="cmn:DeviceInformation"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="MICRNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="RoutingNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="DraftNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Amount" type="tns:AmountType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Payee" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VendorIndex">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="99"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="CheckVerificationResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="tns:Status"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute ref="cmn:MessageId" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="Status">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Verified" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ErrorMessage">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="cmn:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="AmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:minExclusive value="0.00"/>
+      <xsd:maxInclusive value="999999999999.99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

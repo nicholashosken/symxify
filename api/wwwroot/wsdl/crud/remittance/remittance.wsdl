@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="RemittanceService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/remittance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/remittance/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/remittance" xmlns:update="http://www.symxchange.generated.symitar.com/crud/remittance/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/remittance">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="remittance.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/remittance/dto/retrieve" schemaLocation="remittance_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/remittance/dto/update" schemaLocation="remittance_2.xsd"/>
+      <xsd:complexType name="RemittanceSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:RemittanceSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="RemittanceSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Remittance" type="retrieve:Remittance"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateRemittanceByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceFields" type="update:RemittanceFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="RemittanceUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateRemittanceRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceFields" type="update:RemittanceFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="RemittanceCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceCompositeKey" type="tns:RemittanceCompositeKey"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="RemittanceCompositeKey">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequence" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteRemittanceRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="RemittanceDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getRemittanceSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:RemittanceSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRemittanceSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:RemittanceSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateRemittanceByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateRemittanceByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateRemittanceByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:RemittanceUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createRemittance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateRemittanceRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createRemittanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:RemittanceCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteRemittance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteRemittanceRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteRemittanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:RemittanceDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getRemittanceSelectFieldsResponse">
+    <wsdl:part element="tns:getRemittanceSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRemittanceResponse">
+    <wsdl:part element="tns:deleteRemittanceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRemittanceRequest">
+    <wsdl:part element="tns:deleteRemittance" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createRemittanceRequest">
+    <wsdl:part element="tns:createRemittance" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getRemittanceSelectFieldsRequest">
+    <wsdl:part element="tns:getRemittanceSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createRemittanceResponse">
+    <wsdl:part element="tns:createRemittanceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateRemittanceByIDRequest">
+    <wsdl:part element="tns:updateRemittanceByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateRemittanceByIDResponse">
+    <wsdl:part element="tns:updateRemittanceByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="RemittanceService">
+    <wsdl:operation name="getRemittanceSelectFields">
+      <wsdl:input message="tns:getRemittanceSelectFieldsRequest"/>
+      <wsdl:output message="tns:getRemittanceSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateRemittanceByID">
+      <wsdl:input message="tns:updateRemittanceByIDRequest"/>
+      <wsdl:output message="tns:updateRemittanceByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createRemittance">
+      <wsdl:input message="tns:createRemittanceRequest"/>
+      <wsdl:output message="tns:createRemittanceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRemittance">
+      <wsdl:input message="tns:deleteRemittanceRequest"/>
+      <wsdl:output message="tns:deleteRemittanceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RemittanceServiceSOAPBinding" type="tns:RemittanceService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getRemittanceSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/remittance/getRemittanceSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRemittanceByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/remittance/updateRemittanceByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRemittance">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/remittance/createRemittance"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRemittance">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/remittance/deleteRemittance"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RemittanceService">
+    <wsdl:port binding="tns:RemittanceServiceSOAPBinding" name="RemittanceServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/remittance"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

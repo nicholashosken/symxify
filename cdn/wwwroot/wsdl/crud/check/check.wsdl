@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CheckService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/check" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/check/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/check" xmlns:update="http://www.symxchange.generated.symitar.com/crud/check/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/check">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="check.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/check/dto/retrieve" schemaLocation="check_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/check/dto/update" schemaLocation="check_2.xsd"/>
+      <xsd:complexType name="CheckSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CheckSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Check" type="retrieve:Check"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CheckSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:CheckChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Check" type="retrieve:Check"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckFmHistoryPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CheckFmHistorySingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckFmHistoryPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CheckFmHistory" type="retrieve:CheckFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckFmHistorySearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:CheckFmHistorySingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:CheckFmHistorySearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckFmHistorySearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CheckFmHistory" type="retrieve:CheckFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCheckByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckFields" type="update:CheckFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateCheckRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckFields" type="update:CheckFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckCompositeKey" type="tns:CheckCompositeKey"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckCompositeKey">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteCheckRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CheckGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="CheckDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getCheckSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CheckSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCheckSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CheckSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCheckSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CheckSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCheckSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:CheckSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCheckFmHistoryPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CheckFmHistoryPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCheckFmHistoryPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CheckFmHistoryPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCheckFmHistoryPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CheckFmHistorySearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCheckFmHistoryPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:CheckFmHistorySearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCheckByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateCheckByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCheckByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:CheckUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCheck">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateCheckRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCheckResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:CheckCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCheck">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteCheckRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCheckResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:CheckDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getCheckSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getCheckSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCheckFmHistoryPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getCheckFmHistoryPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCheckByIDRequest">
+    <wsdl:part element="tns:updateCheckByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCheckSelectFieldsRequest">
+    <wsdl:part element="tns:getCheckSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createCheckRequest">
+    <wsdl:part element="tns:createCheck" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCheckResponse">
+    <wsdl:part element="tns:deleteCheckResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCheckSelectFieldsResponse">
+    <wsdl:part element="tns:getCheckSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createCheckResponse">
+    <wsdl:part element="tns:createCheckResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCheckSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getCheckSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCheckFmHistoryPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchCheckFmHistoryPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCheckRequest">
+    <wsdl:part element="tns:deleteCheck" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCheckFmHistoryPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getCheckFmHistoryPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCheckByIDResponse">
+    <wsdl:part element="tns:updateCheckByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchCheckFmHistoryPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchCheckFmHistoryPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="CheckService">
+    <wsdl:operation name="getCheckSelectFields">
+      <wsdl:input message="tns:getCheckSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCheckSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getCheckSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getCheckSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckFmHistoryPagedListSelectFields">
+      <wsdl:input message="tns:getCheckFmHistoryPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getCheckFmHistoryPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchCheckFmHistoryPagedSelectFields">
+      <wsdl:input message="tns:searchCheckFmHistoryPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchCheckFmHistoryPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCheckByID">
+      <wsdl:input message="tns:updateCheckByIDRequest"/>
+      <wsdl:output message="tns:updateCheckByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createCheck">
+      <wsdl:input message="tns:createCheckRequest"/>
+      <wsdl:output message="tns:createCheckResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCheck">
+      <wsdl:input message="tns:deleteCheckRequest"/>
+      <wsdl:output message="tns:deleteCheckResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckServiceSOAPBinding" type="tns:CheckService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCheckSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/check/getCheckSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/check/getCheckSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckFmHistoryPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/check/getCheckFmHistoryPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCheckFmHistoryPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/check/searchCheckFmHistoryPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCheckByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/check/updateCheckByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCheck">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/check/createCheck"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCheck">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/check/deleteCheck"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckService">
+    <wsdl:port binding="tns:CheckServiceSOAPBinding" name="CheckServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/check"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

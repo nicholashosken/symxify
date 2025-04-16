@@ -1,0 +1,23 @@
+﻿FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS build
+WORKDIR /src
+
+# Copy API and shared libs
+COPY ./api/ ./api/
+COPY ./serializer/ ./serializer/
+COPY ./shared/ ./shared/
+
+# Restore and publish
+WORKDIR /src/api
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app/publish
+
+# Runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:9.0-preview AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Expose port for ASP.NET Core
+EXPOSE 80
+
+ENV ASPNETCORE_URLS=http://+:80
+ENTRYPOINT ["dotnet", "api.dll"]

@@ -1,0 +1,13 @@
+import { BatchAchOrig } from "./batchAchOrig";
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface BatchAchOrigPagedListSelectFieldsResponse {
+    batchAchOrig: BatchAchOrig[];
+    batchAchOrigSpecified: boolean;
+    token: string;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+    messageId: string;
+}

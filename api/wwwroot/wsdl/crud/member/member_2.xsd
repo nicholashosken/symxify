@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/member/dto/update" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/member/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:update="http://www.symxchange.generated.symitar.com/crud/member/dto/update">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="member.xsd"/>
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/member/dto/retrieve" schemaLocation="member_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="MemberRec">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ActiveDuty" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ActiveDutySeparationDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ActiveDutyStartDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ActiveDutyVerificationDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AltEmail" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BirthDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Chapter4StatusCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CtrExempt" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CurrGrossMonthPay" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CurrNetMonthPay" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaExtendedName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaFirst" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaLast" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaLongName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaMiddle" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaNameFormat" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaShortName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaSuffix" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DbaTitle" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DeathDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Email" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EmployerName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtendedName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="First" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ForeignTin" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FormW8OnFile" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GIin" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="HomePhone" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IdentDocFlag">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IdentDocFlag" type="xsd:short"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IdentIdDescription">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IdentIdDescription" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IdentIdExpireDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IdentIdExpireDate" nillable="true" type="xsd:date"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IdentIdIssueDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IdentIdIssueDate" nillable="true" type="xsd:date"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IdentIdNumber">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IdentIdNumber" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IdentIdType">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IdentIdType" type="xsd:short"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IdentIdVerifyDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IdentIdVerifyDate" nillable="true" type="xsd:date"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IrsCountryCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Last" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Lei" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="License" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Lob" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LongName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrActivityDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrCreateDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrCurrMthPayChgDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrDisconnectDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrExpDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrFileType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrFmLastDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrFmLastPurgeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrRecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrStatus" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MbrStatusFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MemberNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Middle" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MobilePhone" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MothersMaidenName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NameFormat" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NraExemptionCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NraTaxRate" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Occupation" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PagerNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PhoneType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreferredContact" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreferredContactMethod" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Restrict" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Sex" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ShortName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Ssn" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SsnType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubstantialOwner" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Suffix" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Title" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UsPersonFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount1" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount2" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar1" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar2" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar3" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar4" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate1" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate2" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="W8ExpirationDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WorkPhone" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WorkPhoneExtension" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MemberRecUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecMemberNumber" type="xsd:string"/>
+      <xsd:element name="MemberRecFields" type="update:MemberRecFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MemberRecFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:MemberRec"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

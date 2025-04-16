@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="EcaaService" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/ecaa" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:ecaadto="http://www.symxchange.generated.symitar.com/noncrud/ecaa/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/ecaa" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/ecaa" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/noncrud/ecaa/dto" schemaLocation="ecaa.xsd"/>
+      <xsd:element name="authenticate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:authenticateRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:authenticateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateWithAuthorization">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:authenticateWithAuthorizationRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateWithAuthorizationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:authenticateWithAuthorizationResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPrincipals">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:getPrincipalsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPrincipalsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:getPrincipalsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="initKerberosAuthentication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:initKerberosAuthenticationRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="initKerberosAuthenticationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:initKerberosAuthenticationResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authorizeSym">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:authorizeSymRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authorizeSymResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:authorizeSymResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changeSymitarPassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:changeSymitarPasswordRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changeSymitarPasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:changeSymitarPasswordResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateMember">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:authenticateMemberRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateMemberResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:authenticateMemberResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateService">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:authenticateServiceRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateServiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:authenticateServiceResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changeMemberHBPassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:changeMemberHBPasswordRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changeMemberHBPasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:changeMemberHBPasswordResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="convertToJWT">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:convertToJWTRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="convertToJWTResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:convertToJWTResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="convertToSAML">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="ecaadto:convertToSAMLRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="convertToSAMLResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="ecaadto:convertToSAMLResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="authenticateServiceRequest">
+    <wsdl:part element="tns:authenticateService" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateMemberResponse">
+    <wsdl:part element="tns:authenticateMemberResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="changeSymitarPassword">
+    <wsdl:part element="tns:changeSymitarPassword" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateMember">
+    <wsdl:part element="tns:authenticateMember" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="convertToJWTResponse">
+    <wsdl:part element="tns:convertToJWTResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="changeSymitarPasswordResponse">
+    <wsdl:part element="tns:changeSymitarPasswordResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateServiceResponse">
+    <wsdl:part element="tns:authenticateServiceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="changeMemberHBPasswordRequest">
+    <wsdl:part element="tns:changeMemberHBPassword" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="convertToJWTRequest">
+    <wsdl:part element="tns:convertToJWT" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="convertToSAMLResponse">
+    <wsdl:part element="tns:convertToSAMLResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authorizeSym">
+    <wsdl:part element="tns:authorizeSym" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateWithAuthorizationResponse">
+    <wsdl:part element="tns:authenticateWithAuthorizationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authenticate">
+    <wsdl:part element="tns:authenticate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getPrincipalsResponse">
+    <wsdl:part element="tns:getPrincipalsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateResponse">
+    <wsdl:part element="tns:authenticateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateWithAuthorization">
+    <wsdl:part element="tns:authenticateWithAuthorization" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="initKerberosAuthentication">
+    <wsdl:part element="tns:initKerberosAuthentication" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="initKerberosAuthenticationResponse">
+    <wsdl:part element="tns:initKerberosAuthenticationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getPrincipals">
+    <wsdl:part element="tns:getPrincipals" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="changeMemberHBPasswordResponse">
+    <wsdl:part element="tns:changeMemberHBPasswordResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="authorizeSymResponse">
+    <wsdl:part element="tns:authorizeSymResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="convertToSAMLRequest">
+    <wsdl:part element="tns:convertToSAML" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="EcaaService">
+    <wsdl:operation name="authenticate">
+      <wsdl:input message="tns:authenticate" name="authenticate"/>
+      <wsdl:output message="tns:authenticateResponse" name="authenticateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateWithAuthorization">
+      <wsdl:input message="tns:authenticateWithAuthorization" name="authenticateWithAuthorization"/>
+      <wsdl:output message="tns:authenticateWithAuthorizationResponse" name="authenticateWithAuthorizationResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getPrincipals">
+      <wsdl:input message="tns:getPrincipals" name="getPrincipals"/>
+      <wsdl:output message="tns:getPrincipalsResponse" name="getPrincipalsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="initKerberosAuthentication">
+      <wsdl:input message="tns:initKerberosAuthentication" name="initKerberosAuthentication"/>
+      <wsdl:output message="tns:initKerberosAuthenticationResponse" name="initKerberosAuthenticationResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="authorizeSym">
+      <wsdl:input message="tns:authorizeSym" name="authorizeSym"/>
+      <wsdl:output message="tns:authorizeSymResponse" name="authorizeSymResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="changeSymitarPassword">
+      <wsdl:input message="tns:changeSymitarPassword" name="changeSymitarPassword"/>
+      <wsdl:output message="tns:changeSymitarPasswordResponse" name="changeSymitarPasswordResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateMember">
+      <wsdl:input message="tns:authenticateMember" name="authenticateMember"/>
+      <wsdl:output message="tns:authenticateMemberResponse" name="authenticateMemberResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateService">
+      <wsdl:input message="tns:authenticateServiceRequest" name="authenticateService"/>
+      <wsdl:output message="tns:authenticateServiceResponse" name="authenticateServiceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="changeMemberHBPassword">
+      <wsdl:input message="tns:changeMemberHBPasswordRequest" name="changeMemberHBPassword"/>
+      <wsdl:output message="tns:changeMemberHBPasswordResponse" name="changeMemberHBPasswordResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="convertToJWT">
+      <wsdl:input message="tns:convertToJWTRequest" name="convertToJWT"/>
+      <wsdl:output message="tns:convertToJWTResponse" name="convertToJWTResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="convertToSAML">
+      <wsdl:input message="tns:convertToSAMLRequest" name="convertToSAML"/>
+      <wsdl:output message="tns:convertToSAMLResponse" name="convertToSAMLResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EcaaServiceBinding" type="tns:EcaaService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="authenticate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="authenticate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="authenticateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateWithAuthorization">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="authenticateWithAuthorization">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="authenticateWithAuthorizationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrincipals">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPrincipals">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPrincipalsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="initKerberosAuthentication">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="initKerberosAuthentication">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="initKerberosAuthenticationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authorizeSym">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="authorizeSym">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="authorizeSymResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeSymitarPassword">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="changeSymitarPassword">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeSymitarPasswordResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateMember">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="authenticateMember">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="authenticateMemberResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="authenticateService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="authenticateServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeMemberHBPassword">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="changeMemberHBPassword">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeMemberHBPasswordResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertToJWT">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="convertToJWT">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="convertToJWTResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertToSAML">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="convertToSAML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="convertToSAMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EcaaService">
+    <wsdl:port binding="tns:EcaaServiceBinding" name="EcaaServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/ecaa"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

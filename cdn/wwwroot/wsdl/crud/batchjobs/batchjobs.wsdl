@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BatchJobsService" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/batchjobs" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:batchjobsdto="http://www.symxchange.generated.symitar.com/noncrud/batchjobs/dto" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/batchjobs" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/batchjobs">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/noncrud/batchjobs/dto" schemaLocation="batchjobs.xsd"/>
+      <xsd:element name="listBatchJobs">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Request" type="batchjobsdto:ListBatchJobsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listBatchJobsServiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Response" type="batchjobsdto:ListBatchJobsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executeBatchJob">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Request" type="batchjobsdto:ExecuteBatchJobRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executeBatchJobServiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Response" type="batchjobsdto:ExecuteBatchJobResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBatchJobStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Request" type="batchjobsdto:GetBatchJobStatusRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBatchJobStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Response" type="batchjobsdto:GetBatchJobStatusResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="listBatchJobsRequestMsg">
+    <wsdl:part element="tns:listBatchJobs" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getBatchJobStatusResponse">
+    <wsdl:part element="tns:getBatchJobStatusResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executeBatchJobResponseMsg">
+    <wsdl:part element="tns:executeBatchJobServiceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getBatchJobStatusRequest">
+    <wsdl:part element="tns:getBatchJobStatus" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executeBatchJobRequestMsg">
+    <wsdl:part element="tns:executeBatchJob" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="listBatchJobsResponseMsg">
+    <wsdl:part element="tns:listBatchJobsServiceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="BatchJobsService">
+    <wsdl:operation name="listBatchJobs">
+      <wsdl:input message="tns:listBatchJobsRequestMsg"/>
+      <wsdl:output message="tns:listBatchJobsResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="executeBatchJob">
+      <wsdl:input message="tns:executeBatchJobRequestMsg"/>
+      <wsdl:output message="tns:executeBatchJobResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="getBatchJobStatus">
+      <wsdl:input message="tns:getBatchJobStatusRequest"/>
+      <wsdl:output message="tns:getBatchJobStatusResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BatchJobsServiceBinding" type="tns:BatchJobsService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listBatchJobs">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/BatchJobs/ListBatchJobs"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeBatchJob">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/BatchJobs/ExecuteBatchJob"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBatchJobStatus">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/BatchJobs/GetBatchJobStatus"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BatchJobsService">
+    <wsdl:port binding="tns:BatchJobsServiceBinding" name="BatchJobsPort">
+      <soap:address location="https://symitar367:24604/SymXchange/batchjobs"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

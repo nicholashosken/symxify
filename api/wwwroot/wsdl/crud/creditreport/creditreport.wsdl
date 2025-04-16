@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CreditReportService" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/creditreport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:creditreportdto="http://www.symxchange.generated.symitar.com/noncrud/creditreport/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/creditreport" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2016-2022 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/creditreport">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="creditreport.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/noncrud/creditreport/dto" schemaLocation="creditreport_1.xsd"/>
+      <xsd:element name="orderReport">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="creditreportdto:OrderReportRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="orderReportResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="creditreportdto:CreditReportResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="importReport">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="creditreportdto:ImportReportRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="importReportResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="creditreportdto:CreditReportResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="orderReportRequest">
+    <wsdl:part element="tns:orderReport" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="orderReportResponse">
+    <wsdl:part element="tns:orderReportResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="importReportResponse">
+    <wsdl:part element="tns:importReportResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="importReportRequest">
+    <wsdl:part element="tns:importReport" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="CreditReportService">
+    <wsdl:operation name="orderReport">
+      <wsdl:input message="tns:orderReportRequest"/>
+      <wsdl:output message="tns:orderReportResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="importReport">
+      <wsdl:input message="tns:importReportRequest"/>
+      <wsdl:output message="tns:importReportResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditReportServiceBinding" type="tns:CreditReportService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="orderReport">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/creditreport/orderReport"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importReport">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/creditreport/importReport"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditReportService">
+    <wsdl:port binding="tns:CreditReportServiceBinding" name="CreditReportServicePort">
+      <soap:address location="https://symitar367:24604/SymXchange/creditreport"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 1.0</xsd:documentation>
+</wsdl:definitions>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="MemberService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/member" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/member/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/member" xmlns:update="http://www.symxchange.generated.symitar.com/crud/member/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/member">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="member.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/member/dto/retrieve" schemaLocation="member_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/member/dto/update" schemaLocation="member_2.xsd"/>
+      <xsd:complexType name="MemberRecSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecMemberNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:MemberRecSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRec" type="retrieve:MemberRec"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecMemberNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:MemberRecSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:MemberRecChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRec" type="retrieve:MemberRec"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecFmHistoryPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecMemberNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:MemberRecFmHistorySingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecFmHistoryPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="MemberRecFmHistory" type="retrieve:MemberRecFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecFmHistorySearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecMemberNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:MemberRecFmHistorySingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:MemberRecFmHistorySearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecFmHistorySearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="MemberRecFmHistory" type="retrieve:MemberRecFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateMemberRecByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecMemberNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecFields" type="update:MemberRecFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateMemberRecRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecFields" type="update:MemberRecFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="MemberRecCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MemberRecMemberNumber" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getMemberRecSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:MemberRecSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMemberRecSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:MemberRecSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMemberRecSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:MemberRecSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMemberRecSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:MemberRecSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMemberRecFmHistoryPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:MemberRecFmHistoryPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMemberRecFmHistoryPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:MemberRecFmHistoryPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchMemberRecFmHistoryPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:MemberRecFmHistorySearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchMemberRecFmHistoryPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:MemberRecFmHistorySearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateMemberRecByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateMemberRecByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateMemberRecByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:MemberRecUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createMemberRec">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateMemberRecRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createMemberRecResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:MemberRecCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getMemberRecSelectFieldsResponse">
+    <wsdl:part element="tns:getMemberRecSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMemberRecSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getMemberRecSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchMemberRecFmHistoryPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchMemberRecFmHistoryPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateMemberRecByIDRequest">
+    <wsdl:part element="tns:updateMemberRecByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMemberRecSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getMemberRecSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createMemberRecResponse">
+    <wsdl:part element="tns:createMemberRecResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMemberRecSelectFieldsRequest">
+    <wsdl:part element="tns:getMemberRecSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchMemberRecFmHistoryPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchMemberRecFmHistoryPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateMemberRecByIDResponse">
+    <wsdl:part element="tns:updateMemberRecByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMemberRecFmHistoryPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getMemberRecFmHistoryPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createMemberRecRequest">
+    <wsdl:part element="tns:createMemberRec" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMemberRecFmHistoryPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getMemberRecFmHistoryPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="MemberService">
+    <wsdl:operation name="getMemberRecSelectFields">
+      <wsdl:input message="tns:getMemberRecSelectFieldsRequest"/>
+      <wsdl:output message="tns:getMemberRecSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMemberRecSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getMemberRecSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getMemberRecSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMemberRecFmHistoryPagedListSelectFields">
+      <wsdl:input message="tns:getMemberRecFmHistoryPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getMemberRecFmHistoryPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchMemberRecFmHistoryPagedSelectFields">
+      <wsdl:input message="tns:searchMemberRecFmHistoryPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchMemberRecFmHistoryPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateMemberRecByID">
+      <wsdl:input message="tns:updateMemberRecByIDRequest"/>
+      <wsdl:output message="tns:updateMemberRecByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createMemberRec">
+      <wsdl:input message="tns:createMemberRecRequest"/>
+      <wsdl:output message="tns:createMemberRecResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MemberServiceSOAPBinding" type="tns:MemberService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMemberRecSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/member/getMemberRecSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMemberRecSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/member/getMemberRecSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMemberRecFmHistoryPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/member/getMemberRecFmHistoryPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchMemberRecFmHistoryPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/member/searchMemberRecFmHistoryPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMemberRecByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/member/updateMemberRecByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createMemberRec">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/member/createMemberRec"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MemberService">
+    <wsdl:port binding="tns:MemberServiceSOAPBinding" name="MemberServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/member"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

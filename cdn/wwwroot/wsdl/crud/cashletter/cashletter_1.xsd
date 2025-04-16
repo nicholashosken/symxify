@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/cashletter/dto/retrieve" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/cashletter/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="cashletter.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="CashLetter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountInformation" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustedTotalAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentDate" type="xsd:date"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="AvailableAmount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AvailableAmount" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="4" minOccurs="0" name="AvailableDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AvailableDate" type="xsd:date"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CalculatedAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CalculatedDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CorporateId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreationDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreationTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreditAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="9" minOccurs="0" name="DayDeferredAmount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DayDeferredAmount" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DebitAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DebitCredit" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DepositDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FedCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FedReference" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ImmediateAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItemCount" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MemberId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginalAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginalDepositDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorRT" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Payee" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PriorAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Reference" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ResubmitAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnReason" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReversalDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReversalFlag" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ShareId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StatementCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ThirdPartyInformation" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UsCentralRT" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CashLetterSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllCashLetterFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterFields" type="retrieve:CashLetterFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CashLetterFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountInformation" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustedTotalAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="AvailableAmount" type="xsd:short"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="AvailableDate" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CalculatedAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CalculatedDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CorporateId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreationDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreationTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreditAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="9" minOccurs="0" name="DayDeferredAmount" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DebitAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DebitCredit" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DepositDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FedCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FedReference" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ImmediateAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ItemCount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MemberId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginalAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginalDepositDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorRT" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Payee" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PriorAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Reference" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ResubmitAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnReason" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReversalDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReversalFlag" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ShareId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StatementCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ThirdPartyInformation" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UsCentralRT" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CashLetterSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllCashLetterFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CashLetterFields" type="retrieve:CashLetterFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

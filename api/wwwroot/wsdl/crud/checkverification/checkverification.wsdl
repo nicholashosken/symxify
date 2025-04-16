@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CheckVerificationService" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/checkverification" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:chkverdto="http://www.symxchange.generated.symitar.com/noncrud/checkverification/dto" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/checkverification" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2018-2022 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/checkverification">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/noncrud/checkverification/dto" schemaLocation="checkverification.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="checkverification_1.xsd"/>
+      <xsd:element name="verifyCheck">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Request" type="chkverdto:CheckVerificationRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="verifyCheckResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Response" type="chkverdto:CheckVerificationResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="VerifyCheckResponse">
+    <wsdl:part element="tns:verifyCheckResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VerifyCheckRequest">
+    <wsdl:part element="tns:verifyCheck" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="CheckVerificationService">
+    <wsdl:operation name="verifyCheck">
+      <wsdl:input message="tns:VerifyCheckRequest"/>
+      <wsdl:output message="tns:VerifyCheckResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckVerificationServiceBinding" type="tns:CheckVerificationService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="verifyCheck">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/checkverification/verifyCheck"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckVerificationService">
+    <wsdl:port binding="tns:CheckVerificationServiceBinding" name="CheckVerificationServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/checkverification"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 1.0</xsd:documentation>
+</wsdl:definitions>

@@ -1,0 +1,40 @@
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface CdmCommonFields {
+    cashMachineReleaseValue: boolean;
+    cashMachineReleaseValueSpecified: boolean;
+    cashMachineRelease: boolean | null;
+    cdmDuressAutoMixDescr: number[];
+    cdmDuressAutoMixDescrSpecified: boolean;
+    externalHostNameValue: boolean;
+    externalHostNameValueSpecified: boolean;
+    externalHostName: boolean | null;
+    externalHostNameExtValue: boolean;
+    externalHostNameExtValueSpecified: boolean;
+    externalHostNameExt: boolean | null;
+    externalKeystorePasswordValue: boolean;
+    externalKeystorePasswordValueSpecified: boolean;
+    externalKeystorePassword: boolean | null;
+    externalUserNameValue: boolean;
+    externalUserNameValueSpecified: boolean;
+    externalUserName: boolean | null;
+    externalUserPasswordValue: boolean;
+    externalUserPasswordValueSpecified: boolean;
+    externalUserPassword: boolean | null;
+    lowCassetteAutoDispCashValue: boolean;
+    lowCassetteAutoDispCashValueSpecified: boolean;
+    lowCassetteAutoDispCash: boolean | null;
+    maximumCdmAmountValue: boolean;
+    maximumCdmAmountValueSpecified: boolean;
+    maximumCdmAmount: boolean | null;
+    tcrDuressDispAmtValue: boolean;
+    tcrDuressDispAmtValueSpecified: boolean;
+    tcrDuressDispAmt: boolean | null;
+    twinSafeGlobalUserIdValue: boolean;
+    twinSafeGlobalUserIdValueSpecified: boolean;
+    twinSafeGlobalUserId: boolean | null;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+}

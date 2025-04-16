@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PowerOnService" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/poweron" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:powerondto="http://www.symxchange.generated.symitar.com/noncrud/poweron/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/poweron" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2022 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/poweron">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="poweron.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/noncrud/poweron/dto" schemaLocation="poweron_1.xsd"/>
+      <xsd:element name="executePowerOnReturnArray">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Request" type="powerondto:PowerOnExecutionRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executePowerOnReturnArrayResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Response" type="powerondto:PowerOnExecutionReturnArrayResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executeMCWPowerOn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="powerondto:MCWPowerOnExecutionRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executeMCWPowerOnResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="powerondto:MCWPowerOnExecutionResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executePowerOn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Request" type="powerondto:PowerOnExecutionRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executePowerOnResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Response" type="powerondto:PowerOnExecutionResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executeMCWPowerOnReturnArray">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Request" type="powerondto:MCWPowerOnExecutionRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executeMCWPowerOnReturnArrayResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Response" type="powerondto:MCWPowerOnExecutionReturnArrayResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="executeMCWPowerOnRequest">
+    <wsdl:part element="tns:executeMCWPowerOn" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executePowerOnResponse">
+    <wsdl:part element="tns:executePowerOnResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executeMCWPowerOnResponse">
+    <wsdl:part element="tns:executeMCWPowerOnResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executeMCWPowerOnReturnArrayResponse">
+    <wsdl:part element="tns:executeMCWPowerOnReturnArrayResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executePowerOnRequest">
+    <wsdl:part element="tns:executePowerOn" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executePowerOnReturnArrayRequest">
+    <wsdl:part element="tns:executePowerOnReturnArray" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executePowerOnReturnArrayResponse">
+    <wsdl:part element="tns:executePowerOnReturnArrayResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="executeMCWPowerOnReturnArrayRequest">
+    <wsdl:part element="tns:executeMCWPowerOnReturnArray" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="PowerOnService">
+    <wsdl:operation name="executePowerOnReturnArray">
+      <wsdl:input message="tns:executePowerOnReturnArrayRequest"/>
+      <wsdl:output message="tns:executePowerOnReturnArrayResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="executePowerOn">
+      <wsdl:input message="tns:executePowerOnRequest"/>
+      <wsdl:output message="tns:executePowerOnResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="executeMCWPowerOn">
+      <wsdl:input message="tns:executeMCWPowerOnRequest"/>
+      <wsdl:output message="tns:executeMCWPowerOnResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="executeMCWPowerOnReturnArray">
+      <wsdl:input message="tns:executeMCWPowerOnReturnArrayRequest"/>
+      <wsdl:output message="tns:executeMCWPowerOnReturnArrayResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PowerOnServiceSOAPBinding" type="tns:PowerOnService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="executePowerOnReturnArray">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/poweron/executePowerOnReturnArray"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executePowerOn">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/poweron/executePowerOn"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeMCWPowerOn">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/poweron/executeMCWPowerOn"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeMCWPowerOnReturnArray">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/poweron/executeMCWPowerOnReturnArray"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PowerOnService">
+    <wsdl:port binding="tns:PowerOnServiceSOAPBinding" name="PowerOnServicePort">
+      <soap:address location="https://symitar367:24604/SymXchange/poweron"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 1.0</xsd:documentation>
+</wsdl:definitions>

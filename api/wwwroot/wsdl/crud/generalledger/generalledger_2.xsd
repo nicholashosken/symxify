@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/update" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:update="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/update">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="generalledger.xsd"/>
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/retrieve" schemaLocation="generalledger_1.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="GlAccount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BalNextGlMonth" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Balance" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BalanceLastYear" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BalanceNextPeriod" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BalanceSheetColumn" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BalanceYtd" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BlankLineCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:string"/>
+      <xsd:element maxOccurs="12" minOccurs="0" name="Budget">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Budget" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CommentCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DcRestrictionLevel" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DistributionCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmLastPurgeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmLevel" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FormatType" type="xsd:short"/>
+      <xsd:element maxOccurs="12" minOccurs="0" name="HistoricalBalance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="HistoricalBalance" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IndentationCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IqLevel" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastPurgeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastTranDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Lookup" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Name" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Number" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OpenCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PrintingCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RestrictionLevel" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Suffix" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TotalGlBudget" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TotalLevel" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UnderscoreCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UsageType" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GlAccountUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+      <xsd:element name="GlAccountFields" type="update:GlAccountFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GlAccountFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:GlAccount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GlAccountTracking">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreationDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CreationTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExpireDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmLastDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TrackingCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount1" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount10" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount11" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount12" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount13" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount14" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount15" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount16" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount17" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount18" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount19" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount2" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount20" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount3" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount4" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount5" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount6" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount7" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount8" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserAmount9" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar1" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar10" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar11" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar12" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar13" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar14" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar15" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar16" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar17" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar18" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar19" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar2" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar20" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar3" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar4" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar5" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar6" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar7" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar8" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserChar9" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode1" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode10" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode11" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode12" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode13" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode14" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode15" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode16" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode17" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode18" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode19" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode2" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode20" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode3" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode4" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode5" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode6" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode7" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode8" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserCode9" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate1" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate10" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate11" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate12" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate13" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate14" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate15" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate16" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate17" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate18" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate19" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate2" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate20" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate3" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate4" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate5" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate6" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate7" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate8" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserDate9" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserId" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber1" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber10" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber11" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber12" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber13" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber14" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber15" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber16" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber17" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber18" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber19" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber2" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber20" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber3" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber4" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber5" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber6" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber7" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber8" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber9" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate1" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate10" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate11" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate12" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate13" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate14" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate15" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate16" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate17" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate18" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate19" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate2" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate20" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate3" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate4" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate5" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate6" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate7" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate8" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserRate9" type="xsd:decimal"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GlAccountTrackingUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTrackingLocator" type="xsd:int"/>
+      <xsd:element name="GlAccountTrackingFields" type="update:GlAccountTrackingFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GlAccountTrackingFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:GlAccountTracking"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GlSubaccount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccrualAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccrualEffectDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccrualPostDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccrualPostThruDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccrualStartDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccruedAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccruedCount" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AcquisitionDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CommentOne" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CommentTwo" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CurrentValue" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Disposition" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FirstMonthMethod" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlOffset" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InsMaturityDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InsTypeDescription" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InsuranceType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LimitValue" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MaturityDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Method" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Name" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginalValue" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Process" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Rate" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RateBase" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SaleAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SaleDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TaxAmount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TaxCategory" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TaxDate" nillable="true" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TaxDescription" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TaxLocation" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TermFrequency" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TermPeriod" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GlSubaccountUpdateRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccountId" type="xsd:string"/>
+      <xsd:element name="GlSubaccountFields" type="update:GlSubaccountFields"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GlSubaccountFields">
+    <xsd:complexContent>
+      <xsd:extension base="update:GlSubaccount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

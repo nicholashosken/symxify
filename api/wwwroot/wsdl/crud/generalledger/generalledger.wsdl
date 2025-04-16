@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="GeneralLedgerService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/generalledger" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/generalledger" xmlns:update="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/generalledger">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="generalledger.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/retrieve" schemaLocation="generalledger_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/generalledger/dto/update" schemaLocation="generalledger_2.xsd"/>
+      <xsd:complexType name="GlAccountSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlAccountSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccount" type="retrieve:GlAccount"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountSelectFieldsFilterChildrenRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlAccountSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ChildrenSearchFilter" type="retrieve:GlAccountChildrenFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountSelectFieldsFilterChildrenResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccount" type="retrieve:GlAccount"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountFmHistoryPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlAccountFmHistorySingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountFmHistoryPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlAccountFmHistory" type="retrieve:GlAccountFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountFmHistorySearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlAccountFmHistorySingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:GlAccountFmHistorySearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountFmHistorySearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlAccountFmHistory" type="retrieve:GlAccountFmHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTrackingLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlAccountTrackingSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTracking" type="retrieve:GlAccountTracking"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlAccountTrackingSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlAccountTracking" type="retrieve:GlAccountTracking"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlAccountTrackingSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:GlAccountTrackingSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlAccountTracking" type="retrieve:GlAccountTracking"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlHistoryPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlHistorySingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlHistoryPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlHistory" type="retrieve:GlHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlHistorySearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlHistorySingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:GlHistorySearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlHistorySearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlHistory" type="retrieve:GlHistory"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccountId" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlSubaccountSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccount" type="retrieve:GlSubaccount"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountPagedListSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlSubaccountSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountPagedListSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlSubaccount" type="retrieve:GlSubaccount"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountSearchPagedSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PagingRequestContext" type="symxcommon:PagingRequestContext"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:GlSubaccountSingleSelectableFields"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SearchFilter" type="retrieve:GlSubaccountSearchFilter"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountSearchPagedSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="GlSubaccount" type="retrieve:GlSubaccount"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Token" type="xsd:string"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateGlAccountByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountFields" type="update:GlAccountFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateGlAccountTrackingByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTrackingLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTrackingFields" type="update:GlAccountTrackingFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateGlSubaccountByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccountId" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccountFields" type="update:GlSubaccountFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateGlAccountRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountFields" type="update:GlAccountFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountCompositeKey" type="tns:GlAccountCompositeKey"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountCompositeKey">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreateGlAccountTrackingRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTrackingFields" type="update:GlAccountTrackingFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTrackingLocator" type="xsd:int"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateGlSubaccountRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccountFields" type="update:GlSubaccountFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccountId" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteGlAccountTrackingRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountTrackingLocator" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlAccountTrackingDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteGlSubaccountRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountSuffix" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlAccountBranch" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GlSubaccountId" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="GlSubaccountDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getGlAccountSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlAccountSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:GlAccountSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountSelectFieldsFilterChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlAccountSelectFieldsFilterChildrenRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountSelectFieldsFilterChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:GlAccountSelectFieldsFilterChildrenResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountFmHistoryPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlAccountFmHistoryPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountFmHistoryPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlAccountFmHistoryPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlAccountFmHistoryPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlAccountFmHistorySearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlAccountFmHistoryPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlAccountFmHistorySearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountTrackingSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlAccountTrackingSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountTrackingSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:GlAccountTrackingSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountTrackingPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlAccountTrackingPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlAccountTrackingPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlAccountTrackingPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlAccountTrackingPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlAccountTrackingSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlAccountTrackingPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlAccountTrackingSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlHistoryPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlHistoryPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlHistoryPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlHistoryPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlHistoryPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlHistorySearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlHistoryPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlHistorySearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlSubaccountSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlSubaccountSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlSubaccountSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:GlSubaccountSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlSubaccountPagedListSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlSubaccountPagedListSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGlSubaccountPagedListSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlSubaccountPagedListSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlSubaccountPagedSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:GlSubaccountSearchPagedSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchGlSubaccountPagedSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PagedResponse" type="tns:GlSubaccountSearchPagedSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateGlAccountByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateGlAccountByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateGlAccountByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:GlAccountUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateGlAccountTrackingByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateGlAccountTrackingByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateGlAccountTrackingByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:GlAccountTrackingUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateGlSubaccountByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateGlSubaccountByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateGlSubaccountByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:GlSubaccountUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createGlAccount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateGlAccountRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createGlAccountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:GlAccountCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createGlAccountTracking">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateGlAccountTrackingRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createGlAccountTrackingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:GlAccountTrackingCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createGlSubaccount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateGlSubaccountRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createGlSubaccountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:GlSubaccountCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteGlAccountTracking">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteGlAccountTrackingRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteGlAccountTrackingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:GlAccountTrackingDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteGlSubaccount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteGlSubaccountRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteGlSubaccountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:GlSubaccountDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="updateGlAccountByIDResponse">
+    <wsdl:part element="tns:updateGlAccountByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createGlSubaccountResponse">
+    <wsdl:part element="tns:createGlSubaccountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlSubaccountPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchGlSubaccountPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountTrackingPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getGlAccountTrackingPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createGlAccountTrackingRequest">
+    <wsdl:part element="tns:createGlAccountTracking" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteGlAccountTrackingRequest">
+    <wsdl:part element="tns:deleteGlAccountTracking" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlSubaccountSelectFieldsResponse">
+    <wsdl:part element="tns:getGlSubaccountSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountFmHistoryPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getGlAccountFmHistoryPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlAccountTrackingPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchGlAccountTrackingPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateGlSubaccountByIDRequest">
+    <wsdl:part element="tns:updateGlSubaccountByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountSelectFieldsFilterChildrenRequest">
+    <wsdl:part element="tns:getGlAccountSelectFieldsFilterChildren" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlAccountTrackingPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchGlAccountTrackingPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlHistoryPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchGlHistoryPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createGlAccountRequest">
+    <wsdl:part element="tns:createGlAccount" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlAccountFmHistoryPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchGlAccountFmHistoryPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createGlSubaccountRequest">
+    <wsdl:part element="tns:createGlSubaccount" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateGlSubaccountByIDResponse">
+    <wsdl:part element="tns:updateGlSubaccountByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountTrackingSelectFieldsResponse">
+    <wsdl:part element="tns:getGlAccountTrackingSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlSubaccountPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getGlSubaccountPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountTrackingSelectFieldsRequest">
+    <wsdl:part element="tns:getGlAccountTrackingSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlHistoryPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getGlHistoryPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlHistoryPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getGlHistoryPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountSelectFieldsRequest">
+    <wsdl:part element="tns:getGlAccountSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlAccountFmHistoryPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchGlAccountFmHistoryPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlSubaccountPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getGlSubaccountPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteGlAccountTrackingResponse">
+    <wsdl:part element="tns:deleteGlAccountTrackingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateGlAccountByIDRequest">
+    <wsdl:part element="tns:updateGlAccountByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteGlSubaccountResponse">
+    <wsdl:part element="tns:deleteGlSubaccountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateGlAccountTrackingByIDResponse">
+    <wsdl:part element="tns:updateGlAccountTrackingByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createGlAccountResponse">
+    <wsdl:part element="tns:createGlAccountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountTrackingPagedListSelectFieldsResponse">
+    <wsdl:part element="tns:getGlAccountTrackingPagedListSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createGlAccountTrackingResponse">
+    <wsdl:part element="tns:createGlAccountTrackingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlSubaccountPagedSelectFieldsResponse">
+    <wsdl:part element="tns:searchGlSubaccountPagedSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountFmHistoryPagedListSelectFieldsRequest">
+    <wsdl:part element="tns:getGlAccountFmHistoryPagedListSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlSubaccountSelectFieldsRequest">
+    <wsdl:part element="tns:getGlSubaccountSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateGlAccountTrackingByIDRequest">
+    <wsdl:part element="tns:updateGlAccountTrackingByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountSelectFieldsResponse">
+    <wsdl:part element="tns:getGlAccountSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getGlAccountSelectFieldsFilterChildrenResponse">
+    <wsdl:part element="tns:getGlAccountSelectFieldsFilterChildrenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="searchGlHistoryPagedSelectFieldsRequest">
+    <wsdl:part element="tns:searchGlHistoryPagedSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteGlSubaccountRequest">
+    <wsdl:part element="tns:deleteGlSubaccount" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="GeneralLedgerService">
+    <wsdl:operation name="getGlAccountSelectFields">
+      <wsdl:input message="tns:getGlAccountSelectFieldsRequest"/>
+      <wsdl:output message="tns:getGlAccountSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountSelectFieldsFilterChildren">
+      <wsdl:input message="tns:getGlAccountSelectFieldsFilterChildrenRequest"/>
+      <wsdl:output message="tns:getGlAccountSelectFieldsFilterChildrenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountFmHistoryPagedListSelectFields">
+      <wsdl:input message="tns:getGlAccountFmHistoryPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getGlAccountFmHistoryPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlAccountFmHistoryPagedSelectFields">
+      <wsdl:input message="tns:searchGlAccountFmHistoryPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchGlAccountFmHistoryPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountTrackingSelectFields">
+      <wsdl:input message="tns:getGlAccountTrackingSelectFieldsRequest"/>
+      <wsdl:output message="tns:getGlAccountTrackingSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountTrackingPagedListSelectFields">
+      <wsdl:input message="tns:getGlAccountTrackingPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getGlAccountTrackingPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlAccountTrackingPagedSelectFields">
+      <wsdl:input message="tns:searchGlAccountTrackingPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchGlAccountTrackingPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGlHistoryPagedListSelectFields">
+      <wsdl:input message="tns:getGlHistoryPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getGlHistoryPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlHistoryPagedSelectFields">
+      <wsdl:input message="tns:searchGlHistoryPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchGlHistoryPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGlSubaccountSelectFields">
+      <wsdl:input message="tns:getGlSubaccountSelectFieldsRequest"/>
+      <wsdl:output message="tns:getGlSubaccountSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGlSubaccountPagedListSelectFields">
+      <wsdl:input message="tns:getGlSubaccountPagedListSelectFieldsRequest"/>
+      <wsdl:output message="tns:getGlSubaccountPagedListSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlSubaccountPagedSelectFields">
+      <wsdl:input message="tns:searchGlSubaccountPagedSelectFieldsRequest"/>
+      <wsdl:output message="tns:searchGlSubaccountPagedSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateGlAccountByID">
+      <wsdl:input message="tns:updateGlAccountByIDRequest"/>
+      <wsdl:output message="tns:updateGlAccountByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateGlAccountTrackingByID">
+      <wsdl:input message="tns:updateGlAccountTrackingByIDRequest"/>
+      <wsdl:output message="tns:updateGlAccountTrackingByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateGlSubaccountByID">
+      <wsdl:input message="tns:updateGlSubaccountByIDRequest"/>
+      <wsdl:output message="tns:updateGlSubaccountByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createGlAccount">
+      <wsdl:input message="tns:createGlAccountRequest"/>
+      <wsdl:output message="tns:createGlAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createGlAccountTracking">
+      <wsdl:input message="tns:createGlAccountTrackingRequest"/>
+      <wsdl:output message="tns:createGlAccountTrackingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createGlSubaccount">
+      <wsdl:input message="tns:createGlSubaccountRequest"/>
+      <wsdl:output message="tns:createGlSubaccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGlAccountTracking">
+      <wsdl:input message="tns:deleteGlAccountTrackingRequest"/>
+      <wsdl:output message="tns:deleteGlAccountTrackingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGlSubaccount">
+      <wsdl:input message="tns:deleteGlSubaccountRequest"/>
+      <wsdl:output message="tns:deleteGlSubaccountResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeneralLedgerServiceSOAPBinding" type="tns:GeneralLedgerService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getGlAccountSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlAccountSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountSelectFieldsFilterChildren">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlAccountSelectFieldsFilterChildren"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountFmHistoryPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlAccountFmHistoryPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlAccountFmHistoryPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/searchGlAccountFmHistoryPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountTrackingSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlAccountTrackingSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlAccountTrackingPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlAccountTrackingPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlAccountTrackingPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/searchGlAccountTrackingPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlHistoryPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlHistoryPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlHistoryPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/searchGlHistoryPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlSubaccountSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlSubaccountSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlSubaccountPagedListSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/getGlSubaccountPagedListSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchGlSubaccountPagedSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/searchGlSubaccountPagedSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGlAccountByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/updateGlAccountByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGlAccountTrackingByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/updateGlAccountTrackingByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGlSubaccountByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/updateGlSubaccountByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGlAccount">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/createGlAccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGlAccountTracking">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/createGlAccountTracking"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGlSubaccount">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/createGlSubaccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGlAccountTracking">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/deleteGlAccountTracking"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGlSubaccount">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/generalledger/deleteGlSubaccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralLedgerService">
+    <wsdl:port binding="tns:GeneralLedgerServiceSOAPBinding" name="GeneralLedgerServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/generalledger"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

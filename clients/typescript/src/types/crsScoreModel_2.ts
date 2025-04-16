@@ -1,0 +1,6 @@
+export interface CrsScoreModel_2 {
+    entryIdValue: number;
+    entryIdValueSpecified: boolean;
+    entryId: number | null;
+    scoreModel: string;
+}

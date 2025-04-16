@@ -1,0 +1,40 @@
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface WireMisc_2 {
+    defaultBusinessFunctionCode: string;
+    fedFormatValue: number;
+    fedFormatValueSpecified: boolean;
+    fedFormat: number | null;
+    incomingCorpWireGlOffset: string;
+    incomingMemberWireGlOffset: string;
+    incomingWireDepServiceCodeValue: number;
+    incomingWireDepServiceCodeValueSpecified: boolean;
+    incomingWireDepServiceCode: number | null;
+    newWireCutoffTimeValue: number;
+    newWireCutoffTimeValueSpecified: boolean;
+    newWireCutoffTime: number | null;
+    outgoingCorpWireGlOffset: string;
+    outgoingMemberWireGlOffset: string;
+    outgoingWesternUnionGlOffs: string;
+    outgoingWireListSrvcCodeValue: number;
+    outgoingWireListSrvcCodeValueSpecified: boolean;
+    outgoingWireListSrvcCode: number | null;
+    outgoingWireWdServiceCodeValue: number;
+    outgoingWireWdServiceCodeValueSpecified: boolean;
+    outgoingWireWdServiceCode: number | null;
+    preAuthWireCutoffTimeValue: number;
+    preAuthWireCutoffTimeValueSpecified: boolean;
+    preAuthWireCutoffTime: number | null;
+    senderFi: string;
+    senderName: string;
+    thresholdValue: number;
+    thresholdValueSpecified: boolean;
+    threshold: number | null;
+    westernUnionXferCutoffTimeValue: number;
+    westernUnionXferCutoffTimeValueSpecified: boolean;
+    westernUnionXferCutoffTime: number | null;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+}

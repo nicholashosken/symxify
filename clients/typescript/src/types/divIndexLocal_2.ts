@@ -1,0 +1,42 @@
+import { DivIndexLocalBackdatedFlag_2 } from "./divIndexLocalBackdatedFlag_2";
+import { DivIndexLocalBalanceCutoff_2 } from "./divIndexLocalBalanceCutoff_2";
+import { DivIndexLocalBalanceStatus_2 } from "./divIndexLocalBalanceStatus_2";
+import { DivIndexLocalIndexDate_2 } from "./divIndexLocalIndexDate_2";
+import { DivIndexLocalIndexRate_2 } from "./divIndexLocalIndexRate_2";
+import { DivIndexLocalPendingBalance_2 } from "./divIndexLocalPendingBalance_2";
+import { DivIndexLocalPendingRate_2 } from "./divIndexLocalPendingRate_2";
+import { DivIndexLocalStatus_2 } from "./divIndexLocalStatus_2";
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface DivIndexLocal_2 {
+    backdatedFlag: DivIndexLocalBackdatedFlag_2[];
+    backdatedFlagSpecified: boolean;
+    balanceCutoff: DivIndexLocalBalanceCutoff_2[];
+    balanceCutoffSpecified: boolean;
+    balanceStatus: DivIndexLocalBalanceStatus_2[];
+    balanceStatusSpecified: boolean;
+    currentMonthAvgRateValue: number;
+    currentMonthAvgRateValueSpecified: boolean;
+    currentMonthAvgRate: number | null;
+    description: string;
+    dividendIndexTableValue: number;
+    dividendIndexTableValueSpecified: boolean;
+    dividendIndexTable: number | null;
+    inactiveStatusDateValue: string | null;
+    inactiveStatusDateValueSpecified: boolean;
+    inactiveStatusDate: string | null;
+    indexDate: DivIndexLocalIndexDate_2[];
+    indexDateSpecified: boolean;
+    indexRate: DivIndexLocalIndexRate_2[];
+    indexRateSpecified: boolean;
+    pendingBalance: DivIndexLocalPendingBalance_2[];
+    pendingBalanceSpecified: boolean;
+    pendingRate: DivIndexLocalPendingRate_2[];
+    pendingRateSpecified: boolean;
+    status: DivIndexLocalStatus_2[];
+    statusSpecified: boolean;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+}

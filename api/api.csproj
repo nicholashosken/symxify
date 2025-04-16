@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="SymxchangeObjects\" />
+    <Folder Include="wwwroot\wsdl\2020\account\" />
+    <Folder Include="wwwroot\wsdl\2020\batchjobs\" />
+    <Folder Include="wwwroot\wsdl\2020\creditreport\" />
+    <Folder Include="wwwroot\wsdl\2020\filemanagement\" />
+    <Folder Include="wwwroot\wsdl\2020\findby\" />
+    <Folder Include="wwwroot\wsdl\2020\poweron\" />
+    <Folder Include="wwwroot\wsdl\2020\projection\" />
+    <Folder Include="wwwroot\wsdl\2020\transactions\" />
+    <Folder Include="wwwroot\wsdl\2020\user\" />
+    <Folder Include="wwwroot\wsdl\2021\account\" />
+    <Folder Include="wwwroot\wsdl\2021\batchjobs\" />
+    <Folder Include="wwwroot\wsdl\2021\creditreport\" />
+    <Folder Include="wwwroot\wsdl\2021\filemanagement\" />
+    <Folder Include="wwwroot\wsdl\2021\findby\" />
+    <Folder Include="wwwroot\wsdl\2021\poweron\" />
+    <Folder Include="wwwroot\wsdl\2021\projection\" />
+    <Folder Include="wwwroot\wsdl\2021\transactions\" />
+    <Folder Include="wwwroot\wsdl\2021\user\" />
+    <Folder Include="wwwroot\wsdl\2022\account\" />
+    <Folder Include="wwwroot\wsdl\2022\batchjobs\" />
+    <Folder Include="wwwroot\wsdl\2022\creditreport\" />
+    <Folder Include="wwwroot\wsdl\2022\filemanagement\" />
+    <Folder Include="wwwroot\wsdl\2022\findby\" />
+    <Folder Include="wwwroot\wsdl\2022\poweron\" />
+    <Folder Include="wwwroot\wsdl\2022\projection\" />
+    <Folder Include="wwwroot\wsdl\2022\transactions\" />
+    <Folder Include="wwwroot\wsdl\2022\user\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\serializer\serializer.csproj" />
+    <ProjectReference Include="..\shared\shared.csproj" />
+  </ItemGroup>
+</Project>

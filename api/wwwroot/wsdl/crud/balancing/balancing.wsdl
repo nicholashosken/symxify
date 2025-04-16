@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BalancingService" targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/balancing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:balancingdto="http://www.symxchange.generated.symitar.com/noncrud/balancing/dto" xmlns:cmn="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.symxchange.generated.symitar.com/noncrud/balancing" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2015-2022 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/noncrud/balancing">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="balancing.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/noncrud/balancing/dto" schemaLocation="balancing_1.xsd"/>
+      <xsd:element name="resetCashValueBalances">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:ResetCashValueBalancesRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetCashValueBalancesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:ResetCashValueBalancesResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetDepositBalances">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:ResetDepositBalancesRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetDepositBalancesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:ResetDepositBalancesResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetSecondPartyCheckBalances">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:ResetSecondPartyCheckBalancesRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetSecondPartyCheckBalancesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:ResetSecondPartyCheckBalancesResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cashValueAdjust">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:CashValueAdjustRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cashValueAdjustResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:CashValueAdjustResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="secondPartyCheckAdjust">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:SecondPartyCheckAdjustRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="secondPartyCheckAdjustResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:SecondPartyCheckAdjustResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cashValueReport">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:CashValueReportRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cashValueReportResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:CashValueReportResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="verifyDepositReport">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:VerifyDepositReportRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="verifyDepositReportResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:VerifyDepositReportResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkDisbursedReport">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="balancingdto:CheckDisbursedReportRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkDisbursedReportResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Response" type="balancingdto:CheckDisbursedReportResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="secondPartyCheckAdjustRequest">
+    <wsdl:part element="tns:secondPartyCheckAdjust" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="checkDisbursedReportRequest">
+    <wsdl:part element="tns:checkDisbursedReport" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="checkDisbursedReportResponse">
+    <wsdl:part element="tns:checkDisbursedReportResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="verifyDepositReportRequest">
+    <wsdl:part element="tns:verifyDepositReport" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cashValueReportRequest">
+    <wsdl:part element="tns:cashValueReport" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="resetCashValueBalancesRequest">
+    <wsdl:part element="tns:resetCashValueBalances" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="resetSecondPartyCheckBalancesRequest">
+    <wsdl:part element="tns:resetSecondPartyCheckBalances" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="secondPartyCheckAdjustResponse">
+    <wsdl:part element="tns:secondPartyCheckAdjustResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="resetDepositBalancesResponse">
+    <wsdl:part element="tns:resetDepositBalancesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cashValueAdjustResponse">
+    <wsdl:part element="tns:cashValueAdjustResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="resetDepositBalancesRequest">
+    <wsdl:part element="tns:resetDepositBalances" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="verifyDepositReportResponse">
+    <wsdl:part element="tns:verifyDepositReportResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cashValueReportResponse">
+    <wsdl:part element="tns:cashValueReportResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="resetSecondPartyCheckBalancesResponse">
+    <wsdl:part element="tns:resetSecondPartyCheckBalancesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="resetCashValueBalancesResponse">
+    <wsdl:part element="tns:resetCashValueBalancesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cashValueAdjustRequest">
+    <wsdl:part element="tns:cashValueAdjust" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="BalancingService">
+    <wsdl:operation name="resetCashValueBalances">
+      <wsdl:input message="tns:resetCashValueBalancesRequest"/>
+      <wsdl:output message="tns:resetCashValueBalancesResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="resetDepositBalances">
+      <wsdl:input message="tns:resetDepositBalancesRequest"/>
+      <wsdl:output message="tns:resetDepositBalancesResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="resetSecondPartyCheckBalances">
+      <wsdl:input message="tns:resetSecondPartyCheckBalancesRequest"/>
+      <wsdl:output message="tns:resetSecondPartyCheckBalancesResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="cashValueAdjust">
+      <wsdl:input message="tns:cashValueAdjustRequest"/>
+      <wsdl:output message="tns:cashValueAdjustResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="secondPartyCheckAdjust">
+      <wsdl:input message="tns:secondPartyCheckAdjustRequest"/>
+      <wsdl:output message="tns:secondPartyCheckAdjustResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="cashValueReport">
+      <wsdl:input message="tns:cashValueReportRequest"/>
+      <wsdl:output message="tns:cashValueReportResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="verifyDepositReport">
+      <wsdl:input message="tns:verifyDepositReportRequest"/>
+      <wsdl:output message="tns:verifyDepositReportResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="checkDisbursedReport">
+      <wsdl:input message="tns:checkDisbursedReportRequest"/>
+      <wsdl:output message="tns:checkDisbursedReportResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BalancingServiceBinding" type="tns:BalancingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="resetCashValueBalances">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/resetCashValueBalances"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetDepositBalances">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/resetDepositBalances"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetSecondPartyCheckBalances">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/resetSecondPartyCheckBalances"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashValueAdjust">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/cashValueAdjust"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="secondPartyCheckAdjust">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/secondPartyCheckAdjust"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashValueReport">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/cashValueReport"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyDepositReport">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/verifyDepositReport"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkDisbursedReport">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/noncrud/balancing/checkDisbursedReport"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BalancingService">
+    <wsdl:port binding="tns:BalancingServiceBinding" name="BalancingServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/balancing"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 1.0</xsd:documentation>
+</wsdl:definitions>

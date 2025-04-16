@@ -1,0 +1,4 @@
+import { LoanBankruptcyPrepetitionBalPagedListSelectFieldsResponse } from "./loanBankruptcyPrepetitionBalPagedListSelectFieldsResponse";
+export interface GetLoanBankruptcyPrepetitionBalPagedListSelectFieldsResponse {
+    pagedResponse: LoanBankruptcyPrepetitionBalPagedListSelectFieldsResponse;
+}

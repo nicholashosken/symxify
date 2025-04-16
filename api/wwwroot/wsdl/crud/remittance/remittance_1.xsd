@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/remittance/dto/retrieve" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/remittance/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="remittance.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="Remittance">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationSeq" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConsoleNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FundType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MemberAccount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Payer" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PrevDueDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorAcct" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReconDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RemitDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Sequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="User" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VoidDate" type="xsd:date"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RemittanceSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllRemittanceFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceFields" type="retrieve:RemittanceFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RemittanceFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationSeq" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConsoleNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FundType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequence" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlobalSequenceDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MemberAccount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Payer" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PrevDueDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorAcct" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReconDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordChangeDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RemitDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Sequence" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="User" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VoidDate" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RemittanceSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllRemittanceFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RemittanceFields" type="retrieve:RemittanceFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ReceivedItemService" targetNamespace="http://www.symxchange.generated.symitar.com/crud/receiveditem" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/retrieve" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon" xmlns:tns="http://www.symxchange.generated.symitar.com/crud/receiveditem" xmlns:update="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Copyright 2014-2025 Jack Henry Software</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/receiveditem">
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="receiveditem.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/retrieve" schemaLocation="receiveditem_1.xsd"/>
+      <xsd:import namespace="http://www.symxchange.generated.symitar.com/crud/receiveditem/dto/update" schemaLocation="receiveditem_2.xsd"/>
+      <xsd:complexType name="ReceivedItemSelectFieldsRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SelectableFields" type="retrieve:ReceivedItemSingleSelectableFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="ReceivedItemSelectFieldsResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItem" type="retrieve:ReceivedItem"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateReceivedItemByIDRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemFields" type="update:ReceivedItemFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="ReceivedItemUpdateByIDResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="UpdateStatus" type="symxcommon:UpdateStatus"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CreateReceivedItemRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemFields" type="update:ReceivedItemFields"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="ReceivedItemCreateResponse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemCompositeKey" type="tns:ReceivedItemCompositeKey"/>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="ReceivedItemCompositeKey">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequence" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteReceivedItemRequest">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequenceDate" type="xsd:date"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ReceivedItemGlobalSequence" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Credentials" type="symxcommon:AdminCredentialsChoice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DeviceInformation" type="symxcommon:DeviceInformation"/>
+          <xsd:sequence minOccurs="0">
+            <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+            <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+          </xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="MessageId" type="xsd:string" use="required"/>
+        <xsd:attribute ref="tns:BranchId"/>
+      </xsd:complexType>
+      <xsd:complexType name="ReceivedItemDeleteResponse">
+        <xsd:attribute name="MessageId" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:element name="getReceivedItemSelectFields">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:ReceivedItemSelectFieldsRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getReceivedItemSelectFieldsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SingleResponse" type="tns:ReceivedItemSelectFieldsResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReceivedItemByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:UpdateReceivedItemByIDRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReceivedItemByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="UpdateResponse" type="tns:ReceivedItemUpdateByIDResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createReceivedItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:CreateReceivedItemRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createReceivedItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CreateResponse" type="tns:ReceivedItemCreateResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteReceivedItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Request" type="tns:DeleteReceivedItemRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteReceivedItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeleteResponse" type="tns:ReceivedItemDeleteResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:attribute name="BranchId" type="xsd:short"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getReceivedItemSelectFieldsRequest">
+    <wsdl:part element="tns:getReceivedItemSelectFields" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createReceivedItemResponse">
+    <wsdl:part element="tns:createReceivedItemResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getReceivedItemSelectFieldsResponse">
+    <wsdl:part element="tns:getReceivedItemSelectFieldsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createReceivedItemRequest">
+    <wsdl:part element="tns:createReceivedItem" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteReceivedItemRequest">
+    <wsdl:part element="tns:deleteReceivedItem" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteReceivedItemResponse">
+    <wsdl:part element="tns:deleteReceivedItemResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateReceivedItemByIDResponse">
+    <wsdl:part element="tns:updateReceivedItemByIDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateReceivedItemByIDRequest">
+    <wsdl:part element="tns:updateReceivedItemByID" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="ReceivedItemService">
+    <wsdl:operation name="getReceivedItemSelectFields">
+      <wsdl:input message="tns:getReceivedItemSelectFieldsRequest"/>
+      <wsdl:output message="tns:getReceivedItemSelectFieldsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateReceivedItemByID">
+      <wsdl:input message="tns:updateReceivedItemByIDRequest"/>
+      <wsdl:output message="tns:updateReceivedItemByIDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createReceivedItem">
+      <wsdl:input message="tns:createReceivedItemRequest"/>
+      <wsdl:output message="tns:createReceivedItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteReceivedItem">
+      <wsdl:input message="tns:deleteReceivedItemRequest"/>
+      <wsdl:output message="tns:deleteReceivedItemResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReceivedItemServiceSOAPBinding" type="tns:ReceivedItemService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getReceivedItemSelectFields">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/receiveditem/getReceivedItemSelectFields"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateReceivedItemByID">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/receiveditem/updateReceivedItemByID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createReceivedItem">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/receiveditem/createReceivedItem"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteReceivedItem">
+      <soap:operation soapAction="http://www.symxchange.generated.symitar.com/crud/receiveditem/deleteReceivedItem"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReceivedItemService">
+    <wsdl:port binding="tns:ReceivedItemServiceSOAPBinding" name="ReceivedItemServicePort">
+      <soap:address location="https://symx-colorado.mdtsaas.com:6101/SymXchange/receiveditem"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:documentation>Version 3.0</xsd:documentation>
+</wsdl:definitions>

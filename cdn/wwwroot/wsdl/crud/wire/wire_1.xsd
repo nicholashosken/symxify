@@ -1,0 +1,2886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.symxchange.generated.symitar.com/crud/wire/dto/retrieve" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:retrieve="http://www.symxchange.generated.symitar.com/crud/wire/dto/retrieve" xmlns:symxcommon="http://www.symxchange.generated.symitar.com/symxcommon">
+  <xsd:import namespace="http://www.symxchange.generated.symitar.com/symxcommon" schemaLocation="wire.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Copyright 2014-2025 Jack Henry Software</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="Wire">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AcceptanceDate" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AcceptanceTime" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentDate" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentReason" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ApplicationId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchNumberChar" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="BeneficiaryAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryAddress" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryAdvice" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryAdviceCode" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="BeneficiaryFiAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiAddress" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiAdvice" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiAdviceCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiIdCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiInfo" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiIntrnatlId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryIdCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryInfo" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryReference" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BusinessFunctionCode" type="xsd:string"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="ChargesCurrencyCode">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ChargesCurrencyCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CommentCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Destination" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DetailOfCharges" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Direction" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownCreditAccount" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="DrawdownDebitAccountAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAccountAddress" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAccountId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAccountIdCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAccountName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAcctAdvice" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAcctAdviceCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EffectiveDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByCorporateUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByCorporateUserName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByMemberUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByMemberUserName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredValidationMethod" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ErrorCategory" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ErrorCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ErrorDescription" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExchangeRate" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractDestination" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedByCorporateUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedByCorporateUserName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FiToFiInfo" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmLastPurgeDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FormatVersion" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlAccount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlCommentAddlInfo" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlOffset" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Imad" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="InstructIngFiAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="InstructIngFiAddress" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructIngFiId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructIngFiIdCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructedAmount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructedAmtCurrencyCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IntermediaryFiAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiAddress" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiAdvice" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiAdviceCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiIdCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiInfo" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MessageDuplicationCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MessageStatusIndicator" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationMethod" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationStatus" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationUser" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OfacDetails" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OfacStatus" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Omad" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorAddress" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorFiAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorFiAddress" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorFiId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorFiIdCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorFiName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorIdCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorIdF" type="xsd:string"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorLineCodeF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorLineCodeF" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorLineF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorLineF" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorNameF" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorPartyIdF" type="xsd:string"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="OriginatorToBeneficiaryInfo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorToBeneficiaryInfo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OtherAddLinFo" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentLimitation" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentMethod" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentMethodCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostingError" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreAuthTemplateName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreAuthTemplateNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreviousMessageImad" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverFi" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverFiInfo" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RegETran" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedByCorporateUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedByCorporateUserName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedReason" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectByCorpUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectByCorpUserName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectReason" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectTime" type="xsd:short"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="SenderCharges">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SenderCharges" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SenderFi" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SenderName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SenderReferenceNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ServiceMessage" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ShareId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StatementDescription" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TestProductionCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranTypeCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TransactionSequenceNumChar" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TransactionSequenceNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TypeCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UpLoadedTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UploadedDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UrcData" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UscAuditTrailInfo" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerificationMemberContact" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerificationMemberContactName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByCorpUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByCorpUserName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByMemberUser" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByMemberUserName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedValidationMethod" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedValidationReason" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvList" type="retrieve:WireBeneficiaryAdvList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvList" type="retrieve:WireBeneficiaryFiAdvList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoList" type="retrieve:WireBeneficiaryFiInfoList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoList" type="retrieve:WireBeneficiaryInfoList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvList" type="retrieve:WireDrawdownDebitAcctAdvList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoList" type="retrieve:WireFiToFiInfoList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFmHistoryList" type="retrieve:WireFmHistoryList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFor" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvList" type="retrieve:WireIntermedFiAdvList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoList" type="retrieve:WireIntermedFiInfoList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsList" type="retrieve:WireOfacDetailsList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoList" type="retrieve:WireReceiverFiInfoList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageList" type="retrieve:WireServiceMessageList"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoList" type="retrieve:WireUscAuditInfoList"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctCurrency" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIban" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIdProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAcctName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctProxyCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAcctProxyId">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctProxyId" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctProxyProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctTypeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctTypeProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctCurrency" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIban" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIdProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAgtAcctName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctProxyCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAgtAcctProxyId">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctProxyId" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctProxyProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctTypeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctTypeProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Bic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1BuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1BuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1ClrSysMemId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1ClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Country" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1CountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Department">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Department" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1DistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Floor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Floor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Lei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent1Name">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Name" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1PostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1PostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Room">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Room" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1StreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1StreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Subdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Subdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1TownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1TownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Bic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2BuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2BuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2ClrSysMemId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2ClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Country" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2CountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Department">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Department" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2DistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Floor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Floor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Lei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent2Name">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Name" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2PostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2PostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Room">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Room" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2StreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2StreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Subdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Subdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2TownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2TownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Bic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3BuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3BuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3ClrSysMemId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3ClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Country" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3CountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Department">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Department" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3DistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Floor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Floor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Lei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent3Name">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Name" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3PostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3PostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Room">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Room" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3StreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3StreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Subdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Subdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3TownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3TownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Bic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4BuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4BuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4ClrSysMemId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4ClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Country" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4CountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Department">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Department" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4DistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Floor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Floor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Lei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent4Name">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Name" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4PostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4PostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Room">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Room" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4StreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4StreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Subdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Subdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4TownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4TownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeBearer" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreationDateTime" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentClrSysMemId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentFiBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentFiLei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="CreditorAgentFiName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentFiName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorIdSchemeName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorLei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="CreditorName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="CreditorSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctCurrency" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIban" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIdProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DbtrAgtAcctName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctProxyCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DbtrAgtAcctProxyId">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctProxyId" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctProxyProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctTypeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctTypeProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctCurrency" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIban" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIdProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAcctName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctProxyCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAcctProxyId">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctProxyId" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctProxyProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctTypeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctTypeProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentClrSysMemId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentLei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="DebtorAgentName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorIdSchemeName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorLei" type="xsd:string"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="DebtorName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="DebtorSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyCtryOfRes" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="4" minOccurs="0" name="InitgPtyName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdLei" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdSchemePrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdBirthDt" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdCityOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdCtryOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdIdSchemePrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdPrvcOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtySubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtySubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Instr1ForCdtrAgtCode" type="xsd:short"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="Instr1ForCdtrAgtInfo">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Instr1ForCdtrAgtInfo" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Instr2ForCdtrAgtCode" type="xsd:short"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="Instr2ForCdtrAgtInfo">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Instr2ForCdtrAgtInfo" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName2" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName3" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName4" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiLei" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName2" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName3" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName4" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctCurrency" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIban" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIdProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntrmyAgt1AcctName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctProxyCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntrmyAgt1AcctProxyId">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctProxyId" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctProxyProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctTypeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctTypeProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="MessageType" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctCurrency" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIban" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIdProprietary" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentAcctName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctProxyCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentAcctProxyId">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctProxyId" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctProxyPrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctTypeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctTypePrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgtTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstructAgentBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstructAgentClrSysMemIdCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstructAgentLei" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevMsgCreationDateTime" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevMsgNameId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ReturnReasonCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="TransactionId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Uetr" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrCtryOfRes" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="4" minOccurs="0" name="UltmtCdtrName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdLei" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdSchemePrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdBirthDt" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdCityOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdCtryOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdIdSchemePrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdPrvcOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrTownName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrBuildingName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrBuildingNum" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrCountry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrCountrySubDiv" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrCtryOfRes" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrDepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrDepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrDistrictName" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrFloor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrFloor" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="4" minOccurs="0" name="UltmtDbtrName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdBic" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdLei" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdSchemePrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPostBox" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPostCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdBirthDt" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdCityOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdCtryOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdId" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdIdIssuer" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdIdSchemeCode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdIdSchemePrtry" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdPrvcOfBirth" type="xsd:string"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrRoom">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrRoom" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrStreetName">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrStreetName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrSubdepartment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrSubdepartment" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrTownLocationName" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrTownName" type="xsd:string"/>
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_2" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryAdvList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryAdv" type="retrieve:WireBeneficiaryAdv"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiAdvList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryFiAdv" type="retrieve:WireBeneficiaryFiAdv"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiInfoList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryFiInfo" type="retrieve:WireBeneficiaryFiInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryInfoList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireBeneficiaryInfo" type="retrieve:WireBeneficiaryInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireDrawdownDebitAcctAdvList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireDrawdownDebitAcctAdv" type="retrieve:WireDrawdownDebitAcctAdv"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFiToFiInfoList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireFiToFiInfo" type="retrieve:WireFiToFiInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFmHistoryList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireFmHistory" type="retrieve:WireFmHistory"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiAdvList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireIntermedFiAdv" type="retrieve:WireIntermedFiAdv"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiInfoList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireIntermedFiInfo" type="retrieve:WireIntermedFiInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireOfacDetailsList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireOfacDetails" type="retrieve:WireOfacDetails"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireReceiverFiInfoList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireReceiverFiInfo" type="retrieve:WireReceiverFiInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireServiceMessageList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireServiceMessage" type="retrieve:WireServiceMessage"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireUscAuditInfoList">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="hasReachedMaximumListSize" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="WireUscAuditInfo" type="retrieve:WireUscAuditInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireChildrenFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvFilter" type="retrieve:WireBeneficiaryAdvFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvFilter" type="retrieve:WireBeneficiaryFiAdvFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoFilter" type="retrieve:WireBeneficiaryFiInfoFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoFilter" type="retrieve:WireBeneficiaryInfoFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvFilter" type="retrieve:WireDrawdownDebitAcctAdvFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoFilter" type="retrieve:WireFiToFiInfoFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFmHistoryFilter" type="retrieve:WireFmHistoryFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvFilter" type="retrieve:WireIntermedFiAdvFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoFilter" type="retrieve:WireIntermedFiInfoFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsFilter" type="retrieve:WireOfacDetailsFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoFilter" type="retrieve:WireReceiverFiInfoFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageFilter" type="retrieve:WireServiceMessageFilter"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoFilter" type="retrieve:WireUscAuditInfoFilter"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFields" type="retrieve:WireFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvSelectableFields" type="retrieve:WireBeneficiaryAdvSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvSelectableFields" type="retrieve:WireBeneficiaryFiAdvSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoSelectableFields" type="retrieve:WireBeneficiaryFiInfoSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoSelectableFields" type="retrieve:WireBeneficiaryInfoSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvSelectableFields" type="retrieve:WireDrawdownDebitAcctAdvSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoSelectableFields" type="retrieve:WireFiToFiInfoSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFmHistorySelectableFields" type="retrieve:WireFmHistorySelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvSelectableFields" type="retrieve:WireIntermedFiAdvSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoSelectableFields" type="retrieve:WireIntermedFiInfoSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsSelectableFields" type="retrieve:WireOfacDetailsSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoSelectableFields" type="retrieve:WireReceiverFiInfoSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageSelectableFields" type="retrieve:WireServiceMessageSelectableFields"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoSelectableFields" type="retrieve:WireUscAuditInfoSelectableFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AcceptanceDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AcceptanceTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AdjustmentReason" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ApplicationId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchNumberChar" type="xsd:boolean"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="BeneficiaryAddress" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryAdvice" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryAdviceCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="BeneficiaryFiAddress" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiAdvice" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiAdviceCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiIdCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiInfo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiIntrnatlId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryFiName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryIdCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryInfo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryReference" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BusinessFunctionCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="ChargesCurrencyCode" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CommentCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Destination" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DetailOfCharges" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Direction" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownCreditAccount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="DrawdownDebitAccountAddress" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAccountId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAccountIdCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAccountName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAcctAdvice" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DrawdownDebitAcctAdviceCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EffectiveDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByCorporateUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByCorporateUserName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByMemberUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredByMemberUserName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EnteredValidationMethod" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ErrorCategory" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ErrorCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ErrorDescription" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExchangeRate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractDestination" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedByCorporateUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedByCorporateUserName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ExtractedTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FiToFiInfo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmLastPurgeDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FormatVersion" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlAccount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlCommentAddlInfo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="GlOffset" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Imad" type="xsd:boolean"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="InstructIngFiAddress" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructIngFiId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructIngFiIdCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructedAmount" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructedAmtCurrencyCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="IntermediaryFiAddress" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiAdvice" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiAdviceCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiIdCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiInfo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MessageDuplicationCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MessageStatusIndicator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationMethod" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationStatus" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NotificationUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OfacDetails" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OfacStatus" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Omad" type="xsd:boolean"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorAddress" type="xsd:short"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorFiAddress" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorFiId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorFiIdCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorFiName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorIdCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorIdF" type="xsd:boolean"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorLineCodeF" type="xsd:short"/>
+      <xsd:element maxOccurs="3" minOccurs="0" name="OriginatorLineF" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorNameF" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OriginatorPartyIdF" type="xsd:boolean"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="OriginatorToBeneficiaryInfo" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OtherAddLinFo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentLimitation" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentMethod" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PaymentMethodCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostingError" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreAuthTemplateName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreAuthTemplateNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreviousMessageImad" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverFi" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverFiInfo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReceiverName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RegETran" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedByCorporateUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedByCorporateUserName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedReason" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReleasedTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectByCorpUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectByCorpUserName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectReason" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReturnRejectTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="4" minOccurs="0" name="SenderCharges" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SenderFi" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SenderName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SenderReferenceNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ServiceMessage" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ShareId" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StatementDescription" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Status" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TestProductionCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TranTypeCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TransactionSequenceNumChar" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TransactionSequenceNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TypeCode" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UpLoadedTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UploadedDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UrcData" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UscAuditTrailInfo" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerificationMemberContact" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerificationMemberContactName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByCorpUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByCorpUserName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByMemberUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedByMemberUserName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedValidationMethod" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedValidationReason" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFor" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctCurrency" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIban" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctIdProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAcctName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctProxyCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAcctProxyId" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctProxyProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctTypeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAcctTypeProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctCurrency" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIban" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctIdProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAgtAcctName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctProxyCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CdtrAgtAcctProxyId" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctProxyProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctTypeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CdtrAgtAcctTypeProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Bic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1BuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1BuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1ClrSysMemId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1ClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Country" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1CountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Department" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1DistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Floor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1Lei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent1Name" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1PostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1PostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Room" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1StreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent1Subdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1TownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent1TownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Bic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2BuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2BuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2ClrSysMemId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2ClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Country" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2CountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Department" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2DistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Floor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2Lei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent2Name" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2PostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2PostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Room" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2StreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent2Subdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2TownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent2TownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Bic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3BuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3BuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3ClrSysMemId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3ClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Country" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3CountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Department" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3DistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Floor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3Lei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent3Name" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3PostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3PostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Room" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3StreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent3Subdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3TownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent3TownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Bic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4BuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4BuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4ClrSysMemId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4ClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Country" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4CountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Department" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4DistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Floor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4Lei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="ChargeAgent4Name" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4PostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4PostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Room" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4StreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="ChargeAgent4Subdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4TownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeAgent4TownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ChargeBearer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreationDateTime" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentClrSysMemId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentFiBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentFiLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="CreditorAgentFiName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorAgentSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorAgentTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorIdSchemeName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="CreditorName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="CreditorSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CreditorTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctCurrency" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIban" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctIdProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DbtrAgtAcctName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctProxyCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DbtrAgtAcctProxyId" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctProxyProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctTypeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DbtrAgtAcctTypeProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctCurrency" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIban" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctIdProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAcctName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctProxyCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAcctProxyId" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctProxyProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctTypeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAcctTypeProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentClrSysMemId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="DebtorAgentName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorAgentSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorAgentTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorIdSchemeName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="DebtorName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="DebtorSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DebtorTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyCtryOfRes" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="InitgPtyName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyOrgIdSchemePrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdBirthDt" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdCityOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdCtryOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdIdSchemePrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyPrvtIdPrvcOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtyStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="InitgPtySubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InitgPtyTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Instr1ForCdtrAgtCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="Instr1ForCdtrAgtInfo" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Instr2ForCdtrAgtCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="Instr2ForCdtrAgtInfo" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName2" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName3" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="InstructingFiName4" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntermedFiSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermedFiTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName2" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName3" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntermediaryFiName4" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctCurrency" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIban" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctIdProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntrmyAgt1AcctName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctProxyCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="IntrmyAgt1AcctProxyId" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctProxyProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctTypeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="IntrmyAgt1AcctTypeProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="MessageType" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctCurrency" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIban" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctIdProprietary" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentAcctName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctProxyCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentAcctProxyId" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctProxyPrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctTypeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentAcctTypePrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="PrevInstrAgentSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgentTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstrAgtTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstructAgentBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstructAgentClrSysMemIdCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevInstructAgentLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevMsgCreationDateTime" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PrevMsgNameId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="ReturnReasonCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="TransactionId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Uetr" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrCtryOfRes" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="UltmtCdtrName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrOrgIdSchemePrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdBirthDt" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdCityOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdCtryOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdIdSchemePrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrPrvtIdPrvcOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtCdtrSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtCdtrTownName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrBuildingName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrBuildingNum" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrCountry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrCountrySubDiv" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrCtryOfRes" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrDepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrDistrictName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrFloor" type="xsd:short"/>
+        <xsd:element maxOccurs="4" minOccurs="0" name="UltmtDbtrName" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdBic" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdLei" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrOrgIdSchemePrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPostBox" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPostCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdBirthDt" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdCityOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdCtryOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdId" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdIdIssuer" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdIdSchemeCode" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdIdSchemePrtry" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrPrvtIdPrvcOfBirth" type="xsd:boolean"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrRoom" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrStreetName" type="xsd:short"/>
+        <xsd:element maxOccurs="2" minOccurs="0" name="UltmtDbtrSubdepartment" type="xsd:short"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrTownLocationName" type="xsd:boolean"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="UltmtDbtrTownName" type="xsd:boolean"/>
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_2" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFields" type="retrieve:WireFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryAdv">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryAdvSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryAdvFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryAdvSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvFields" type="retrieve:WireBeneficiaryAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryAdvFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryAdvSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryAdvFields" type="retrieve:WireBeneficiaryAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiAdv">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiAdvSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiAdvFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiAdvSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryFiAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvFields" type="retrieve:WireBeneficiaryFiAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiAdvFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiAdvSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryFiAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiAdvFields" type="retrieve:WireBeneficiaryFiAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiInfo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiInfoSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiInfoFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiInfoSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoFields" type="retrieve:WireBeneficiaryFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiInfoFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryFiInfoSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryFiInfoFields" type="retrieve:WireBeneficiaryFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryInfo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryInfoSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryInfoFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryInfoSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoFields" type="retrieve:WireBeneficiaryInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryInfoFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireBeneficiaryInfoSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireBeneficiaryInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireBeneficiaryInfoFields" type="retrieve:WireBeneficiaryInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireDrawdownDebitAcctAdv">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireDrawdownDebitAcctAdvSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireDrawdownDebitAcctAdvFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireDrawdownDebitAcctAdvSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireDrawdownDebitAcctAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvFields" type="retrieve:WireDrawdownDebitAcctAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireDrawdownDebitAcctAdvFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireDrawdownDebitAcctAdvSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireDrawdownDebitAcctAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireDrawdownDebitAcctAdvFields" type="retrieve:WireDrawdownDebitAcctAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFiToFiInfo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFiToFiInfoSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFiToFiInfoFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFiToFiInfoSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireFiToFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoFields" type="retrieve:WireFiToFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFiToFiInfoFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFiToFiInfoSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireFiToFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFiToFiInfoFields" type="retrieve:WireFiToFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFmHistory">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchSequence" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationSeq" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConsoleNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DataType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewCharacter" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewMoney" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewRate" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldCharacter" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldMoney" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldRate" type="xsd:decimal"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostTime" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorUser" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordType" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SecurityLevels" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubFieldNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber" type="xsd:short"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserOverride" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFmHistorySearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StartPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EndPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFmHistoryFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StartPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="EndPostDate" type="xsd:date"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFmHistorySelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireFmHistoryFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFmHistoryFields" type="retrieve:WireFmHistoryFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFmHistoryFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="AccountNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="BatchSequence" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Branch" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConfirmationSeq" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ConsoleNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DataType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FieldNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="FmType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="LastFmDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewCharacter" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewMoney" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="NewRate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldCharacter" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldMoney" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="OldRate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostDate" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PostTime" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProcessorUser" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordName" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="RecordType" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SecurityLevels" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubFieldNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserNumber" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="UserOverride" type="xsd:boolean"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireFmHistorySingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireFmHistoryFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireFmHistoryFields" type="retrieve:WireFmHistoryFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiAdv">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiAdvSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiAdvFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiAdvSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireIntermedFiAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvFields" type="retrieve:WireIntermedFiAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiAdvFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiAdvSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireIntermedFiAdvFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiAdvFields" type="retrieve:WireIntermedFiAdvFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiInfo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiInfoSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiInfoFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiInfoSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireIntermedFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoFields" type="retrieve:WireIntermedFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiInfoFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireIntermedFiInfoSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireIntermedFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireIntermedFiInfoFields" type="retrieve:WireIntermedFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireOfacDetails">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireOfacDetailsSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireOfacDetailsFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireOfacDetailsSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireOfacDetailsFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsFields" type="retrieve:WireOfacDetailsFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireOfacDetailsFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireOfacDetailsSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireOfacDetailsFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireOfacDetailsFields" type="retrieve:WireOfacDetailsFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireReceiverFiInfo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireReceiverFiInfoSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireReceiverFiInfoFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireReceiverFiInfoSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireReceiverFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoFields" type="retrieve:WireReceiverFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireReceiverFiInfoFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireReceiverFiInfoSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireReceiverFiInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireReceiverFiInfoFields" type="retrieve:WireReceiverFiInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireServiceMessage">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireServiceMessageSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireServiceMessageFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireServiceMessageSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireServiceMessageFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageFields" type="retrieve:WireServiceMessageFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireServiceMessageFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireServiceMessageSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireServiceMessageFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireServiceMessageFields" type="retrieve:WireServiceMessageFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireUscAuditInfo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:int"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EntryId" type="xsd:short"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Text" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireUscAuditInfoSearchFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireUscAuditInfoFilter">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Query" type="xsd:string"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:sequence minOccurs="0">
+          <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+          <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+        </xsd:sequence>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireUscAuditInfoSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireUscAuditInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoFields" type="retrieve:WireUscAuditInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireUscAuditInfoFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Locator" type="xsd:boolean"/>
+      <xsd:element maxOccurs="20" minOccurs="0" name="Text" type="xsd:short"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WireUscAuditInfoSingleSelectableFields">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IncludeAllWireUscAuditInfoFields" type="xsd:boolean"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="WireUscAuditInfoFields" type="retrieve:WireUscAuditInfoFields"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="Version_1" type="symxcommon:Version_Type"/>
+        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
