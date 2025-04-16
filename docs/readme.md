@@ -12,17 +12,32 @@ Below are two separate sets of instruction - one for pulling the docker containe
 
 ##### TL;DR - Make sure you have a symxchange instance that's accessible from where ever you are hosting Symxify. Also make sure you're using the persistent `crud` endpoints.
 
-The first step in using Symxify is having a SymXchange instance ready to use. If you do not have SymXchange set up on your core, then you'll have to contact Jack Henry (or your CUSO) to get that set up. You must have at least one service enabled to use Symxify.
+The first step in using Symxify is having a SymXchange instance ready to use. If you do not have SymXchange set up on your core, then you'll have to contact Jack Henry (or your CUSO/admin team) to get that set up. You must have at least one service enabled to use Symxify.
 
 ⚠️ Note: Symxify only supports the persistent `crud` endpoint. This may change in the future, but realistically, any credit union looking to use Symxify is likely already on the persistent version of SymXchange.
 
-Where ever your SymXchange is hosted must be accessible by Symxify. For example, if you're using Jack Henry's EASE to host your SymXchange, you must contact Jack Henry to allow access from where you are hosting Symxify. You can check the connection between your Symxify host and your Symxchange host in the Symxify dashboard.
+Wherever your SymXchange is hosted must be accessible by Symxify. For example, if you're using Jack Henry's EASE to host your SymXchange, you must contact Jack Henry to allow access from where you are hosting Symxify. You can check the connection between your Symxify host and your Symxchange host in the Symxify dashboard.
 
 Once your instance is ready, run the Symxify container, and navigate to `{container_url}:{ui_port}/dashboard`. The container comes with a user already setup. You can find the username and password information inside your UI configuration.
 
 # Pulling the Docker Container
 
 To begin, simply pull the Symxify container from [Docker Hub](https://hub.docker.com/r/memberwise/symxify). The Docker container comes with all of the available services and objects for SymXchange, and is ready to go off the shelf.
+
+```
+docker pull memberwise/symxify
+docker run -d
+--name my-api-container
+-p 7042:80
+-e ASPNETCORE_URLS=http://+:80
+-e Serializer__cdnUrl=http://localhost
+-e AvailableSymxchangeVersions_0=crud
+-e SymxchangeConnection__Port={{Your Symxchange port}}
+-e SymxchangeConnection__Host={{Your Symxchange url (e.g., symtar123.host.net)}}
+-e SymxchangeConnection__Secure=true
+memberwise/symxify
+
+```
 
 You can run Symxify anywhere a Docker container can ba ran. However, the Symxify projects are meant to be distributed as you see fit. For example your CDN may live somewhere else than your API project.
 
@@ -120,9 +135,7 @@ There are a few configuration items you can set.
   "PreloadedServices": []
 ```
 
-Required ✅ The `cdnUrl` is the base URL for your CDN.
-
-`Authorization` is the type of authorization you'll be using (deprecated)
+*Required* `cdnUrl` is the base URL for your CDN.
 
 `PreloadedServices` defines the services you'd like to automatically load into memory.
 

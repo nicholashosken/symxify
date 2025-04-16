@@ -6,9 +6,9 @@ Symxify aims to make it easy for you and your development team to get up and run
 
 - Official Typescript and C# clients 🧑‍💻
 - Self-hostable containers 💾
-- An easy and affordable cloud hosted option ☁️
-- Digestable logs 📜
-- Testable interfaces 🧪
+- An easy and affordable cloud hosted option ☁️ (coming soon)
+- Digestable logs 📜 (coming soon)
+- Testable interfaces 🧪 (coming soon)
 - Neatly-split projects for maximum flexibility 💪
 
 To run symxify, simply run
@@ -126,6 +126,6 @@ By default, the CDN will display and allow the read of all files under wwwroot.
 
 ---
 
-Symxify comes with two clients, a typescript client (available via NPM) and a C# client (available via Nuget). Both clients require some configuration to run. Feel clone the demo repo to see how these clients function. You may also create a pull request for clients in other languages, like Python or Java.
+Symxify comes with two clients, a typescript client (available via NPM) and a C# client (coming soon) (available via Nuget). Both clients require some configuration to run. Feel clone the demo repo to see how these clients function. You may also create a pull request for clients in other languages, like Python or Java.
 
 Ready to get started? Head to the [docs](/docs/readme.md) to learn how to configure Symxify.
