@@ -15,9 +15,12 @@ To run symxify, simply run
 
 ```
 docker pull memberwise/symxify
-docker run -d --name symxify -p 7042:80 -e ASPNETCORE_URLS=http://+:80 -e Serializer__cdnUrl=http://localhost -e AvailableSymxchangeVersions_0=crud -e SymxchangeConnection__Port="12345" -e SymxchangeConnection__Host="symtar123.host.net" -e SymxchangeConnection__Secure=true memberwise/symxify
-
 ```
+Then,
+```
+docker run -d --name symxify -p 7042:80 -e ASPNETCORE_URLS=http://+:80 -e Serializer__cdnUrl=http://localhost -e AvailableSymxchangeVersions_0=crud -e SymxchangeConnection__Port="12345" -e SymxchangeConnection__Host="symtar123.host.net" -e SymxchangeConnection__Secure=true memberwise/symxify -e SymxchangeConnection__CertificateThumbprint=(gc ./crt.pem)
+```
+Note that certificate contents cannot be passed into Docker via a .env file, and must be injected in the command line, or applied inside the container's environment variables.
 
 <!--
 ## Rather have us set up your environment? Visit [https://memberwise.com](https://www.memberwise.com/symxify/sign-up) to create an account and get Symxchanging in under 5 minutes. -->
