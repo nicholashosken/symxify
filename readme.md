@@ -15,16 +15,7 @@ To run symxify, simply run
 
 ```
 docker pull memberwise/symxify
-docker run -d
---name my-api-container
--p 7042:80
--e ASPNETCORE_URLS=http://+:80
--e Serializer__cdnUrl=http://localhost
--e AvailableSymxchangeVersions_0=crud
--e SymxchangeConnection__Port={{Your Symxchange port}}
--e SymxchangeConnection__Host={{Your Symxchange url (e.g., symtar123.host.net)}}
--e SymxchangeConnection__Secure=true
-memberwise/symxify
+docker run -d --name symxify -p 7042:80 -e ASPNETCORE_URLS=http://+:80 -e Serializer__cdnUrl=http://localhost -e AvailableSymxchangeVersions_0=crud -e SymxchangeConnection__Port="12345" -e SymxchangeConnection__Host="symtar123.host.net" -e SymxchangeConnection__Secure=true memberwise/symxify
 
 ```
 
