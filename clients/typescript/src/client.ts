@@ -76,7 +76,7 @@ export class SymxifyClient {
     }
   }
 
-  public request() {
+  public request(options: RequestInit) {
     const handler: ProxyHandler<any> = {
       get: (_, method: string) => {
         const service = OperationServiceMap[method as keyof typeof OperationServiceMap];
@@ -84,6 +84,7 @@ export class SymxifyClient {
           return this.fetch(method, {
             method: "POST",
             body: JSON.stringify(payload),
+            ...options
           }, service);
         };
       },
