@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { AcctTrackingTypeSingleSelectableFields } from "./acctTrackingTypeSingleSelectableFields";
 import { AcctTrackingTypeSearchFilter } from "./acctTrackingTypeSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface AcctTrackingTypeSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface AcctTrackingTypeSearchPagedSelectFieldsRequest {
     selectableFields: AcctTrackingTypeSingleSelectableFields;
     searchFilter: AcctTrackingTypeSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

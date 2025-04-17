@@ -4,7 +4,6 @@ import { DealerNoteFilter } from "./dealerNoteFilter";
 import { DealerTrackingFilter } from "./dealerTrackingFilter";
 import { ReservePlanFilter } from "./reservePlanFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface DealerChildrenFilter {
     dealerCommentFilter: DealerCommentFilter;
@@ -13,6 +12,4 @@ export interface DealerChildrenFilter {
     dealerTrackingFilter: DealerTrackingFilter;
     reservePlanFilter: ReservePlanFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

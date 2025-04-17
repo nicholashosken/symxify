@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { NoteSingleSelectableFields } from "./noteSingleSelectableFields";
 import { NoteSearchFilter } from "./noteSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface NoteSearchPagedSelectFieldsRequest {
     accountNumber: string;
     credentials: CredentialsChoice;
@@ -13,10 +12,6 @@ export interface NoteSearchPagedSelectFieldsRequest {
     selectableFields: NoteSingleSelectableFields;
     searchFilter: NoteSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -3,7 +3,6 @@ import { ExternalLoanNoteFilter } from "./externalLoanNoteFilter";
 import { ExternalLoanTrackingFilter } from "./externalLoanTrackingFilter";
 import { ExternalLoanTransferFilter } from "./externalLoanTransferFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ExternalLoanChildrenFilter {
     externalLoanNameFilter: ExternalLoanNameFilter;
@@ -11,6 +10,4 @@ export interface ExternalLoanChildrenFilter {
     externalLoanTrackingFilter: ExternalLoanTrackingFilter;
     externalLoanTransferFilter: ExternalLoanTransferFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

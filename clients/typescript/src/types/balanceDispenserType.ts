@@ -1,44 +1,17 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface BalanceDispenserType {
-    dispenserIdValue: number;
-    dispenserIdValueSpecified: boolean;
     dispenserId: number | null;
-    tranGlCodeValue: number;
-    tranGlCodeValueSpecified: boolean;
     tranGlCode: number | null;
-    sourceGlCodeValue: number;
-    sourceGlCodeValueSpecified: boolean;
     sourceGlCode: number | null;
-    denominationValue: number;
-    denominationValueSpecified: boolean;
     denomination: number | null;
-    beginAmountValue: number;
-    beginAmountValueSpecified: boolean;
     beginAmount: number | null;
-    dispenseAmountValue: number;
-    dispenseAmountValueSpecified: boolean;
     dispenseAmount: number | null;
-    reverseAmountValue: number;
-    reverseAmountValueSpecified: boolean;
     reverseAmount: number | null;
-    adjustAmountValue: number;
-    adjustAmountValueSpecified: boolean;
     adjustAmount: number | null;
-    replenishAmountValue: number;
-    replenishAmountValueSpecified: boolean;
     replenishAmount: number | null;
-    revTotalAmountValue: number;
-    revTotalAmountValueSpecified: boolean;
     revTotalAmount: number | null;
-    currentAmountValue: number;
-    currentAmountValueSpecified: boolean;
     currentAmount: number | null;
-    warningAmountValue: number;
-    warningAmountValueSpecified: boolean;
     warningAmount: number | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

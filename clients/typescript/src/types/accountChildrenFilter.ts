@@ -21,7 +21,6 @@ import { ShareFilter } from "./shareFilter";
 import { SiteFilter } from "./siteFilter";
 import { TrackingFilter } from "./trackingFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface AccountChildrenFilter {
     batchAchOrigFilter: BatchAchOrigFilter;
@@ -47,6 +46,4 @@ export interface AccountChildrenFilter {
     siteFilter: SiteFilter;
     trackingFilter: TrackingFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { LoanSingleSelectableFields } from "./loanSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface LoanPagedListSelectFieldsRequest {
     accountNumber: string;
     credentials: CredentialsChoice;
@@ -11,10 +10,6 @@ export interface LoanPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: LoanSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

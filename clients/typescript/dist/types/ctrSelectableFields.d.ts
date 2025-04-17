@@ -6,10 +6,7 @@ import { CtrForeignSelectableFields } from "./ctrForeignSelectableFields";
 import { CtrNoteSelectableFields } from "./ctrNoteSelectableFields";
 import { CtrPersonSelectableFields } from "./ctrPersonSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CtrSelectableFields {
-    includeAllCtrFieldsValue: boolean;
-    includeAllCtrFieldsValueSpecified: boolean;
     includeAllCtrFields: boolean | null;
     ctrFields: CtrFields;
     ctrAccountSelectableFields: CtrAccountSelectableFields;
@@ -19,6 +16,4 @@ export interface CtrSelectableFields {
     ctrNoteSelectableFields: CtrNoteSelectableFields;
     ctrPersonSelectableFields: CtrPersonSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

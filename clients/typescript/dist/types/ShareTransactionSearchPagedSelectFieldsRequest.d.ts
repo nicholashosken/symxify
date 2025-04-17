@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ShareTransactionSingleSelectableFields } from "./shareTransactionSingleSelectableFields";
 import { ShareTransactionSearchFilter } from "./shareTransactionSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface ShareTransactionSearchPagedSelectFieldsRequest {
     accountNumber: string;
     shareId: string;
@@ -14,10 +13,6 @@ export interface ShareTransactionSearchPagedSelectFieldsRequest {
     selectableFields: ShareTransactionSingleSelectableFields;
     searchFilter: ShareTransactionSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

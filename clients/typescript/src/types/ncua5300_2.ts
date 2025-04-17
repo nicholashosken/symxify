@@ -3,9 +3,7 @@ import { Ncua5300AllOtherAssets_2 } from "./ncua5300AllOtherAssets_2";
 import { Ncua5300TAggrCashOutlayInCuso_2 } from "./ncua5300TAggrCashOutlayInCuso_2";
 import { Ncua5300TAmountLoanedToCuso_2 } from "./ncua5300TAmountLoanedToCuso_2";
 import { Ncua5300TNameOfCuso_2 } from "./ncua5300TNameOfCuso_2";
-import { Ncua5300TValueOfInvInCuso_2 } from "./ncua5300TValueOfInvInCuso_2";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface Ncua5300_2 {
     accruedDividends: string;
@@ -16,7 +14,6 @@ export interface Ncua5300_2 {
     agriculturalLoans: string;
     allBankruptcyWarnList: BitMap;
     allOtherAssets: Ncua5300AllOtherAssets_2[];
-    allOtherAssetsSpecified: boolean;
     allOtherInvestments: string;
     allOtherInvestmtCcu: string;
     allOtherNonRealEstLoans: string;
@@ -115,13 +112,8 @@ export interface Ncua5300_2 {
     shareDrafts: string;
     subordinatedDebt: string;
     tAggrCashOutlayInCuso: Ncua5300TAggrCashOutlayInCuso_2[];
-    tAggrCashOutlayInCusoSpecified: boolean;
     tAmountLoanedToCuso: Ncua5300TAmountLoanedToCuso_2[];
-    tAmountLoanedToCusoSpecified: boolean;
     tNameOfCuso: Ncua5300TNameOfCuso_2[];
-    tNameOfCusoSpecified: boolean;
-    tValueOfInvInCuso: Ncua5300TValueOfInvInCuso_2[];
-    tValueOfInvInCusoSpecified: boolean;
     totalAllOtherLoans: string;
     tradingProfits: string;
     tradingSecurities: string;
@@ -134,6 +126,4 @@ export interface Ncua5300_2 {
     unsecuredCcLoansGl: string;
     usedVehicleLoans: string;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

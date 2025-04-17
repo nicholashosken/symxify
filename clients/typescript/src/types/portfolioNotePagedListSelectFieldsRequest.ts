@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { PortfolioNoteSingleSelectableFields } from "./portfolioNoteSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface PortfolioNotePagedListSelectFieldsRequest {
     accountNumber: string;
@@ -13,10 +12,6 @@ export interface PortfolioNotePagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: PortfolioNoteSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

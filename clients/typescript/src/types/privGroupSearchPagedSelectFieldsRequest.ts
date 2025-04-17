@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { PrivGroupSingleSelectableFields } from "./privGroupSingleSelectableFields";
 import { PrivGroupSearchFilter } from "./privGroupSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface PrivGroupSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface PrivGroupSearchPagedSelectFieldsRequest {
     selectableFields: PrivGroupSingleSelectableFields;
     searchFilter: PrivGroupSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

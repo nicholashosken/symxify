@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { PmtAppMethodSingleSelectableFields } from "./pmtAppMethodSingleSelectableFields";
 import { PmtAppMethodSearchFilter } from "./pmtAppMethodSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface PmtAppMethodSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface PmtAppMethodSearchPagedSelectFieldsRequest {
     selectableFields: PmtAppMethodSingleSelectableFields;
     searchFilter: PmtAppMethodSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -4,11 +4,8 @@ import { GlAccountTrackingSelectableFields } from "./glAccountTrackingSelectable
 import { GlHistorySelectableFields } from "./glHistorySelectableFields";
 import { GlSubaccountSelectableFields } from "./glSubaccountSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface GlAccountSelectableFields {
-    includeAllGlAccountFieldsValue: boolean;
-    includeAllGlAccountFieldsValueSpecified: boolean;
     includeAllGlAccountFields: boolean | null;
     glAccountFields: GlAccountFields;
     glAccountFmHistorySelectableFields: GlAccountFmHistorySelectableFields;
@@ -16,6 +13,4 @@ export interface GlAccountSelectableFields {
     glHistorySelectableFields: GlHistorySelectableFields;
     glSubaccountSelectableFields: GlSubaccountSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { NoticeSingleSelectableFields } from "./noticeSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface NoticePagedListSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface NoticePagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: NoticeSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

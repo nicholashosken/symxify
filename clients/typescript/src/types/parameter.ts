@@ -155,7 +155,6 @@ import { WireTypeCodeList } from "./wireTypeCodeList";
 import { WorkFlowRepGenList } from "./workFlowRepGenList";
 import { YellowHammerList } from "./yellowHammerList";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface Parameter {
     accountDefaultList: AccountDefaultList;
@@ -315,6 +314,4 @@ export interface Parameter {
     workFlowRepGenList: WorkFlowRepGenList;
     yellowHammerList: YellowHammerList;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

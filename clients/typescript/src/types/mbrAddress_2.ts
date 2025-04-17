@@ -1,44 +1,23 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface MbrAddress_2 {
-    addrCreateDateValue: string | null;
-    addrCreateDateValueSpecified: boolean;
     addrCreateDate: string | null;
-    addrDisconnectDateValue: string | null;
-    addrDisconnectDateValueSpecified: boolean;
     addrDisconnectDate: string | null;
-    addrExpDateValue: string | null;
-    addrExpDateValueSpecified: boolean;
     addrExpDate: string | null;
-    addrFmLastDateValue: string | null;
-    addrFmLastDateValueSpecified: boolean;
     addrFmLastDate: string | null;
-    addrFmLastPurgeDateValue: string | null;
-    addrFmLastPurgeDateValueSpecified: boolean;
     addrFmLastPurgeDate: string | null;
-    addrRecordChangeDateValue: string | null;
-    addrRecordChangeDateValueSpecified: boolean;
     addrRecordChangeDate: string | null;
-    addressTypeValue: number;
-    addressTypeValueSpecified: boolean;
     addressType: number | null;
     carrierRoute: string;
     city: string;
     country: string;
     countryCode: string;
     extraAddress: string;
-    headquartersValue: number;
-    headquartersValueSpecified: boolean;
     headquarters: number | null;
-    mbrAddrFileTypeValue: number;
-    mbrAddrFileTypeValueSpecified: boolean;
     mbrAddrFileType: number | null;
     mbrAddrNumber: string;
     state: string;
     street: string;
     zipCode: string;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

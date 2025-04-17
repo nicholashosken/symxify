@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CardDefaultSingleSelectableFields } from "./cardDefaultSingleSelectableFields";
 import { CardDefaultSearchFilter } from "./cardDefaultSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CardDefaultSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface CardDefaultSearchPagedSelectFieldsRequest {
     selectableFields: CardDefaultSingleSelectableFields;
     searchFilter: CardDefaultSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { BatchRcSingleSelectableFields } from "./batchRcSingleSelectableFields";
 import { BatchRcSearchFilter } from "./batchRcSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface BatchRcSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface BatchRcSearchPagedSelectFieldsRequest {
     selectableFields: BatchRcSingleSelectableFields;
     searchFilter: BatchRcSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

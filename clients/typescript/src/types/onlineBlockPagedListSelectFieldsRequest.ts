@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { OnlineBlockSingleSelectableFields } from "./onlineBlockSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface OnlineBlockPagedListSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface OnlineBlockPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: OnlineBlockSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

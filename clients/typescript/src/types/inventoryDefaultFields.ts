@@ -1,41 +1,15 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface InventoryDefaultFields {
-    costValue: boolean;
-    costValueSpecified: boolean;
     cost: boolean | null;
-    faceValueValue: boolean;
-    faceValueValueSpecified: boolean;
-    faceValue: boolean | null;
-    inventoryTypeValue: boolean;
-    inventoryTypeValueSpecified: boolean;
     inventoryType: boolean | null;
-    locationCodeValue: boolean;
-    locationCodeValueSpecified: boolean;
     locationCode: boolean | null;
-    priceValue: boolean;
-    priceValueSpecified: boolean;
     price: boolean | null;
-    quantityValue: boolean;
-    quantityValueSpecified: boolean;
     quantity: boolean | null;
-    standardFeeValue: boolean;
-    standardFeeValueSpecified: boolean;
     standardFee: boolean | null;
-    statusValue: boolean;
-    statusValueSpecified: boolean;
     status: boolean | null;
-    termFrequencyValue: boolean;
-    termFrequencyValueSpecified: boolean;
     termFrequency: boolean | null;
-    termPeriodValue: boolean;
-    termPeriodValueSpecified: boolean;
     termPeriod: boolean | null;
-    typeValue: boolean;
-    typeValueSpecified: boolean;
     type: boolean | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

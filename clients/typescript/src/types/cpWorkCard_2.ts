@@ -1,48 +1,21 @@
 import { CpWorkCardSecCollectorId_2 } from "./cpWorkCardSecCollectorId_2";
 import { CpWorkCardSecPriority_2 } from "./cpWorkCardSecPriority_2";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CpWorkCard_2 {
-    activeValue: number;
-    activeValueSpecified: boolean;
     active: number | null;
-    closeDateValue: string | null;
-    closeDateValueSpecified: boolean;
     closeDate: string | null;
-    fmLastDateValue: string | null;
-    fmLastDateValueSpecified: boolean;
     fmLastDate: string | null;
-    lastCollectorIdValue: number;
-    lastCollectorIdValueSpecified: boolean;
     lastCollectorId: number | null;
-    lastWorkDateValue: string | null;
-    lastWorkDateValueSpecified: boolean;
     lastWorkDate: string | null;
-    lastWorktimeValue: number;
-    lastWorktimeValueSpecified: boolean;
     lastWorktime: number | null;
-    locatorValue: number;
-    locatorValueSpecified: boolean;
     locator: number | null;
-    nextWorkDateValue: string | null;
-    nextWorkDateValueSpecified: boolean;
     nextWorkDate: string | null;
-    notePurgeDateValue: string | null;
-    notePurgeDateValueSpecified: boolean;
     notePurgeDate: string | null;
     priority: string;
-    recordChangeDateValue: string | null;
-    recordChangeDateValueSpecified: boolean;
     recordChangeDate: string | null;
     secCollectorId: CpWorkCardSecCollectorId_2[];
-    secCollectorIdSpecified: boolean;
     secPriority: CpWorkCardSecPriority_2[];
-    secPrioritySpecified: boolean;
-    typeValue: number;
-    typeValueSpecified: boolean;
     type: number | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

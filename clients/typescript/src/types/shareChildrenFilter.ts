@@ -9,7 +9,6 @@ import { ShareTrackingFilter } from "./shareTrackingFilter";
 import { ShareTransactionFilter } from "./shareTransactionFilter";
 import { ShareTransferFilter } from "./shareTransferFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ShareChildrenFilter {
     shareAnalysisFilter: ShareAnalysisFilter;
@@ -23,6 +22,4 @@ export interface ShareChildrenFilter {
     shareTransactionFilter: ShareTransactionFilter;
     shareTransferFilter: ShareTransferFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

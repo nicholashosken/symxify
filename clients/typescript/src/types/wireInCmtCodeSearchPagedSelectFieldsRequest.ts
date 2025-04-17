@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { WireInCmtCodeSingleSelectableFields } from "./wireInCmtCodeSingleSelectableFields";
 import { WireInCmtCodeSearchFilter } from "./wireInCmtCodeSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface WireInCmtCodeSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface WireInCmtCodeSearchPagedSelectFieldsRequest {
     selectableFields: WireInCmtCodeSingleSelectableFields;
     searchFilter: WireInCmtCodeSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

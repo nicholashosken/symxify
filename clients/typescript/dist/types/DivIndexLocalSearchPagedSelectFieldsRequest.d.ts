@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { DivIndexLocalSingleSelectableFields } from "./divIndexLocalSingleSelectableFields";
 import { DivIndexLocalSearchFilter } from "./divIndexLocalSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface DivIndexLocalSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface DivIndexLocalSearchPagedSelectFieldsRequest {
     selectableFields: DivIndexLocalSingleSelectableFields;
     searchFilter: DivIndexLocalSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

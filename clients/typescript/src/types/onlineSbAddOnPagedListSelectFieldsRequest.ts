@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { OnlineSbAddOnSingleSelectableFields } from "./onlineSbAddOnSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface OnlineSbAddOnPagedListSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface OnlineSbAddOnPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: OnlineSbAddOnSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

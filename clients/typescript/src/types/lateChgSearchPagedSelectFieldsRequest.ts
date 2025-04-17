@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { LateChgSingleSelectableFields } from "./lateChgSingleSelectableFields";
 import { LateChgSearchFilter } from "./lateChgSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LateChgSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface LateChgSearchPagedSelectFieldsRequest {
     selectableFields: LateChgSingleSelectableFields;
     searchFilter: LateChgSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

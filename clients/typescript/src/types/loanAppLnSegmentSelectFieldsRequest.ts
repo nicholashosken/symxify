@@ -2,7 +2,6 @@ import { CredentialsChoice } from "./credentialsChoice";
 import { DeviceInformation } from "./deviceInformation";
 import { LoanAppLnSegmentSingleSelectableFields } from "./loanAppLnSegmentSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LoanAppLnSegmentSelectFieldsRequest {
     accountNumber: string;
@@ -12,10 +11,6 @@ export interface LoanAppLnSegmentSelectFieldsRequest {
     deviceInformation: DeviceInformation;
     selectableFields: LoanAppLnSegmentSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { MemberRecSelectableFields } from "./memberRecSelectableFields";
 import { MemberRecChildrenFilter } from "./memberRecChildrenFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface MemberRecSelectFieldsFilterChildrenRequest {
     memberRecMemberNumber: string;
@@ -12,10 +11,6 @@ export interface MemberRecSelectFieldsFilterChildrenRequest {
     selectableFields: MemberRecSelectableFields;
     childrenSearchFilter: MemberRecChildrenFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

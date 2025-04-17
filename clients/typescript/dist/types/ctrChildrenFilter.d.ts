@@ -5,7 +5,6 @@ import { CtrForeignFilter } from "./ctrForeignFilter";
 import { CtrNoteFilter } from "./ctrNoteFilter";
 import { CtrPersonFilter } from "./ctrPersonFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CtrChildrenFilter {
     ctrAccountFilter: CtrAccountFilter;
     ctrBranchFilter: CtrBranchFilter;
@@ -14,6 +13,4 @@ export interface CtrChildrenFilter {
     ctrNoteFilter: CtrNoteFilter;
     ctrPersonFilter: CtrPersonFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

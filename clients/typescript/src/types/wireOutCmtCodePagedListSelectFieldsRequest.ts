@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { WireOutCmtCodeSingleSelectableFields } from "./wireOutCmtCodeSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface WireOutCmtCodePagedListSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface WireOutCmtCodePagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: WireOutCmtCodeSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

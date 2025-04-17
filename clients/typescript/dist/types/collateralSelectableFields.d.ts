@@ -4,10 +4,7 @@ import { CollateralDocumentSelectableFields } from "./collateralDocumentSelectab
 import { CollateralFmHistorySelectableFields } from "./collateralFmHistorySelectableFields";
 import { CollateralTrackingSelectableFields } from "./collateralTrackingSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CollateralSelectableFields {
-    includeAllCollateralFieldsValue: boolean;
-    includeAllCollateralFieldsValueSpecified: boolean;
     includeAllCollateralFields: boolean | null;
     collateralFields: CollateralFields;
     collateralCollHoldSelectableFields: CollateralCollHoldSelectableFields;
@@ -15,6 +12,4 @@ export interface CollateralSelectableFields {
     collateralFmHistorySelectableFields: CollateralFmHistorySelectableFields;
     collateralTrackingSelectableFields: CollateralTrackingSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

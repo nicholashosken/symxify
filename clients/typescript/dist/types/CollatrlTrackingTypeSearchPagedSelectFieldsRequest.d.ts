@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CollatrlTrackingTypeSingleSelectableFields } from "./collatrlTrackingTypeSingleSelectableFields";
 import { CollatrlTrackingTypeSearchFilter } from "./collatrlTrackingTypeSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CollatrlTrackingTypeSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface CollatrlTrackingTypeSearchPagedSelectFieldsRequest {
     selectableFields: CollatrlTrackingTypeSingleSelectableFields;
     searchFilter: CollatrlTrackingTypeSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

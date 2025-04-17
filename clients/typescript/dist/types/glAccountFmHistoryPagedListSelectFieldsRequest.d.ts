@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { GlAccountFmHistorySingleSelectableFields } from "./glAccountFmHistorySingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface GlAccountFmHistoryPagedListSelectFieldsRequest {
     glAccountNumber: string;
     glAccountSuffix: string;
@@ -13,10 +12,6 @@ export interface GlAccountFmHistoryPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: GlAccountFmHistorySingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

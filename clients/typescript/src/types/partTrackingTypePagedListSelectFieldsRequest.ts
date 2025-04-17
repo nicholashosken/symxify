@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { PartTrackingTypeSingleSelectableFields } from "./partTrackingTypeSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface PartTrackingTypePagedListSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface PartTrackingTypePagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: PartTrackingTypeSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

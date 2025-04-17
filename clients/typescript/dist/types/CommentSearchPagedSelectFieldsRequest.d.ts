@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CommentSingleSelectableFields } from "./commentSingleSelectableFields";
 import { CommentSearchFilter } from "./commentSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CommentSearchPagedSelectFieldsRequest {
     accountNumber: string;
     credentials: CredentialsChoice;
@@ -13,10 +12,6 @@ export interface CommentSearchPagedSelectFieldsRequest {
     selectableFields: CommentSingleSelectableFields;
     searchFilter: CommentSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

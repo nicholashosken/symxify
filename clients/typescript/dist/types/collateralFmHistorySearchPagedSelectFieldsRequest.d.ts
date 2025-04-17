@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CollateralFmHistorySingleSelectableFields } from "./collateralFmHistorySingleSelectableFields";
 import { CollateralFmHistorySearchFilter } from "./collateralFmHistorySearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CollateralFmHistorySearchPagedSelectFieldsRequest {
     collateralNumber: string;
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface CollateralFmHistorySearchPagedSelectFieldsRequest {
     selectableFields: CollateralFmHistorySingleSelectableFields;
     searchFilter: CollateralFmHistorySearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

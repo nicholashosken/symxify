@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { ReservePlanSelectableFields } from "./reservePlanSelectableFields";
 import { ReservePlanChildrenFilter } from "./reservePlanChildrenFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ReservePlanSelectFieldsFilterChildrenRequest {
     dealerNumber: string;
@@ -13,10 +12,6 @@ export interface ReservePlanSelectFieldsFilterChildrenRequest {
     selectableFields: ReservePlanSelectableFields;
     childrenSearchFilter: ReservePlanChildrenFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

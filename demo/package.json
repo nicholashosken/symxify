@@ -15,7 +15,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.4.1",
-    "symxify-client": "file:../clients/typescript"
+    "symxify-client": "^1.0.4"
   },
   "devDependencies": {
     "@react-router/dev": "^7.4.1",

@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { OnlineFeeSingleSelectableFields } from "./onlineFeeSingleSelectableFields";
 import { OnlineFeeSearchFilter } from "./onlineFeeSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface OnlineFeeSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface OnlineFeeSearchPagedSelectFieldsRequest {
     selectableFields: OnlineFeeSingleSelectableFields;
     searchFilter: OnlineFeeSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

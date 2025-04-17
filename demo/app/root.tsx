@@ -10,11 +10,6 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import {
-  createSymxifyClient,
-  SymxifyClient,
-  useSymxifyClient,
-} from "symxify-client";
 import { symxify } from "./client";
 
 export const links: Route.LinksFunction = () => [
@@ -49,7 +44,7 @@ export const loader = async ({ request }: Route.LoaderArgs) => {
     messageId: "A very cool message",
   });
 
-  console.log(resp) //If successful, the account will be in the data object!
+  console.log(resp); //If successful, the account will be in the data object!
 
   return client;
 };

@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ShareAnalysisPlanSingleSelectableFields } from "./shareAnalysisPlanSingleSelectableFields";
 import { ShareAnalysisPlanSearchFilter } from "./shareAnalysisPlanSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ShareAnalysisPlanSearchPagedSelectFieldsRequest {
     accountNumber: string;
@@ -15,10 +14,6 @@ export interface ShareAnalysisPlanSearchPagedSelectFieldsRequest {
     selectableFields: ShareAnalysisPlanSingleSelectableFields;
     searchFilter: ShareAnalysisPlanSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

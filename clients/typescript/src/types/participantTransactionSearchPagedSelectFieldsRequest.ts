@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ParticipantTransactionSingleSelectableFields } from "./participantTransactionSingleSelectableFields";
 import { ParticipantTransactionSearchFilter } from "./participantTransactionSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ParticipantTransactionSearchPagedSelectFieldsRequest {
     participantNumber: string;
@@ -14,10 +13,6 @@ export interface ParticipantTransactionSearchPagedSelectFieldsRequest {
     selectableFields: ParticipantTransactionSingleSelectableFields;
     searchFilter: ParticipantTransactionSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

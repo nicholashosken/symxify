@@ -4,12 +4,9 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CtrPersonCtrTranInfoSingleSelectableFields } from "./ctrPersonCtrTranInfoSingleSelectableFields";
 import { CtrPersonCtrTranInfoSearchFilter } from "./ctrPersonCtrTranInfoSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CtrPersonCtrTranInfoSearchPagedSelectFieldsRequest {
     ctrNumber: string;
-    ctrPersonLocatorValue: number;
-    ctrPersonLocatorValueSpecified: boolean;
     ctrPersonLocator: number | null;
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -17,10 +14,6 @@ export interface CtrPersonCtrTranInfoSearchPagedSelectFieldsRequest {
     selectableFields: CtrPersonCtrTranInfoSingleSelectableFields;
     searchFilter: CtrPersonCtrTranInfoSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -4,10 +4,7 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { WireBeneficiaryInfoSingleSelectableFields } from "./wireBeneficiaryInfoSingleSelectableFields";
 import { WireBeneficiaryInfoSearchFilter } from "./wireBeneficiaryInfoSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface WireBeneficiaryInfoSearchPagedSelectFieldsRequest {
-    wireSequenceNumberValue: number;
-    wireSequenceNumberValueSpecified: boolean;
     wireSequenceNumber: number | null;
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -15,10 +12,6 @@ export interface WireBeneficiaryInfoSearchPagedSelectFieldsRequest {
     selectableFields: WireBeneficiaryInfoSingleSelectableFields;
     searchFilter: WireBeneficiaryInfoSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

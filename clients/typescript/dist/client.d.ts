@@ -19,7 +19,7 @@ export declare class SymxifyClient {
     private hostingType;
     constructor({ symxifyUrl: baseUrl, serviceKey: connectionKey, serviceId: connectionId, symxifyType: hostingType }: SymxifyClientInitOptions);
     private fetch;
-    request(): { [K in OperationName]: (payload: OperationMap[K]["request"]) => Promise<APIResponse<OperationMap[K]["response"]>>; };
+    request(options?: RequestInit): { [K in OperationName]: (payload: OperationMap[K]["request"]) => Promise<APIResponse<OperationMap[K]["response"]>>; };
 }
 export declare function createSymxifyClient(initOptions: SymxifyClientInitOptions): () => SymxifyClient;
 export declare function useSymxifyClient(): SymxifyClient;

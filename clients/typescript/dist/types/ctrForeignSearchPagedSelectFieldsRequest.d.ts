@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CtrForeignSingleSelectableFields } from "./ctrForeignSingleSelectableFields";
 import { CtrForeignSearchFilter } from "./ctrForeignSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CtrForeignSearchPagedSelectFieldsRequest {
     ctrNumber: string;
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface CtrForeignSearchPagedSelectFieldsRequest {
     selectableFields: CtrForeignSingleSelectableFields;
     searchFilter: CtrForeignSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { OnlineFileSingleSelectableFields } from "./onlineFileSingleSelectableFields";
 import { OnlineFileSearchFilter } from "./onlineFileSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface OnlineFileSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface OnlineFileSearchPagedSelectFieldsRequest {
     selectableFields: OnlineFileSingleSelectableFields;
     searchFilter: OnlineFileSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -156,11 +156,8 @@ import { WireTypeCodeSelectableFields } from "./wireTypeCodeSelectableFields";
 import { WorkFlowRepGenSelectableFields } from "./workFlowRepGenSelectableFields";
 import { YellowHammerSelectableFields } from "./yellowHammerSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ParameterSelectableFields {
-    includeAllParameterFieldsValue: boolean;
-    includeAllParameterFieldsValueSpecified: boolean;
     includeAllParameterFields: boolean | null;
     parameterFields: ParameterFields;
     accountDefaultSelectableFields: AccountDefaultSelectableFields;
@@ -320,6 +317,4 @@ export interface ParameterSelectableFields {
     workFlowRepGenSelectableFields: WorkFlowRepGenSelectableFields;
     yellowHammerSelectableFields: YellowHammerSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

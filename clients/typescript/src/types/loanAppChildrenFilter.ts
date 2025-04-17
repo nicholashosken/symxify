@@ -8,7 +8,6 @@ import { LoanAppPledgeFilter } from "./loanAppPledgeFilter";
 import { LoanAppScheduleFilter } from "./loanAppScheduleFilter";
 import { LoanAppTrackingFilter } from "./loanAppTrackingFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LoanAppChildrenFilter {
     loanAppEscrowFilter: LoanAppEscrowFilter;
@@ -21,6 +20,4 @@ export interface LoanAppChildrenFilter {
     loanAppScheduleFilter: LoanAppScheduleFilter;
     loanAppTrackingFilter: LoanAppTrackingFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CtrBranchSingleSelectableFields } from "./ctrBranchSingleSelectableFields";
 import { CtrBranchSearchFilter } from "./ctrBranchSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CtrBranchSearchPagedSelectFieldsRequest {
     ctrNumber: string;
@@ -14,10 +13,6 @@ export interface CtrBranchSearchPagedSelectFieldsRequest {
     selectableFields: CtrBranchSingleSelectableFields;
     searchFilter: CtrBranchSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

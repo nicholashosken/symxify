@@ -76,7 +76,7 @@ export class SymxifyClient {
     }
   }
 
-  public request(options: RequestInit) {
+  public request(options?: RequestInit) {
     const handler: ProxyHandler<any> = {
       get: (_, method: string) => {
         const service = OperationServiceMap[method as keyof typeof OperationServiceMap];

@@ -3,12 +3,8 @@ import { McwExecutionBaseResponseBodyMcwDataType } from "./mcwExecutionBaseRespo
 import { McwDataParameters } from "./mcwDataParameters";
 export interface McwExecutionBaseResponseBody {
     userDefinedParameters: McwUserDefinedParameters;
-    statusCodeValue: number;
-    statusCodeValueSpecified: boolean;
     statusCode: number | null;
     statusMessage: string;
-    mcwDataTypeValue: McwExecutionBaseResponseBodyMcwDataType;
-    mcwDataTypeValueSpecified: boolean;
     mcwDataType: McwExecutionBaseResponseBodyMcwDataType | null;
     dataParameters: McwDataParameters;
 }

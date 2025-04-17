@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { EscrowTypeSingleSelectableFields } from "./escrowTypeSingleSelectableFields";
 import { EscrowTypeSearchFilter } from "./escrowTypeSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface EscrowTypeSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface EscrowTypeSearchPagedSelectFieldsRequest {
     selectableFields: EscrowTypeSingleSelectableFields;
     searchFilter: EscrowTypeSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

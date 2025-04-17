@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CtrNoteSingleSelectableFields } from "./ctrNoteSingleSelectableFields";
 import { CtrNoteSearchFilter } from "./ctrNoteSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CtrNoteSearchPagedSelectFieldsRequest {
     ctrNumber: string;
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface CtrNoteSearchPagedSelectFieldsRequest {
     selectableFields: CtrNoteSingleSelectableFields;
     searchFilter: CtrNoteSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

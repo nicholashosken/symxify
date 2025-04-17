@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { OnlineNetSingleSelectableFields } from "./onlineNetSingleSelectableFields";
 import { OnlineNetSearchFilter } from "./onlineNetSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface OnlineNetSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface OnlineNetSearchPagedSelectFieldsRequest {
     selectableFields: OnlineNetSingleSelectableFields;
     searchFilter: OnlineNetSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

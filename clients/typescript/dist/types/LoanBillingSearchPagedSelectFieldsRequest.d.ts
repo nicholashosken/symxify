@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { LoanBillingSingleSelectableFields } from "./loanBillingSingleSelectableFields";
 import { LoanBillingSearchFilter } from "./loanBillingSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface LoanBillingSearchPagedSelectFieldsRequest {
     accountNumber: string;
     loanId: string;
@@ -14,10 +13,6 @@ export interface LoanBillingSearchPagedSelectFieldsRequest {
     selectableFields: LoanBillingSingleSelectableFields;
     searchFilter: LoanBillingSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

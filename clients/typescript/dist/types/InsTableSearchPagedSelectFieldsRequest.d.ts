@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { InsTableSingleSelectableFields } from "./insTableSingleSelectableFields";
 import { InsTableSearchFilter } from "./insTableSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface InsTableSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface InsTableSearchPagedSelectFieldsRequest {
     selectableFields: InsTableSingleSelectableFields;
     searchFilter: InsTableSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

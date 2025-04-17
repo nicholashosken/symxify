@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CpLetterSingleSelectableFields } from "./cpLetterSingleSelectableFields";
 import { CpLetterSearchFilter } from "./cpLetterSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CpLetterSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface CpLetterSearchPagedSelectFieldsRequest {
     selectableFields: CpLetterSingleSelectableFields;
     searchFilter: CpLetterSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

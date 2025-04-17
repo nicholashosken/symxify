@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CtrFmHistorySingleSelectableFields } from "./ctrFmHistorySingleSelectableFields";
 import { CtrFmHistorySearchFilter } from "./ctrFmHistorySearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CtrFmHistorySearchPagedSelectFieldsRequest {
     ctrNumber: string;
@@ -14,10 +13,6 @@ export interface CtrFmHistorySearchPagedSelectFieldsRequest {
     selectableFields: CtrFmHistorySingleSelectableFields;
     searchFilter: CtrFmHistorySearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { ParameterSelectableFields } from "./parameterSelectableFields";
 import { ParameterChildrenFilter } from "./parameterChildrenFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ParameterSelectFieldsFilterChildrenRequest {
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface ParameterSelectFieldsFilterChildrenRequest {
     selectableFields: ParameterSelectableFields;
     childrenSearchFilter: ParameterChildrenFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

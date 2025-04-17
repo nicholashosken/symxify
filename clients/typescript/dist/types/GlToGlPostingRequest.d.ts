@@ -9,23 +9,13 @@ export interface GlToGlPostingRequest extends TransactionsBaseRequest {
     recipientAccountNumber: string;
     recipientGlCode: GlCode;
     amounts: AmountInformation;
-    checkIssuerValue: CheckIssuerType;
-    checkIssuerValueSpecified: boolean;
     checkIssuer: CheckIssuerType | null;
     comment: string;
     payee: PayeeInformation;
     sourceCode: string;
-    effectiveDateValue: string;
-    effectiveDateValueSpecified: boolean;
     effectiveDate: string | null;
-    commentCodeValue: number;
-    commentCodeValueSpecified: boolean;
     commentCode: number | null;
     checkReference: string;
-    recurrenceRequestedValue: boolean;
-    recurrenceRequestedValueSpecified: boolean;
     recurrenceRequested: boolean | null;
-    calculateCheckValue: boolean;
-    calculateCheckValueSpecified: boolean;
     calculateCheck: boolean | null;
 }

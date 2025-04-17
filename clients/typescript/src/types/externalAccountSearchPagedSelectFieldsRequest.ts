@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ExternalAccountSingleSelectableFields } from "./externalAccountSingleSelectableFields";
 import { ExternalAccountSearchFilter } from "./externalAccountSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ExternalAccountSearchPagedSelectFieldsRequest {
     accountNumber: string;
@@ -14,10 +13,6 @@ export interface ExternalAccountSearchPagedSelectFieldsRequest {
     selectableFields: ExternalAccountSingleSelectableFields;
     searchFilter: ExternalAccountSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

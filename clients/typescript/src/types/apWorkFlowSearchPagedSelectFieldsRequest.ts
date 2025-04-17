@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ApWorkFlowSingleSelectableFields } from "./apWorkFlowSingleSelectableFields";
 import { ApWorkFlowSearchFilter } from "./apWorkFlowSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ApWorkFlowSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface ApWorkFlowSearchPagedSelectFieldsRequest {
     selectableFields: ApWorkFlowSingleSelectableFields;
     searchFilter: ApWorkFlowSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

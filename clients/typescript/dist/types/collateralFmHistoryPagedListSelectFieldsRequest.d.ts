@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { CollateralFmHistorySingleSelectableFields } from "./collateralFmHistorySingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CollateralFmHistoryPagedListSelectFieldsRequest {
     collateralNumber: string;
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface CollateralFmHistoryPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: CollateralFmHistorySingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

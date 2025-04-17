@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { CollateralCollHoldSingleSelectableFields } from "./collateralCollHoldSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CollateralCollHoldPagedListSelectFieldsRequest {
     collateralNumber: string;
@@ -12,10 +11,6 @@ export interface CollateralCollHoldPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: CollateralCollHoldSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

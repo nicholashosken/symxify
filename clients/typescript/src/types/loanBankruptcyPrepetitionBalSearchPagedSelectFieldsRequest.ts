@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { LoanBankruptcyPrepetitionBalSingleSelectableFields } from "./loanBankruptcyPrepetitionBalSingleSelectableFields";
 import { LoanBankruptcyPrepetitionBalSearchFilter } from "./loanBankruptcyPrepetitionBalSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LoanBankruptcyPrepetitionBalSearchPagedSelectFieldsRequest {
     accountNumber: string;
@@ -16,10 +15,6 @@ export interface LoanBankruptcyPrepetitionBalSearchPagedSelectFieldsRequest {
     selectableFields: LoanBankruptcyPrepetitionBalSingleSelectableFields;
     searchFilter: LoanBankruptcyPrepetitionBalSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -13,18 +13,10 @@ export interface ShareDepositRequest extends TransactionsBaseRequest {
     glAccounts: GlAccounts;
     glCodes: GlCodes;
     comment: string;
-    effectiveDateValue: string;
-    effectiveDateValueSpecified: boolean;
     effectiveDate: string | null;
-    commentCodeValue: number;
-    commentCodeValueSpecified: boolean;
     commentCode: number | null;
-    taxDeferredContributionCodeValue: TaxDeferredContributionCode;
-    taxDeferredContributionCodeValueSpecified: boolean;
     taxDeferredContributionCode: TaxDeferredContributionCode | null;
     sourceCode: string;
-    recurrenceRequestedValue: boolean;
-    recurrenceRequestedValueSpecified: boolean;
     recurrenceRequested: boolean | null;
     cashDevice: CashDeviceType;
     glComment: string;

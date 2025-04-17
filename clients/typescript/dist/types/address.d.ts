@@ -1,5 +1,4 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface Address {
     houseNumber: string;
     directional: string;
@@ -9,6 +8,4 @@ export interface Address {
     state: string;
     zipCode: string;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

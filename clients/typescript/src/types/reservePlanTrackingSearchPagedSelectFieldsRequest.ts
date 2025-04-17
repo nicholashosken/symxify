@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ReservePlanTrackingSingleSelectableFields } from "./reservePlanTrackingSingleSelectableFields";
 import { ReservePlanTrackingSearchFilter } from "./reservePlanTrackingSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ReservePlanTrackingSearchPagedSelectFieldsRequest {
     dealerNumber: string;
@@ -15,10 +14,6 @@ export interface ReservePlanTrackingSearchPagedSelectFieldsRequest {
     selectableFields: ReservePlanTrackingSingleSelectableFields;
     searchFilter: ReservePlanTrackingSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

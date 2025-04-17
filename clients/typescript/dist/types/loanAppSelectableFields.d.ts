@@ -9,10 +9,7 @@ import { LoanAppPledgeSelectableFields } from "./loanAppPledgeSelectableFields";
 import { LoanAppScheduleSelectableFields } from "./loanAppScheduleSelectableFields";
 import { LoanAppTrackingSelectableFields } from "./loanAppTrackingSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface LoanAppSelectableFields {
-    includeAllLoanAppFieldsValue: boolean;
-    includeAllLoanAppFieldsValueSpecified: boolean;
     includeAllLoanAppFields: boolean | null;
     loanAppFields: LoanAppFields;
     loanAppEscrowSelectableFields: LoanAppEscrowSelectableFields;
@@ -25,6 +22,4 @@ export interface LoanAppSelectableFields {
     loanAppScheduleSelectableFields: LoanAppScheduleSelectableFields;
     loanAppTrackingSelectableFields: LoanAppTrackingSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

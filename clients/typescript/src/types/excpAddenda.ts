@@ -2,14 +2,11 @@ import { ExcpAddendaAddendaInfo } from "./excpAddendaAddendaInfo";
 import { ExcpAddendaAddendaStd } from "./excpAddendaAddendaStd";
 import { ExcpAddendaPmtRelatedInfo } from "./excpAddendaPmtRelatedInfo";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ExcpAddenda {
     addendaInfo: ExcpAddendaAddendaInfo[];
-    addendaInfoSpecified: boolean;
     addendaSeqNum: string;
     addendaStd: ExcpAddendaAddendaStd[];
-    addendaStdSpecified: boolean;
     addendaType: string;
     cbrAddendaInfo: string;
     changeCode: string;
@@ -37,8 +34,6 @@ export interface ExcpAddenda {
     foreignTrace: string;
     foreignTraceIat: string;
     iatRetAddendaInfo: string;
-    locatorValue: number;
-    locatorValueSpecified: boolean;
     locator: number | null;
     networkIdCode: string;
     origEntryPmt: string;
@@ -51,7 +46,6 @@ export interface ExcpAddenda {
     originatorAddr: string;
     originatorName: string;
     pmtRelatedInfo: ExcpAddendaPmtRelatedInfo[];
-    pmtRelatedInfoSpecified: boolean;
     receiverAddr: string;
     receiverIdent: string;
     receivingName: string;
@@ -69,10 +63,6 @@ export interface ExcpAddenda {
     tranSerial: string;
     tranTime: string;
     tranType: string;
-    typeValue: number;
-    typeValueSpecified: boolean;
     type: number | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

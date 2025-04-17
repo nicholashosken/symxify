@@ -1,9 +1,6 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface Institution_2 {
-    branchValue: number;
-    branchValueSpecified: boolean;
     branch: number | null;
     cfpbWebAddress1: string;
     cfpbWebAddress2: string;
@@ -30,6 +27,4 @@ export interface Institution_2 {
     websiteAddr: string;
     zipCode: string;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

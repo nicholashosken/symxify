@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { WarningsSingleSelectableFields } from "./warningsSingleSelectableFields";
 import { WarningsSearchFilter } from "./warningsSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface WarningsSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface WarningsSearchPagedSelectFieldsRequest {
     selectableFields: WarningsSingleSelectableFields;
     searchFilter: WarningsSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

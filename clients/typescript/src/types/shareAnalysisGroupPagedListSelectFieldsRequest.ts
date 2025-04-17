@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { ShareAnalysisGroupSingleSelectableFields } from "./shareAnalysisGroupSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ShareAnalysisGroupPagedListSelectFieldsRequest {
     accountNumber: string;
@@ -13,10 +12,6 @@ export interface ShareAnalysisGroupPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: ShareAnalysisGroupSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

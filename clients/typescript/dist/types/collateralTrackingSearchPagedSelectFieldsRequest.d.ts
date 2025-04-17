@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CollateralTrackingSingleSelectableFields } from "./collateralTrackingSingleSelectableFields";
 import { CollateralTrackingSearchFilter } from "./collateralTrackingSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CollateralTrackingSearchPagedSelectFieldsRequest {
     collateralNumber: string;
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface CollateralTrackingSearchPagedSelectFieldsRequest {
     selectableFields: CollateralTrackingSingleSelectableFields;
     searchFilter: CollateralTrackingSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

@@ -15,11 +15,8 @@ import { LoanTrackingSelectableFields } from "./loanTrackingSelectableFields";
 import { LoanTransactionSelectableFields } from "./loanTransactionSelectableFields";
 import { LoanTransferSelectableFields } from "./loanTransferSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LoanSelectableFields {
-    includeAllLoanFieldsValue: boolean;
-    includeAllLoanFieldsValueSpecified: boolean;
     includeAllLoanFields: boolean | null;
     loanFields: LoanFields;
     loanBankruptcySelectableFields: LoanBankruptcySelectableFields;
@@ -38,6 +35,4 @@ export interface LoanSelectableFields {
     loanTransactionSelectableFields: LoanTransactionSelectableFields;
     loanTransferSelectableFields: LoanTransferSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

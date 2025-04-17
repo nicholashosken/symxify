@@ -1038,14 +1038,15 @@ var SymxifyClient = class {
       };
     }
   }
-  request() {
+  request(options) {
     const handler = {
       get: (_, method) => {
         const service = OperationServiceMap[method];
         return async (payload) => {
           return this.fetch(method, {
             method: "POST",
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            ...options
           }, service);
         };
       }

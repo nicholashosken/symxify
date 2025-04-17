@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { CtrPersonSingleSelectableFields } from "./ctrPersonSingleSelectableFields";
 import { CtrPersonSearchFilter } from "./ctrPersonSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CtrPersonSearchPagedSelectFieldsRequest {
     ctrNumber: string;
@@ -14,10 +13,6 @@ export interface CtrPersonSearchPagedSelectFieldsRequest {
     selectableFields: CtrPersonSingleSelectableFields;
     searchFilter: CtrPersonSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

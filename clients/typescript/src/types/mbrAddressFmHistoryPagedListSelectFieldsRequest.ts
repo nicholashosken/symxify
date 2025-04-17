@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { MbrAddressFmHistorySingleSelectableFields } from "./mbrAddressFmHistorySingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface MbrAddressFmHistoryPagedListSelectFieldsRequest {
     mbrAddressMbrAddrNumber: string;
@@ -12,10 +11,6 @@ export interface MbrAddressFmHistoryPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: MbrAddressFmHistorySingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

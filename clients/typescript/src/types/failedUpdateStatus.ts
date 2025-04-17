@@ -1,6 +1,5 @@
 import { PrimaryKeyField } from "./primaryKeyField";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface FailedUpdateStatus {
     record: string;
@@ -8,6 +7,4 @@ export interface FailedUpdateStatus {
     errorMessage: string;
     primaryKeyField: PrimaryKeyField[];
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

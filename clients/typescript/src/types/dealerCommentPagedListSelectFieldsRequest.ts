@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { DealerCommentSingleSelectableFields } from "./dealerCommentSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface DealerCommentPagedListSelectFieldsRequest {
     dealerNumber: string;
@@ -12,10 +11,6 @@ export interface DealerCommentPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: DealerCommentSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

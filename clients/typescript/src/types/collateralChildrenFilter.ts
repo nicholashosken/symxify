@@ -3,7 +3,6 @@ import { CollateralDocumentFilter } from "./collateralDocumentFilter";
 import { CollateralFmHistoryFilter } from "./collateralFmHistoryFilter";
 import { CollateralTrackingFilter } from "./collateralTrackingFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface CollateralChildrenFilter {
     collateralCollHoldFilter: CollateralCollHoldFilter;
@@ -11,6 +10,4 @@ export interface CollateralChildrenFilter {
     collateralFmHistoryFilter: CollateralFmHistoryFilter;
     collateralTrackingFilter: CollateralTrackingFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

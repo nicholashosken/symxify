@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { GlAccountFmHistorySingleSelectableFields } from "./glAccountFmHistorySingleSelectableFields";
 import { GlAccountFmHistorySearchFilter } from "./glAccountFmHistorySearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface GlAccountFmHistorySearchPagedSelectFieldsRequest {
     glAccountNumber: string;
@@ -16,10 +15,6 @@ export interface GlAccountFmHistorySearchPagedSelectFieldsRequest {
     selectableFields: GlAccountFmHistorySingleSelectableFields;
     searchFilter: GlAccountFmHistorySearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

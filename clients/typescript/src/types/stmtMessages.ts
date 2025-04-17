@@ -1,9 +1,6 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface StmtMessages {
-    definedCodeValue: number;
-    definedCodeValueSpecified: boolean;
     definedCode: number | null;
     description: string;
     line1: string;
@@ -18,10 +15,6 @@ export interface StmtMessages {
     line7: string;
     line8: string;
     line9: string;
-    statementMessageCodeValue: number;
-    statementMessageCodeValueSpecified: boolean;
     statementMessageCode: number | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

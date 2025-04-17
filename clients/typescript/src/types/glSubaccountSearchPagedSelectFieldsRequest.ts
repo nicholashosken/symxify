@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { GlSubaccountSingleSelectableFields } from "./glSubaccountSingleSelectableFields";
 import { GlSubaccountSearchFilter } from "./glSubaccountSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface GlSubaccountSearchPagedSelectFieldsRequest {
     glAccountNumber: string;
@@ -16,10 +15,6 @@ export interface GlSubaccountSearchPagedSelectFieldsRequest {
     selectableFields: GlSubaccountSingleSelectableFields;
     searchFilter: GlSubaccountSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

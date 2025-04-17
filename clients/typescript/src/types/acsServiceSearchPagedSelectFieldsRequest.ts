@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { AcsServiceSingleSelectableFields } from "./acsServiceSingleSelectableFields";
 import { AcsServiceSearchFilter } from "./acsServiceSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface AcsServiceSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface AcsServiceSearchPagedSelectFieldsRequest {
     selectableFields: AcsServiceSingleSelectableFields;
     searchFilter: AcsServiceSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

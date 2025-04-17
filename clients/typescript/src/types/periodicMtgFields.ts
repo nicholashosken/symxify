@@ -1,44 +1,18 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface PeriodicMtgFields {
-    amountDueNoteListValue: boolean;
-    amountDueNoteListValueSpecified: boolean;
     amountDueNoteList: boolean | null;
     collateralCodeList: number[];
-    collateralCodeListSpecified: boolean;
-    dqNoticeNoteListValue: boolean;
-    dqNoticeNoteListValueSpecified: boolean;
     dqNoticeNoteList: boolean | null;
-    explAmtDueNoteListValue: boolean;
-    explAmtDueNoteListValueSpecified: boolean;
     explAmtDueNoteList: boolean | null;
-    foreclosureNoteListValue: boolean;
-    foreclosureNoteListValueSpecified: boolean;
     foreclosureNoteList: boolean | null;
-    lateChargeWarningCodeValue: boolean;
-    lateChargeWarningCodeValueSpecified: boolean;
     lateChargeWarningCode: boolean | null;
-    loanInfoNoteListValue: boolean;
-    loanInfoNoteListValueSpecified: boolean;
     loanInfoNoteList: boolean | null;
-    loanMsgsNoteListValue: boolean;
-    loanMsgsNoteListValueSpecified: boolean;
     loanMsgsNoteList: boolean | null;
     loanPurposeList: number[];
-    loanPurposeListSpecified: boolean;
     loanTypeList: number[];
-    loanTypeListSpecified: boolean;
-    lossMitNoteListValue: boolean;
-    lossMitNoteListValueSpecified: boolean;
     lossMitNoteList: boolean | null;
-    pastPmtsNoteListValue: boolean;
-    pastPmtsNoteListValueSpecified: boolean;
     pastPmtsNoteList: boolean | null;
-    transActNoteListValue: boolean;
-    transActNoteListValueSpecified: boolean;
     transActNoteList: boolean | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

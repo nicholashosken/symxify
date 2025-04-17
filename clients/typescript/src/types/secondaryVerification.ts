@@ -1,5 +1,4 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface SecondaryVerification {
     socialSecurityNumber: string;
@@ -7,6 +6,4 @@ export interface SecondaryVerification {
     secondaryHomeBankingPassword: string;
     secondaryAudioAccessCode: string;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

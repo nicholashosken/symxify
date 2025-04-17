@@ -3,21 +3,14 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { WireBeneficiaryAdvSingleSelectableFields } from "./wireBeneficiaryAdvSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface WireBeneficiaryAdvPagedListSelectFieldsRequest {
-    wireSequenceNumberValue: number;
-    wireSequenceNumberValueSpecified: boolean;
     wireSequenceNumber: number | null;
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
     pagingRequestContext: PagingRequestContext;
     selectableFields: WireBeneficiaryAdvSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

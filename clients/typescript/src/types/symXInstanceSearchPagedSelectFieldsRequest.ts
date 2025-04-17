@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { SymXInstanceSingleSelectableFields } from "./symXInstanceSingleSelectableFields";
 import { SymXInstanceSearchFilter } from "./symXInstanceSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface SymXInstanceSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface SymXInstanceSearchPagedSelectFieldsRequest {
     selectableFields: SymXInstanceSingleSelectableFields;
     searchFilter: SymXInstanceSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

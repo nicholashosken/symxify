@@ -4,19 +4,11 @@ import { AcctLimitLimitTransactionSubType_2 } from "./acctLimitLimitTransactionS
 import { AcctLimitLimitTransactionType_2 } from "./acctLimitLimitTransactionType_2";
 import { AcctLimitWarningCodeList_2 } from "./acctLimitWarningCodeList_2";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface AcctLimit_2 {
     limitDescription: AcctLimitLimitDescription_2[];
-    limitDescriptionSpecified: boolean;
     limitSourceCodes: AcctLimitLimitSourceCodes_2[];
-    limitSourceCodesSpecified: boolean;
     limitTransactionSubType: AcctLimitLimitTransactionSubType_2[];
-    limitTransactionSubTypeSpecified: boolean;
     limitTransactionType: AcctLimitLimitTransactionType_2[];
-    limitTransactionTypeSpecified: boolean;
     warningCodeList: AcctLimitWarningCodeList_2[];
-    warningCodeListSpecified: boolean;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

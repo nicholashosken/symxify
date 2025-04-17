@@ -155,7 +155,6 @@ import { WireTypeCodeFilter } from "./wireTypeCodeFilter";
 import { WorkFlowRepGenFilter } from "./workFlowRepGenFilter";
 import { YellowHammerFilter } from "./yellowHammerFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ParameterChildrenFilter {
     accountDefaultFilter: AccountDefaultFilter;
@@ -315,6 +314,4 @@ export interface ParameterChildrenFilter {
     workFlowRepGenFilter: WorkFlowRepGenFilter;
     yellowHammerFilter: YellowHammerFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

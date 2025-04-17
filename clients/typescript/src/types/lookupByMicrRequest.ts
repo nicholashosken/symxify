@@ -1,7 +1,6 @@
 import { DeviceInformation } from "./deviceInformation";
 import { AdminCredentialsChoice } from "./adminCredentialsChoice";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LookupByMicrRequest {
     micr: string;
@@ -9,7 +8,5 @@ export interface LookupByMicrRequest {
     deviceInformation: DeviceInformation;
     credentials: AdminCredentialsChoice;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
 }

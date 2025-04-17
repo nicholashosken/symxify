@@ -4,10 +4,7 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { WireOfacDetailsSingleSelectableFields } from "./wireOfacDetailsSingleSelectableFields";
 import { WireOfacDetailsSearchFilter } from "./wireOfacDetailsSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface WireOfacDetailsSearchPagedSelectFieldsRequest {
-    wireSequenceNumberValue: number;
-    wireSequenceNumberValueSpecified: boolean;
     wireSequenceNumber: number | null;
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -15,10 +12,6 @@ export interface WireOfacDetailsSearchPagedSelectFieldsRequest {
     selectableFields: WireOfacDetailsSingleSelectableFields;
     searchFilter: WireOfacDetailsSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

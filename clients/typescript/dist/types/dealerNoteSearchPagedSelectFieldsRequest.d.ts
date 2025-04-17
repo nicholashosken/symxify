@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { DealerNoteSingleSelectableFields } from "./dealerNoteSingleSelectableFields";
 import { DealerNoteSearchFilter } from "./dealerNoteSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface DealerNoteSearchPagedSelectFieldsRequest {
     dealerNumber: string;
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface DealerNoteSearchPagedSelectFieldsRequest {
     selectableFields: DealerNoteSingleSelectableFields;
     searchFilter: DealerNoteSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

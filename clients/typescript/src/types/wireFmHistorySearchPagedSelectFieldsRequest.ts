@@ -4,11 +4,8 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { WireFmHistorySingleSelectableFields } from "./wireFmHistorySingleSelectableFields";
 import { WireFmHistorySearchFilter } from "./wireFmHistorySearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface WireFmHistorySearchPagedSelectFieldsRequest {
-    wireSequenceNumberValue: number;
-    wireSequenceNumberValueSpecified: boolean;
     wireSequenceNumber: number | null;
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -16,10 +13,6 @@ export interface WireFmHistorySearchPagedSelectFieldsRequest {
     selectableFields: WireFmHistorySingleSelectableFields;
     searchFilter: WireFmHistorySearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

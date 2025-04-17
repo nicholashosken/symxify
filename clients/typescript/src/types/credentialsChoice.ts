@@ -16,7 +16,5 @@ export interface CredentialsChoice {
     userNumberCredentials: UserNumberCredentials;
     administrativeCredentials: AdministrativeCredentials;
     tokenCredentials: TokenCredentials;
-    processorUserValue: number;
-    processorUserValueSpecified: boolean;
     processorUser: number | null;
 }

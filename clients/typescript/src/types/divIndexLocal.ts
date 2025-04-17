@@ -7,36 +7,19 @@ import { DivIndexLocalPendingBalance } from "./divIndexLocalPendingBalance";
 import { DivIndexLocalPendingRate } from "./divIndexLocalPendingRate";
 import { DivIndexLocalStatus } from "./divIndexLocalStatus";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface DivIndexLocal {
     backdatedFlag: DivIndexLocalBackdatedFlag[];
-    backdatedFlagSpecified: boolean;
     balanceCutoff: DivIndexLocalBalanceCutoff[];
-    balanceCutoffSpecified: boolean;
     balanceStatus: DivIndexLocalBalanceStatus[];
-    balanceStatusSpecified: boolean;
-    currentMonthAvgRateValue: number;
-    currentMonthAvgRateValueSpecified: boolean;
     currentMonthAvgRate: number | null;
     description: string;
-    dividendIndexTableValue: number;
-    dividendIndexTableValueSpecified: boolean;
     dividendIndexTable: number | null;
-    inactiveStatusDateValue: string;
-    inactiveStatusDateValueSpecified: boolean;
     inactiveStatusDate: string | null;
     indexDate: DivIndexLocalIndexDate[];
-    indexDateSpecified: boolean;
     indexRate: DivIndexLocalIndexRate[];
-    indexRateSpecified: boolean;
     pendingBalance: DivIndexLocalPendingBalance[];
-    pendingBalanceSpecified: boolean;
     pendingRate: DivIndexLocalPendingRate[];
-    pendingRateSpecified: boolean;
     status: DivIndexLocalStatus[];
-    statusSpecified: boolean;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

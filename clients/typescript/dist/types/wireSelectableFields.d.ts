@@ -13,10 +13,7 @@ import { WireReceiverFiInfoSelectableFields } from "./wireReceiverFiInfoSelectab
 import { WireServiceMessageSelectableFields } from "./wireServiceMessageSelectableFields";
 import { WireUscAuditInfoSelectableFields } from "./wireUscAuditInfoSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface WireSelectableFields {
-    includeAllWireFieldsValue: boolean;
-    includeAllWireFieldsValueSpecified: boolean;
     includeAllWireFields: boolean | null;
     wireFields: WireFields;
     wireBeneficiaryAdvSelectableFields: WireBeneficiaryAdvSelectableFields;
@@ -33,6 +30,4 @@ export interface WireSelectableFields {
     wireServiceMessageSelectableFields: WireServiceMessageSelectableFields;
     wireUscAuditInfoSelectableFields: WireUscAuditInfoSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

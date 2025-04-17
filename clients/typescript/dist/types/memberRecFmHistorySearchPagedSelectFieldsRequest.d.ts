@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { MemberRecFmHistorySingleSelectableFields } from "./memberRecFmHistorySingleSelectableFields";
 import { MemberRecFmHistorySearchFilter } from "./memberRecFmHistorySearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface MemberRecFmHistorySearchPagedSelectFieldsRequest {
     memberRecMemberNumber: string;
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface MemberRecFmHistorySearchPagedSelectFieldsRequest {
     selectableFields: MemberRecFmHistorySingleSelectableFields;
     searchFilter: MemberRecFmHistorySearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

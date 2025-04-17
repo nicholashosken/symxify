@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { NonAcctNameFmHistorySingleSelectableFields } from "./nonAcctNameFmHistorySingleSelectableFields";
 import { NonAcctNameFmHistorySearchFilter } from "./nonAcctNameFmHistorySearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface NonAcctNameFmHistorySearchPagedSelectFieldsRequest {
     nonAcctNameNonAcctNameNum: string;
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface NonAcctNameFmHistorySearchPagedSelectFieldsRequest {
     selectableFields: NonAcctNameFmHistorySingleSelectableFields;
     searchFilter: NonAcctNameFmHistorySearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

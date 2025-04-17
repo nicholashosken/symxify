@@ -5,38 +5,19 @@ import { NoticeLine3_2 } from "./noticeLine3_2";
 import { NoticeLine4_2 } from "./noticeLine4_2";
 import { NoticeNegativeInfoMessage_2 } from "./noticeNegativeInfoMessage_2";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface Notice_2 {
     daysBetweenNotices: NoticeDaysBetweenNotices_2[];
-    daysBetweenNoticesSpecified: boolean;
     description: string;
     line1: NoticeLine1_2[];
-    line1Specified: boolean;
     line2: NoticeLine2_2[];
-    line2Specified: boolean;
     line3: NoticeLine3_2[];
-    line3Specified: boolean;
     line4: NoticeLine4_2[];
-    line4Specified: boolean;
     negativeInfoMessage: NoticeNegativeInfoMessage_2[];
-    negativeInfoMessageSpecified: boolean;
-    negativeInfoPrintPositionValue: number;
-    negativeInfoPrintPositionValueSpecified: boolean;
     negativeInfoPrintPosition: number | null;
-    noticeDescrTypeValue: number;
-    noticeDescrTypeValueSpecified: boolean;
     noticeDescrType: number | null;
-    noticeTypeValue: number;
-    noticeTypeValueSpecified: boolean;
     noticeType: number | null;
-    useWarningGraceDaysValue: number;
-    useWarningGraceDaysValueSpecified: boolean;
     useWarningGraceDays: number | null;
-    warningGraceDaysValue: number;
-    warningGraceDaysValueSpecified: boolean;
     warningGraceDays: number | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

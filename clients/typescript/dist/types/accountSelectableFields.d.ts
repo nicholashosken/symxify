@@ -22,10 +22,7 @@ import { ShareSelectableFields } from "./shareSelectableFields";
 import { SiteSelectableFields } from "./siteSelectableFields";
 import { TrackingSelectableFields } from "./trackingSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface AccountSelectableFields {
-    includeAllAccountFieldsValue: boolean;
-    includeAllAccountFieldsValueSpecified: boolean;
     includeAllAccountFields: boolean | null;
     accountFields: AccountFields;
     batchAchOrigSelectableFields: BatchAchOrigSelectableFields;
@@ -51,6 +48,4 @@ export interface AccountSelectableFields {
     siteSelectableFields: SiteSelectableFields;
     trackingSelectableFields: TrackingSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

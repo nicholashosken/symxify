@@ -1,6 +1,5 @@
 import { BitMap } from "./bitMap";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface InventoryGeneral {
     moInventoryTypes: BitMap;
@@ -11,6 +10,4 @@ export interface InventoryGeneral {
     sbAcqTcInventoryTypes: BitMap;
     tcInventoryTypes: BitMap;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

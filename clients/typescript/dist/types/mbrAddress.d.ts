@@ -1,38 +1,19 @@
 import { MbrAddressFmHistoryList } from "./mbrAddressFmHistoryList";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface MbrAddress {
-    addrCreateDateValue: string;
-    addrCreateDateValueSpecified: boolean;
     addrCreateDate: string | null;
-    addrDisconnectDateValue: string;
-    addrDisconnectDateValueSpecified: boolean;
     addrDisconnectDate: string | null;
-    addrExpDateValue: string;
-    addrExpDateValueSpecified: boolean;
     addrExpDate: string | null;
-    addrFmLastDateValue: string;
-    addrFmLastDateValueSpecified: boolean;
     addrFmLastDate: string | null;
-    addrFmLastPurgeDateValue: string;
-    addrFmLastPurgeDateValueSpecified: boolean;
     addrFmLastPurgeDate: string | null;
-    addrRecordChangeDateValue: string;
-    addrRecordChangeDateValueSpecified: boolean;
     addrRecordChangeDate: string | null;
-    addressTypeValue: number;
-    addressTypeValueSpecified: boolean;
     addressType: number | null;
     carrierRoute: string;
     city: string;
     country: string;
     countryCode: string;
     extraAddress: string;
-    headquartersValue: number;
-    headquartersValueSpecified: boolean;
     headquarters: number | null;
-    mbrAddrFileTypeValue: number;
-    mbrAddrFileTypeValueSpecified: boolean;
     mbrAddrFileType: number | null;
     mbrAddrNumber: string;
     mbrAddressFmHistoryList: MbrAddressFmHistoryList;
@@ -40,6 +21,4 @@ export interface MbrAddress {
     street: string;
     zipCode: string;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

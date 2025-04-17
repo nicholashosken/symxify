@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { WorkFlowRepGenSingleSelectableFields } from "./workFlowRepGenSingleSelectableFields";
 import { WorkFlowRepGenSearchFilter } from "./workFlowRepGenSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface WorkFlowRepGenSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface WorkFlowRepGenSearchPagedSelectFieldsRequest {
     selectableFields: WorkFlowRepGenSingleSelectableFields;
     searchFilter: WorkFlowRepGenSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

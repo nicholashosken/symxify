@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { LookupTypeNameSingleSelectableFields } from "./lookupTypeNameSingleSelectableFields";
 import { LookupTypeNameSearchFilter } from "./lookupTypeNameSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LookupTypeNameSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface LookupTypeNameSearchPagedSelectFieldsRequest {
     selectableFields: LookupTypeNameSingleSelectableFields;
     searchFilter: LookupTypeNameSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

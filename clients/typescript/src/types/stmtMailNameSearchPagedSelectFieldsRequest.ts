@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { StmtMailNameSingleSelectableFields } from "./stmtMailNameSingleSelectableFields";
 import { StmtMailNameSearchFilter } from "./stmtMailNameSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface StmtMailNameSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
@@ -13,10 +12,6 @@ export interface StmtMailNameSearchPagedSelectFieldsRequest {
     selectableFields: StmtMailNameSingleSelectableFields;
     searchFilter: StmtMailNameSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

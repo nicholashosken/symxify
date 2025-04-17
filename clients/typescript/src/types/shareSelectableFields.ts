@@ -10,11 +10,8 @@ import { ShareTrackingSelectableFields } from "./shareTrackingSelectableFields";
 import { ShareTransactionSelectableFields } from "./shareTransactionSelectableFields";
 import { ShareTransferSelectableFields } from "./shareTransferSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface ShareSelectableFields {
-    includeAllShareFieldsValue: boolean;
-    includeAllShareFieldsValueSpecified: boolean;
     includeAllShareFields: boolean | null;
     shareFields: ShareFields;
     shareAnalysisSelectableFields: ShareAnalysisSelectableFields;
@@ -28,6 +25,4 @@ export interface ShareSelectableFields {
     shareTransactionSelectableFields: ShareTransactionSelectableFields;
     shareTransferSelectableFields: ShareTransferSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

@@ -14,7 +14,6 @@ import { LoanTrackingFilter } from "./loanTrackingFilter";
 import { LoanTransactionFilter } from "./loanTransactionFilter";
 import { LoanTransferFilter } from "./loanTransferFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface LoanChildrenFilter {
     loanBankruptcyFilter: LoanBankruptcyFilter;
     loanBillingFilter: LoanBillingFilter;
@@ -32,6 +31,4 @@ export interface LoanChildrenFilter {
     loanTransactionFilter: LoanTransactionFilter;
     loanTransferFilter: LoanTransferFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

@@ -6,7 +6,6 @@ import { Param360ViewExcludeSsnTinType } from "./param360ViewExcludeSsnTinType";
 import { Param360ViewTrackingTypeList } from "./param360ViewTrackingTypeList";
 import { Param360ViewTrackingTypeListDesc } from "./param360ViewTrackingTypeListDesc";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface Param360View {
     accountStmtMailCodeList: BitMap;
@@ -19,32 +18,16 @@ export interface Param360View {
     billPayEftGroupList: string;
     billPaymentDescription: string;
     cardTypeList: Param360ViewCardTypeList[];
-    cardTypeListSpecified: boolean;
     cardTypeListDescription: Param360ViewCardTypeListDescription[];
-    cardTypeListDescriptionSpecified: boolean;
-    checkAudioAccessCodeValue: boolean;
-    checkAudioAccessCodeValueSpecified: boolean;
     checkAudioAccessCode: boolean | null;
-    checkEstatementEnableFlagValue: boolean;
-    checkEstatementEnableFlagValueSpecified: boolean;
     checkEstatementEnableFlag: boolean | null;
-    checkHbPwdAndAudioAccessValue: boolean;
-    checkHbPwdAndAudioAccessValueSpecified: boolean;
     checkHbPwdAndAudioAccess: boolean | null;
-    displayMemberGroupDescValue: boolean;
-    displayMemberGroupDescValueSpecified: boolean;
     displayMemberGroupDesc: boolean | null;
-    enableAcsPaneIn360ViewValue: boolean;
-    enableAcsPaneIn360ViewValueSpecified: boolean;
     enableAcsPaneIn360View: boolean | null;
-    enableTellerTran360ViewValue: boolean;
-    enableTellerTran360ViewValueSpecified: boolean;
     enableTellerTran360View: boolean | null;
     estatementsDescription: string;
     excludeSsnTin: Param360ViewExcludeSsnTin[];
-    excludeSsnTinSpecified: boolean;
     excludeSsnTinType: Param360ViewExcludeSsnTinType[];
-    excludeSsnTinTypeSpecified: boolean;
     inventoryTypeList: BitMap;
     loanNameTypeList: BitMap;
     loanServiceCodeList: BitMap;
@@ -58,11 +41,7 @@ export interface Param360View {
     shareStmtMailCodeList: BitMap;
     standardTrackingTypeList: BitMap;
     trackingTypeList: Param360ViewTrackingTypeList[];
-    trackingTypeListSpecified: boolean;
     trackingTypeListDesc: Param360ViewTrackingTypeListDesc[];
-    trackingTypeListDescSpecified: boolean;
     warningCodeList: BitMap;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { GlAccountTrackingSingleSelectableFields } from "./glAccountTrackingSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface GlAccountTrackingPagedListSelectFieldsRequest {
     glAccountNumber: string;
     glAccountSuffix: string;
@@ -13,10 +12,6 @@ export interface GlAccountTrackingPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: GlAccountTrackingSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

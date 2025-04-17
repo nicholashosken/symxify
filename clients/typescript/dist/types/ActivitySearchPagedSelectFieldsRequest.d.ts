@@ -4,10 +4,7 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ActivitySingleSelectableFields } from "./activitySingleSelectableFields";
 import { ActivitySearchFilter } from "./activitySearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface ActivitySearchPagedSelectFieldsRequest {
-    userNumberValue: number;
-    userNumberValueSpecified: boolean;
     userNumber: number | null;
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -15,10 +12,6 @@ export interface ActivitySearchPagedSelectFieldsRequest {
     selectableFields: ActivitySingleSelectableFields;
     searchFilter: ActivitySearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

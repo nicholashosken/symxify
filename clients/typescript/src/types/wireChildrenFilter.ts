@@ -12,7 +12,6 @@ import { WireReceiverFiInfoFilter } from "./wireReceiverFiInfoFilter";
 import { WireServiceMessageFilter } from "./wireServiceMessageFilter";
 import { WireUscAuditInfoFilter } from "./wireUscAuditInfoFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface WireChildrenFilter {
     wireBeneficiaryAdvFilter: WireBeneficiaryAdvFilter;
@@ -29,6 +28,4 @@ export interface WireChildrenFilter {
     wireServiceMessageFilter: WireServiceMessageFilter;
     wireUscAuditInfoFilter: WireUscAuditInfoFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

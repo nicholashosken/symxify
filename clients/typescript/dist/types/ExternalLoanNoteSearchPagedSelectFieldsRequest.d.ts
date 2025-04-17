@@ -4,11 +4,8 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { ExternalLoanNoteSingleSelectableFields } from "./externalLoanNoteSingleSelectableFields";
 import { ExternalLoanNoteSearchFilter } from "./externalLoanNoteSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface ExternalLoanNoteSearchPagedSelectFieldsRequest {
     accountNumber: string;
-    externalLoanLocatorValue: number;
-    externalLoanLocatorValueSpecified: boolean;
     externalLoanLocator: number | null;
     credentials: CredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -16,10 +13,6 @@ export interface ExternalLoanNoteSearchPagedSelectFieldsRequest {
     selectableFields: ExternalLoanNoteSingleSelectableFields;
     searchFilter: ExternalLoanNoteSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

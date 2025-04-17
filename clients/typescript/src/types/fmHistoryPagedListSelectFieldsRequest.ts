@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { FmHistorySingleSelectableFields } from "./fmHistorySingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface FmHistoryPagedListSelectFieldsRequest {
     accountNumber: string;
@@ -12,10 +11,6 @@ export interface FmHistoryPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: FmHistorySingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

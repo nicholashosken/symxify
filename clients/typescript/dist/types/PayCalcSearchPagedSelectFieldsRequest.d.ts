@@ -4,7 +4,6 @@ import { PagingRequestContext } from "./pagingRequestContext";
 import { PayCalcSingleSelectableFields } from "./payCalcSingleSelectableFields";
 import { PayCalcSearchFilter } from "./payCalcSearchFilter";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface PayCalcSearchPagedSelectFieldsRequest {
     credentials: AdminCredentialsChoice;
     deviceInformation: DeviceInformation;
@@ -12,10 +11,6 @@ export interface PayCalcSearchPagedSelectFieldsRequest {
     selectableFields: PayCalcSingleSelectableFields;
     searchFilter: PayCalcSearchFilter;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

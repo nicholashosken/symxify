@@ -1,42 +1,17 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 
 export interface LoanBankruptcyPrepetitionBal {
-    amountCodeValue: number;
-    amountCodeValueSpecified: boolean;
     amountCode: number | null;
-    balanceValue: number;
-    balanceValueSpecified: boolean;
     balance: number | null;
-    balanceLastYearValue: number;
-    balanceLastYearValueSpecified: boolean;
     balanceLastYear: number | null;
-    balanceYtdValue: number;
-    balanceYtdValueSpecified: boolean;
     balanceYtd: number | null;
-    closeDateValue: string;
-    closeDateValueSpecified: boolean;
     closeDate: string | null;
     id: string;
-    includeInCreditRptValue: number;
-    includeInCreditRptValueSpecified: boolean;
     includeInCreditRpt: number | null;
-    includeInLoanBalValue: number;
-    includeInLoanBalValueSpecified: boolean;
     includeInLoanBal: number | null;
-    lastPaymentDateValue: string;
-    lastPaymentDateValueSpecified: boolean;
     lastPaymentDate: string | null;
-    openDateValue: string;
-    openDateValueSpecified: boolean;
     openDate: string | null;
-    originalBalanceValue: number;
-    originalBalanceValueSpecified: boolean;
     originalBalance: number | null;
-    recordChangeDateValue: string;
-    recordChangeDateValueSpecified: boolean;
     recordChangeDate: string | null;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }

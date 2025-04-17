@@ -3,7 +3,6 @@ import { DeviceInformation } from "./deviceInformation";
 import { PagingRequestContext } from "./pagingRequestContext";
 import { CtrPersonSingleSelectableFields } from "./ctrPersonSingleSelectableFields";
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface CtrPersonPagedListSelectFieldsRequest {
     ctrNumber: string;
     credentials: AdminCredentialsChoice;
@@ -11,10 +10,6 @@ export interface CtrPersonPagedListSelectFieldsRequest {
     pagingRequestContext: PagingRequestContext;
     selectableFields: CtrPersonSingleSelectableFields;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
     messageId: string;
-    branchIdValue: number;
-    branchIdValueSpecified: boolean;
     branchId: number | null;
 }

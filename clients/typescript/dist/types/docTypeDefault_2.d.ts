@@ -1,21 +1,10 @@
 import { VersionType } from "./versionType";
-import { XmlElement } from "./xmlElement";
 export interface DocTypeDefault_2 {
     description: string;
-    documentTypeValue: number;
-    documentTypeValueSpecified: boolean;
     documentType: number | null;
-    excpNoticeCountCpWorkValue: number;
-    excpNoticeCountCpWorkValueSpecified: boolean;
     excpNoticeCountCpWork: number | null;
-    excpNoticeOptionValue: number;
-    excpNoticeOptionValueSpecified: boolean;
     excpNoticeOption: number | null;
-    expireDateValue: string | null;
-    expireDateValueSpecified: boolean;
     expireDate: string | null;
-    typeValue: number;
-    typeValueSpecified: boolean;
     type: number | null;
     userChar1: string;
     userChar2: string;
@@ -24,6 +13,4 @@ export interface DocTypeDefault_2 {
     userChar5: string;
     userChar6: string;
     version1: VersionType;
-    any: XmlElement[];
-    anySpecified: boolean;
 }
