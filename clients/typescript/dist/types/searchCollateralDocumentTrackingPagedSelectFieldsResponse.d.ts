@@ -1,0 +1,4 @@
+import { CollateralDocumentTrackingSearchPagedSelectFieldsResponse } from "./collateralDocumentTrackingSearchPagedSelectFieldsResponse";
+export interface SearchCollateralDocumentTrackingPagedSelectFieldsResponse {
+    pagedResponse: CollateralDocumentTrackingSearchPagedSelectFieldsResponse;
+}

@@ -5,11 +5,17 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { createSymxifyClient, useSymxifyClient } from "symxify-client";
+import {
+  createSymxifyClient,
+  SymxifyClient,
+  useSymxifyClient,
+} from "symxify-client";
+import { symxify } from "./client";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -24,15 +30,33 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export const client = createSymxifyClient({
-  baseUrl: "https://localhost:7042/"
+export const loader = async ({ request }: Route.LoaderArgs) => {
+  const client = symxify();
+  const resp = await client.request().getAccountSelectFields({
+    accountNumber: "99",
+    credentials: {
+      administrativeCredentials: {
+        password: "password",
+      },
+    },
+    selectableFields: {
+      includeAllAccountFields: true,
+    },
+    deviceInformation: {
+      deviceNumber: 12345,
+      deviceType: "SYMX",
+    },
+    messageId: "A very cool message",
+  });
 
-});
-var c = useSymxifyClient()
-let r = await c.request().getAccountSelectFields({})
-r.data?.singleResponse.
+  console.log(resp) //If successful, the account will be in the data object!
+
+  return client;
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
-  const client = 
+  const data = useLoaderData();
+  console.log(data);
   return (
     <html lang="en">
       <head>
@@ -50,7 +74,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
+export default function App({ loaderData }: Route.ComponentProps) {
+  console.log(loaderData);
   return <Outlet />;
 }
 

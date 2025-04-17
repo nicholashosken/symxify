@@ -1,0 +1,5 @@
+import { WireDrawdownDebitAcctAdvSearchPagedSelectFieldsResponse } from "./wireDrawdownDebitAcctAdvSearchPagedSelectFieldsResponse";
+
+export interface SearchWireDrawdownDebitAcctAdvPagedSelectFieldsResponse {
+    pagedResponse: WireDrawdownDebitAcctAdvSearchPagedSelectFieldsResponse;
+}

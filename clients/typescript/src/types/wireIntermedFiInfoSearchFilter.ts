@@ -1,0 +1,9 @@
+import { VersionType } from "./versionType";
+import { XmlElement } from "./xmlElement";
+
+export interface WireIntermedFiInfoSearchFilter {
+    query: string;
+    version1: VersionType;
+    any: XmlElement[];
+    anySpecified: boolean;
+}
