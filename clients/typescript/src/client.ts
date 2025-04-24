@@ -12,9 +12,6 @@ export interface APIResponse<T> {
 
 interface SymxifyClientInitOptions {
   symxifyUrl: string;
-  serviceKey?: string;
-  serviceId?: string;
-  symxifyType: "Self-hosted" | "Cloud-hosted"
 }
 
 let clientInstance: SymxifyClient | null = null;
@@ -23,24 +20,15 @@ type OperationName = keyof OperationMap;
 
 export class SymxifyClient {
   private symxifyUrl: string;
-  private connectionKey: string;
-  private connectionId: string;
-  private hostingType: "Self-hosted" | "Cloud-hosted"
 
-  constructor({ symxifyUrl: baseUrl, serviceKey: connectionKey = "", serviceId: connectionId = "", symxifyType: hostingType = 'Cloud-hosted' }: SymxifyClientInitOptions) {
+  constructor({ symxifyUrl: baseUrl }: SymxifyClientInitOptions) {
     this.symxifyUrl = baseUrl;
-    this.connectionKey = connectionKey;
-    this.connectionId = connectionId;
-    this.hostingType = hostingType
   }
 
   private async fetch<T>(url: string, options: RequestInit, service: string): Promise<APIResponse<T>> {
     try {
-      if (!this.connectionKey && this.hostingType == "Cloud-hosted") {
-        throw new Error("Symxify service key was not found. You must create a connection and use its provided service key if you're using Symxify cloud.");
-      }
 
-      const response = await fetch(`${this.symxifyUrl}${`${this.connectionId ?? '/' + this.connectionId}`}/${service}/${url}/`, {
+      const response = await fetch(`${this.symxifyUrl}/${service}/${url}/`, {
         ...options,
         headers: {
           ...options.headers,

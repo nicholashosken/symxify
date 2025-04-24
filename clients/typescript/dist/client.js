@@ -1022,18 +1022,12 @@ var OperationServiceMap = {
 // src/client.ts
 var clientInstance = null;
 var SymxifyClient = class {
-  constructor({ symxifyUrl: baseUrl, serviceKey: connectionKey = "", serviceId: connectionId = "", symxifyType: hostingType = "Cloud-hosted" }) {
+  constructor({ symxifyUrl: baseUrl }) {
     this.symxifyUrl = baseUrl;
-    this.connectionKey = connectionKey;
-    this.connectionId = connectionId;
-    this.hostingType = hostingType;
   }
   async fetch(url, options, service) {
     try {
-      if (!this.connectionKey && this.hostingType == "Cloud-hosted") {
-        throw new Error("Symxify service key was not found. You must create a connection and use its provided service key if you're using Symxify cloud.");
-      }
-      const response = await fetch(`${this.symxifyUrl}${`${this.connectionId ?? "/" + this.connectionId}`}/${service}/${url}/`, {
+      const response = await fetch(`${this.symxifyUrl}/${service}/${url}/`, {
         ...options,
         headers: {
           ...options.headers,

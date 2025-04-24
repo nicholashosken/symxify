@@ -7,17 +7,11 @@ export interface APIResponse<T> {
 }
 interface SymxifyClientInitOptions {
     symxifyUrl: string;
-    serviceKey?: string;
-    serviceId?: string;
-    symxifyType: "Self-hosted" | "Cloud-hosted";
 }
 type OperationName = keyof OperationMap;
 export declare class SymxifyClient {
     private symxifyUrl;
-    private connectionKey;
-    private connectionId;
-    private hostingType;
-    constructor({ symxifyUrl: baseUrl, serviceKey: connectionKey, serviceId: connectionId, symxifyType: hostingType }: SymxifyClientInitOptions);
+    constructor({ symxifyUrl: baseUrl }: SymxifyClientInitOptions);
     private fetch;
     request(options?: RequestInit): { [K in OperationName]: (payload: OperationMap[K]["request"]) => Promise<APIResponse<OperationMap[K]["response"]>>; };
 }

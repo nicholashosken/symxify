@@ -1,6 +1,6 @@
 {
   "name": "symxify-client",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A TypeScript client for the Symxify API",
   "main": "dist/client.js",
   "module": "dist/client.mjs",
@@ -19,7 +19,8 @@
     "gen:ops": "ts-node scripts/generate-operations-map.ts",
     "build": "tsup",
     "build:types": "tsc --emitDeclarationOnly --declaration --noEmitOnError false --outDir dist",
-    "sanitize:types": "ts-node scripts/sanitize-types.ts"
+    "sanitize:types": "ts-node scripts/sanitize-types.ts",
+    "build:production": "npm run gen:ops && npm run build:types && npm run build"
   },
   "keywords": [],
   "author": "",
