@@ -38,6 +38,4 @@ Use the client in your server or client environment
 
 ##### ⚠️ Known issues
 
-- Typescript complains is any field is left unchecked. This is an unfortunate side-effect of generating typescript types from C# types.
-
-We are working to resolve these, but they are not a high priority as it's not anything breaking. It should be noted that removing the value and specified elements would likely decrease the size of the package by 66%.
+- Typescript complains is any field is left unchecked. This is an unfortunate side-effect of generating typescript types from C# types. This can be worked around by @ts-ignoring the field, or applying your data mutation code in a ts file with a @ts-nocheck.
