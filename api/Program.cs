@@ -20,7 +20,7 @@ builder.Services.Configure<SerializerOptions>(builder.Configuration.GetSection("
 builder.Services.AddHttpClient("SymxchangeClient").ConfigurePrimaryHttpMessageHandler(() =>
 {
     var handler = new HttpClientHandler();
-    var certPem = builder.Configuration["SymxchangeConnection:CertificateThumbprint"];
+    var certPem = builder.Configuration["SymxchangeConnection:CertificateContents"];
     if (String.IsNullOrEmpty(certPem))
     {
         handler.ServerCertificateCustomValidationCallback = (message, serverCert, chain, errors) => { return true; };

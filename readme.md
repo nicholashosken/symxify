@@ -18,14 +18,14 @@ docker pull memberwise/symxify
 ```
 Then,
 ```
-docker run -d --name symxify -p 7042:80 -e ASPNETCORE_URLS=http://+:80 -e Serializer__cdnUrl=http://localhost -e AvailableSymxchangeVersions_0=crud -e SymxchangeConnection__Port="12345" -e SymxchangeConnection__Host="symtar123.host.net" -e SymxchangeConnection__Secure=true memberwise/symxify -e SymxchangeConnection__CertificateThumbprint=(gc ./crt.pem)
+docker run -d --name symxify -p 7042:80 -e SymxchangeConnection__Port="12345" -e SymxchangeConnection__Host="symtar123.host.net" -e SymxchangeConnection__CertificateContents=(gc ./crt.pem) memberwise/symxify
 ```
 Note that certificate contents cannot be passed into Docker via a .env file, and must be injected in the command line, or applied inside the container's environment variables.
 
 <!--
 ## Rather have us set up your environment? Visit [https://memberwise.com](https://www.memberwise.com/symxify/sign-up) to create an account and get Symxchanging in under 5 minutes. -->
 
-In the future, you can use Symxify in the cloud via our paid service offering. Contact the Memberwise sales team for more information. Alternatively, you can self host by pulling our Docker container.
+In the future, you can use Symxify in the cloud via our paid service offering. Contact [Memberwise team](https://memberwise.io/contact)  for more information. Alternatively, you can self host by pulling our Docker container.
 
 Symxify consists of a few different services to ensure high availability and speed.
 
@@ -63,7 +63,7 @@ If you want to pre-load a service, add the service namespace into the "Preloaded
 
 Note that preloading exceptionally large services (like account and parameter) will increase your baseline memory usage.
 
-To use a PEM certificate, use the `"CertificateThumbprint"` configuration option. If no certificate contents are loaded, then the API will execute requests **INSECURELY**. This is helpful for development, but should **not** be used in a production environment. It is highly recommended to use the certificate in your production environment.
+To use a PEM certificate, use the `"CertificateContents"` configuration option. If no certificate contents are loaded, then the API will execute requests **INSECURELY**. This is helpful for development, but should **not** be used in a production environment. It is highly recommended to use the certificate in your production environment.
 
 #### Service Verification List
 

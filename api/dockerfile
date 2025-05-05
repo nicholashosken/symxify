@@ -20,4 +20,7 @@ COPY --from=build /app/publish .
 EXPOSE 80
 
 ENV ASPNETCORE_URLS=http://+:80
+ENV AvailableSymxchangeVersions_0="CRUD"
+ENV SymxchangeConnection__Secure=true
+ENV Serializer__cdnUrl=http://localhost
 ENTRYPOINT ["dotnet", "api.dll"]

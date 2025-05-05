@@ -37,7 +37,7 @@ services:
       - AvailableSymxchangeVersions_0="crud"
       # - PreloadedServices_0="AccountService"
       # - PreloadedService_1="ParameterService"
-      # - SymxchangeConnection__CertificateThumbprint=""
+      # - SymxchangeConnection__CertificateContents=""
       - SymxchangeConnection__Port="1234"
       - SymxchangeConnection__Host="yourconnection.net"
       - SymxchangeConnection__Secure=true
