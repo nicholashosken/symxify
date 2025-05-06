@@ -6,7 +6,7 @@ Symxify aims to make it easy for you and your development team to get up and run
 
 - Official Typescript and C# clients 🧑‍💻
 - Self-hostable containers 💾
-- An easy and affordable cloud hosted option ☁️ (coming soon)
+- An easy and affordable cloud hosted option ☁️ (send us a message at [memberwise.io](https://memberwise.io/contact) for beta access)
 - Digestable logs 📜 (coming soon)
 - Testable interfaces 🧪 (coming soon)
 - Neatly-split projects for maximum flexibility 💪
