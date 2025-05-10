@@ -1022,8 +1022,9 @@ var OperationServiceMap = {
 // src/client.ts
 var clientInstance = null;
 var SymxifyClient = class {
-  constructor({ symxifyUrl: baseUrl }) {
+  constructor({ symxifyUrl: baseUrl, symxifyKey }) {
     this.symxifyUrl = baseUrl;
+    this.symxifyKey = symxifyKey;
   }
   async fetch(url, options, service) {
     try {
@@ -1031,7 +1032,8 @@ var SymxifyClient = class {
         ...options,
         headers: {
           ...options.headers,
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "x-symxify-key": this.symxifyKey
         }
       });
       const result = await response.json();
@@ -1079,9 +1081,9 @@ var config;
 function createSymxifyClient(initOptions) {
   config = initOptions;
   return function withContext() {
-    const client = new SymxifyClient({ ...config });
-    initClientInstance(client);
-    return client;
+    const client2 = new SymxifyClient({ ...config });
+    initClientInstance(client2);
+    return client2;
   };
 }
 function useSymxifyClient() {
@@ -1092,9 +1094,14 @@ function useSymxifyClient() {
   }
   return clientInstance;
 }
-function initClientInstance(client) {
-  clientInstance = client;
+function initClientInstance(client2) {
+  clientInstance = client2;
 }
+var client = createSymxifyClient({
+  symxifyUrl: "https://localhost:7036/api/v1/symxchange",
+  symxifyKey: "1234567890"
+})();
+console.log(client);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   SymxifyClient,

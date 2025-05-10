@@ -3,6 +3,7 @@
 import type { APIResponseError } from "./types/APIResponseError";
 import type { OperationMap } from "./generated/operation-map";
 import { OperationServiceMap } from "./generated/operation-map-runtime";
+import { create } from "domain";
 
 export interface APIResponse<T> {
   success: boolean;
@@ -12,6 +13,7 @@ export interface APIResponse<T> {
 
 interface SymxifyClientInitOptions {
   symxifyUrl: string;
+  symxifyKey?: string;
 }
 
 let clientInstance: SymxifyClient | null = null;
@@ -20,9 +22,11 @@ type OperationName = keyof OperationMap;
 
 export class SymxifyClient {
   private symxifyUrl: string;
+  private symxifyKey: string;
 
-  constructor({ symxifyUrl: baseUrl }: SymxifyClientInitOptions) {
+  constructor({ symxifyUrl: baseUrl, symxifyKey: symxifyKey }: SymxifyClientInitOptions) {
     this.symxifyUrl = baseUrl;
+    this.symxifyKey = symxifyKey
   }
 
   private async fetch<T>(url: string, options: RequestInit, service: string): Promise<APIResponse<T>> {
@@ -33,6 +37,7 @@ export class SymxifyClient {
         headers: {
           ...options.headers,
           "Content-Type": "application/json",
+          "x-symxify-key": this.symxifyKey,
         },
       });
 
@@ -110,3 +115,10 @@ export function useSymxifyClient(): SymxifyClient {
 function initClientInstance(client: SymxifyClient) {
   clientInstance = client;
 }
+
+let client = createSymxifyClient({
+  symxifyUrl: "https://localhost:7036/api/v1/symxchange",
+  symxifyKey: "1234567890",
+})();
+
+console.log(client)

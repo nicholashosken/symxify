@@ -7,11 +7,13 @@ export interface APIResponse<T> {
 }
 interface SymxifyClientInitOptions {
     symxifyUrl: string;
+    symxifyKey?: string;
 }
 type OperationName = keyof OperationMap;
 export declare class SymxifyClient {
     private symxifyUrl;
-    constructor({ symxifyUrl: baseUrl }: SymxifyClientInitOptions);
+    private symxifyKey;
+    constructor({ symxifyUrl: baseUrl, symxifyKey: symxifyKey }: SymxifyClientInitOptions);
     private fetch;
     request(options?: RequestInit): { [K in OperationName]: (payload: OperationMap[K]["request"]) => Promise<APIResponse<OperationMap[K]["response"]>>; };
 }
