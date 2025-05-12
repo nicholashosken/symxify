@@ -24,20 +24,24 @@ export class SymxifyClient {
   private symxifyUrl: string;
   private symxifyKey: string;
 
-  constructor({ symxifyUrl: baseUrl, symxifyKey: symxifyKey }: SymxifyClientInitOptions) {
-    this.symxifyUrl = baseUrl;
+  constructor({ symxifyUrl, symxifyKey }: SymxifyClientInitOptions) {
+    this.symxifyUrl = symxifyUrl
     this.symxifyKey = symxifyKey
   }
 
   private async fetch<T>(url: string, options: RequestInit, service: string): Promise<APIResponse<T>> {
     try {
-
+      const headers: HeadersInit = {
+        ...options.headers,
+        "Content-Type": "application/json",
+      }
+      if (this.symxifyKey) {
+        headers["x-symxify-key"] = this.symxifyKey;
+      }
       const response = await fetch(`${this.symxifyUrl}/${service}/${url}/`, {
         ...options,
         headers: {
-          ...options.headers,
-          "Content-Type": "application/json",
-          "x-symxify-key": this.symxifyKey,
+          ...headers,
         },
       });
 
@@ -115,10 +119,3 @@ export function useSymxifyClient(): SymxifyClient {
 function initClientInstance(client: SymxifyClient) {
   clientInstance = client;
 }
-
-let client = createSymxifyClient({
-  symxifyUrl: "https://localhost:7036/api/v1/symxchange",
-  symxifyKey: "1234567890",
-})();
-
-console.log(client)

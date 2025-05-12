@@ -1,6 +1,6 @@
 {
   "name": "symxify-client",
-  "version": "1.0.9",
+  "version": "1.0.14",
   "description": "A TypeScript client for the Symxify API",
   "main": "dist/client.js",
   "module": "dist/client.mjs",

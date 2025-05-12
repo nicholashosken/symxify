@@ -1,5 +1,7 @@
-﻿namespace SymxifyClient;
+﻿using SymxifyClient.Models;
 
-public class SymxifyRequest(HttpClient client)
+namespace SymxifyClient;
+
+public class SymxifyRequest(HttpClient client, SymxifyConfig config)
 {
 }
