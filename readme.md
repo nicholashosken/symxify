@@ -6,7 +6,7 @@ Symxify aims to make it easy for you and your development team to get up and run
 
 - Official Typescript and C# clients 🧑‍💻
 - Self-hostable containers 💾
-- An easy and affordable cloud hosted option ☁️ (send us a message at [memberwise.io](https://memberwise.io/contact) for beta access)
+- An easy and affordable cloud hosted option ☁️
 - Digestable logs 📜 (coming soon)
 - Testable interfaces 🧪 (coming soon)
 - Neatly-split projects for maximum flexibility 💪
@@ -22,8 +22,8 @@ docker run -d --name symxify -p 7042:80 -e SymxchangeConnection__Port="12345" -e
 ```
 Note that certificate contents cannot be passed into Docker via a .env file, and must be injected in the command line, or applied inside the container's environment variables.
 
-<!--
-## Rather have us set up your environment? Visit [https://memberwise.com](https://www.memberwise.com/symxify/sign-up) to create an account and get Symxchanging in under 5 minutes. -->
+
+## Rather have us set up your environment? Visit [https://memberwise.io](https://www.memberwise.io/contact) and set us a message to get started.
 
 In the future, you can use Symxify in the cloud via our paid service offering. Contact [Memberwise team](https://memberwise.io/contact)  for more information. Alternatively, you can self host by pulling our Docker container.
 

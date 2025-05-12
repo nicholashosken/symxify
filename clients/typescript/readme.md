@@ -1,5 +1,7 @@
 ### Typescript Client
 
+# We now offer cloud hosting for Symxify! Create an unlimited number of connections in the Memberwise Dashboard. To learn more, head to https://memberwise.io/products/symxify
+
 The typescript client is available to use and is fully operational, however there are some known issues that we're working to resolve. Note that they do not have any effect on how the client works.
 
 `npm -i symxify-client`
