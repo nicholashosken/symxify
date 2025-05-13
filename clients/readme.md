@@ -4,12 +4,12 @@ The typescript client is available to use and is fully operational, however ther
 
 `npm -i symxify-client`
 
-##### Known issues
-- Typescript complains is any field is left unchecked. This is an unfortunate side-effect of generating typescript types from C# types.
-- The value and specified fields are present in the typescript objects.
-
-We are working to resolve these, but they are not a high priority as it's not anything breaking. It should be noted that removing the value and specified elements would likely decrease the size of the package by 66%.
-
 ### C# Client
 
-The C# client is a WIP. The goal is for this client to be usable on the server and client (e.g., Blazor SSR/Razor Page and Blazor CSR).
+The C# client is completed, but not 100% tested. Feel free to try it out on Nuget!
+
+dotnet add package Symxify.Client
+
+### Other Clients
+
+Feel free to fork and add your own clients!
