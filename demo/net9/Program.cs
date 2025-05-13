@@ -10,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddHttpClient();
+
 builder.Services.AddSymxifyClient(options =>
     builder.Configuration.GetSection("Symxify").Bind(options));
 
@@ -25,29 +27,37 @@ app.UseHttpsRedirection();
 
 app.MapGet("/get-account", async ([FromServices] SymxifyClient _client) =>
 {
-    var resp = await _client.GetAccountSelectFields(new AccountSelectFieldsRequest()
+    try
     {
-        SelectableFields = new AccountSingleSelectableFields()
+        var resp = await _client.GetAccountSelectFields(new AccountSelectFieldsRequest()
         {
-            IncludeAllAccountFields = true
-        },
-        Credentials = new CredentialsChoice()
-        {
-            AdministrativeCredentials = new AdministrativeCredentials()
+            SelectableFields = new AccountSingleSelectableFields()
             {
-                Password = "<PASSWORD>"
-            }
-        },
-        AccountNumber = "1234567890",
-        DeviceInformation = new DeviceInformation()
-        {
-            DeviceNumber = 12345,
-            DeviceType = "MYSYMX"
-        },
-        MessageId = "Getting this account!"
-    });
+                IncludeAllAccountFields = true
+            },
+            Credentials = new CredentialsChoice()
+            {
+                AdministrativeCredentials = new AdministrativeCredentials()
+                {
+                    Password = "<PASSWORD>"
+                }
+            },
+            AccountNumber = "99",
+            DeviceInformation = new DeviceInformation()
+            {
+                DeviceNumber = 20548,
+                DeviceType = "MYSYMX"
+            },
+            MessageId = "Getting this account!",
+        });
+        return !resp.Success ? Results.BadRequest(resp.Error) : Results.Ok(resp.Data);
+    }
+    catch (Exception e)
+    {
+        return Results.BadRequest(e.Message);
+    }
 
-    return !resp.Success ? Results.BadRequest(resp.Error) : Results.Ok(resp.Data);
+    
 });
 
 app.Run();

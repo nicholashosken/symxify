@@ -29,13 +29,19 @@ public partial class SymxifyClient
 
         if (!String.IsNullOrEmpty(_options.SymxifyKey))
         {
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _options.SymxifyKey);
+            request.Headers.TryAddWithoutValidation("x-symxify-key", _options.SymxifyKey);
         }
 
         var response = await _http.SendAsync(request);
-        response.EnsureSuccessStatusCode();
+        // response.EnsureSuccessStatusCode();
+
+        Console.WriteLine(JsonSerializer.Serialize(response));
 
         var body = await response.Content.ReadAsStringAsync();
-        return JsonSerializer.Deserialize<TResponse>(body)!;
+        Console.WriteLine(body);
+        return JsonSerializer.Deserialize<TResponse>(body, new JsonSerializerOptions()
+        {
+            PropertyNameCaseInsensitive = true
+        })!;
     }
 }
