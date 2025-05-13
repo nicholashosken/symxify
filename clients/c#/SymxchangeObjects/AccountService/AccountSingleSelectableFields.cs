@@ -39,7 +39,7 @@ namespace AccountService
         /// <para xml:lang="en">Gets or sets a value indicating whether the IncludeAllAccountFields property is specified.</para>
         /// </summary>
         [XmlIgnoreAttribute()]
-        [EditorBrowsableAttribute(EditorBrowsableState.Never)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public bool IncludeAllAccountFieldsValueSpecified { get; set; }
         
         [XmlIgnoreAttribute()]

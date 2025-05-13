@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>generate_map</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Declare the operation-map.json file -->
+    <None Include="operation-map.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <Target Name="CopyOperationMap" AfterTargets="Build">
+    <Copy SourceFiles="operation-map.json" DestinationFolder="$(OutputPath)" />
+  </Target>
+</Project>

@@ -1,4 +1,4 @@
-﻿namespace shared.Models;
+﻿namespace Memberwise.Symxify.Models;
 
 public class Result<T>(bool success, T? data = default, Error? error = null)
 {
