@@ -35,10 +35,7 @@ public partial class SymxifyClient
         var response = await _http.SendAsync(request);
         // response.EnsureSuccessStatusCode();
 
-        Console.WriteLine(JsonSerializer.Serialize(response));
-
         var body = await response.Content.ReadAsStringAsync();
-        Console.WriteLine(body);
         return JsonSerializer.Deserialize<TResponse>(body, new JsonSerializerOptions()
         {
             PropertyNameCaseInsensitive = true
