@@ -1,0 +1,19 @@
+services:
+  api:
+    environment:
+      ASPNETCORE_URLS: "http://+:80"
+      Serializer__cdnUrl: "${CDN_URL:-http://localhost}"
+      AvailableSymxchangeVersions_0: "crud"
+      # ↓ Opcional: reduzir a travadinha do primeiro acesso
+      # PreloadedServices_0: "AccountService"
+      # PreloadedServices_1: "ParameterService"
+      # Header usado no endpoint de refresh do operation map
+      Authorization: "${AUTH_HEADER:-changeme}"
+      SymxchangeConnection__Host: "${SYMX_HOST:-symtar123.host.net}"
+      SymxchangeConnection__Port: "${SYMX_PORT:-12345}"
+      SymxchangeConnection__Secure: "${SYMX_SECURE:-true}"
+      # IMPORTANTE: Em staging/prod, cole o conteúdo PEM abaixo.
+      # Em dev local, pode deixar vazio (inseguro, apenas para testes).
+      SymxchangeConnection__CertificateContents: "${SYMX_CERT_PEM:-}"
+    ports:
+      - "${API_PORT:-7042}:80"
