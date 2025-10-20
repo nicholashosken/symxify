@@ -1,0 +1,12 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Body>
+    <m:GetAccountSelectFieldsResponse xmlns:m="http://symitar.example.com/AccountService">
+      <m:Result>
+        <m:MemberNumber>12345</m:MemberNumber>
+        <m:Branch>001</m:Branch>
+        <m:Name>JOHN DOE</m:Name>
+        <m:Status>Active</m:Status>
+      </m:Result>
+    </m:GetAccountSelectFieldsResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
