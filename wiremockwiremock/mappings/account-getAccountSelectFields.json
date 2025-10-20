@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/symxchange",
+    "headers": {
+      "SOAPAction": { "contains": "getAccountSelectFields" },
+      "Content-Type": { "contains": "text/xml" }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "text/xml; charset=utf-8" },
+    "bodyFileName": "getAccountSelectFieldsResponse.xml"
+  }
+}
