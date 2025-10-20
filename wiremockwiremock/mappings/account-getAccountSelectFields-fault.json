@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/symxchange",
+    "headers": {
+      "SOAPAction": { "contains": "getAccountSelectFields" }
+    },
+    "bodyPatterns": [
+      { "contains": "<symbol>CAUSE_FAULT</symbol>" }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "headers": { "Content-Type": "text/xml; charset=utf-8" },
+    "bodyFileName": "faultResponse.xml"
+  }
+}
